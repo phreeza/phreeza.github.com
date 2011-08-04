@@ -49,3 +49,18 @@ header ul li:first-child {
 	padding-top: 50px;
 	background: red;
 }
+
+/*
+		INTERACTION
+*/
+
+h1.logo {
+	width: 301px;
+	height: 120px;
+	margin: 0 auto;
+	background: black;
+	overflow: hidden;
+}
+h2.description {
+	margin: 0 auto;
+}
