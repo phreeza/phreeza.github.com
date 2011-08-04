@@ -17,7 +17,7 @@ $(function() {
   {
     $("#timer").startTimer($("#timer").data('countdown.settings'));
     var newli = document.createElement('li');
-    newli.innerHTML = $("#description").val();
+    newli.innerHTML = "<p>"+$("#description").val()+"<span>Time</span></p>";
 
     $("#history").append(newli);
   }
