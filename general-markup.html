@@ -7,7 +7,14 @@
 		<script type='text/javascript' src='countdown/jquery.the_final_countdown.js'></script>
 		<script type='text/javascript'>
 		  $(function() {
-		      $("#timer_pomodoro").createTimer({time_in_seconds: 25*60,autostart: false});
+		      $("#timer_pomodoro").createTimer({
+			time_in_seconds: 25*60,
+			tick:function(timer, time_in_seconds, formatted_time)
+			{
+			$("#progress_pomodoro").attr("value",$("#timer_pomodoro").data('countdown.duration'));
+			}
+			,
+			autostart: false});
 
 		      $("#startstop").click(function() {
 			if ($("#timer_pomodoro").data('countdown.state') == 'running')
@@ -16,7 +23,7 @@
 			}
 			else
 			{
-			$("#timer_pomodoro").startTimer();
+			$("#timer_pomodoro").startTimer($("#timer_pomodoro").data('countdown.settings'));
 			var newli = document.createElement('li');
 			newli.innerHTML = $("#description").val();
 
@@ -33,7 +40,7 @@
 			<li>Delete</li>
 		</ul>
 		<input id="description" placeholder="Enter Task" />
-		<progress value="65" max="1500">
+		<progress id="progress_pomodoro" value="0" max="1500000">
 			<span>01:05</span>
 		</progress>
 		<span id="timer_pomodoro">01:05</span>
