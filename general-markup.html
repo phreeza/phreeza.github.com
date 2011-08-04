@@ -7,41 +7,42 @@
 		<script type='text/javascript' src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
 		<script type='text/javascript' src='countdown/jquery.the_final_countdown.js'></script>
 		<script type='text/javascript'>
-		  $(function() {
-		      $("#timer_pomodoro").createTimer({
-			time_in_seconds: 25*60,
-			tick:function(timer, time_in_seconds, formatted_time)
-			{
-			$("#progress_pomodoro").attr("value",$("#timer_pomodoro").data('countdown.duration'));
-			}
-			,
-			autostart: false});
+			$(function() {
+				$("#timer_pomodoro").createTimer({
+					time_in_seconds: 25*60,
+					tick:function(timer, time_in_seconds, formatted_time)
+				{
+				$("#progress_pomodoro").attr("value",$("#timer_pomodoro").data('countdown.duration'));
+				}
+				,
+				autostart: false});
 
-		      $("#startstop").click(function() {
-			if ($("#timer_pomodoro").data('countdown.state') == 'running')
-			{
-			$("#timer_pomodoro").resetTimer();
-			}
-			else
-			{
-			$("#timer_pomodoro").startTimer($("#timer_pomodoro").data('countdown.settings'));
-			var newli = document.createElement('li');
-			newli.innerHTML = $("#description").val();
+				$("#startstop").click(function() {
+					if ($("#timer_pomodoro").data('countdown.state') == 'running')
+					{
+						$("#timer_pomodoro").resetTimer();
+					}
+					else
+					{
+						$("#timer_pomodoro").startTimer($("#timer_pomodoro").data('countdown.settings'));
+						var newli = document.createElement('li');
+						newli.innerHTML = $("#description").val();
 
-			$("#history").append(newli);
-			}
+						$("#history").append(newli);
+					}
+				});
 			});
-		      });
-		    </script>
-		  </head>
-		  <body>
-		    <header>
-				<ul>
-					<li>http://rispen.nl/<input value="chiffre" /></li>
-					<li>Lock/Unlock</li>
-					<li>Delete</li>
-				</ul>
-			</header>
+		</script>
+	</head>
+	<body>
+	<header>
+		<ul>
+			<li>http://rispen.nl/<input value="chiffre" /></li>
+			<li>Lock/Unlock</li>
+			<li>Delete</li>
+		</ul>
+	</header>
+	<div id="interaction">
 		<input id="description" placeholder="Enter Task" />
 		<progress id="progress_pomodoro" value="0" max="1500000">
 			<span>01:05</span>
@@ -54,10 +55,11 @@
 			<li>Continue Task</li>
 			<li>Start new task</li>
 		</ul>
-		<ul id="history">
-			<li>
-				<p>Task <span>Time spent</span></p>
-			</li>
-		</ul>
+	</div>
+	<ul id="history">
+		<li>
+			<p>Task <span>Time spent</span></p>
+		</li>
+	</ul>
 	</body>
 </html>
