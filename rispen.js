@@ -18,7 +18,9 @@ $(function() {
     $("#timer").startTimer($("#timer").data('countdown.settings'));
     var newli = document.createElement('li');
     newli.innerHTML = "<p>"+$("#description").val()+"<span>Time</span></p>";
-
+	  $('#description').attr({
+      readOnly: 'readonly',
+    });
     $("#history").prepend(newli);
   }
   });
