@@ -12,6 +12,7 @@ body {
 ul, h1, h2, h3 {
 	margin: 0;
 	padding: 0;
+	list-style: none;
 }
 .wrapper {
 	width: 800px;
@@ -35,7 +36,6 @@ header {
 }
 header ul {
 	height: 50px;
-	list-style: none;
 	color: #FFFFFF;
 }
 header ul li {
@@ -69,7 +69,21 @@ h1.logo {
 h2.claim {
 	text-align: center;
 }
+
 #task-wrapper {
 	width: 800px;
 	margin: auto;
+}
+
+#after-task {
+	width: 336px;
+	margin: auto;
+}
+#after-task li {
+	float: left;
+	width: 64px;
+	height: 64px;
+	margin: 10px;
+	overflow: hidden;
+	background: grey;
 }
