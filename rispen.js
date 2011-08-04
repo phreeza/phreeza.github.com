@@ -12,14 +12,15 @@ $(function() {
     if ($("#timer").data('countdown.state') == 'running')
   {
     $("#timer").resetTimer();
+    $("#description").removeAttr("disabled")
   }
     else
   {
     $("#timer").startTimer($("#timer").data('countdown.settings'));
     var newli = document.createElement('li');
     newli.innerHTML = "<p>"+$("#description").val()+"<span>Time</span></p>";
-	  $('#description').attr({
-      readOnly: 'readonly',
+	  $("#description").attr({
+      disabled: 'disabled',
     });
     $("#history").prepend(newli);
   }
