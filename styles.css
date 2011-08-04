@@ -56,7 +56,7 @@ header ul li:first-child {
 /*
 		INTERACTION
 		
-		This
+		This part describes all the content, the user interacts with handle new tasks.
 */
 
 h1.logo {
@@ -86,4 +86,25 @@ h2.claim {
 	margin: 10px;
 	overflow: hidden;
 	background: grey;
+}
+
+/*
+		HISTORY
+		
+		Self-explanatory.
+*/
+
+#history li {
+	line-height: 28px;
+	background: aqua;
+}
+#history li:nth-child(even) {
+	background: purple;
+}
+#history li p {
+	width: 800px;
+	margin: auto;
+}
+#history li span {
+	float: right;
 }
