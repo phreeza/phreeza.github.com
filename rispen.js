@@ -19,7 +19,7 @@ $(function() {
     var newli = document.createElement('li');
     newli.innerHTML = "<p>"+$("#description").val()+"<span>Time</span></p>";
 
-    $("#history").append(newli);
+    $("#history").prepend(newli);
   }
   });
 });
