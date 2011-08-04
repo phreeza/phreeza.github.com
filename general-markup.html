@@ -26,7 +26,7 @@
 					{
 						$("#timer_pomodoro").startTimer($("#timer_pomodoro").data('countdown.settings'));
 						var newli = document.createElement('li');
-						newli.innerHTML = $("#description").val();
+						newli.innerHTML = $("#task").val();
 
 						$("#history").append(newli);
 					}
@@ -43,7 +43,9 @@
 		</ul>
 	</header>
 	<div id="interaction">
-		<input id="description" placeholder="Enter Task" />
+		<h1 class="logo"><a href="#">Rispen</a></h1>
+		<h2 class="description">Helping you getting things done with Pomodoro®</h2>
+		<input id="task" placeholder="Enter Task" />
 		<progress id="progress_pomodoro" value="0" max="1500000">
 			<span>01:05</span>
 		</progress>
