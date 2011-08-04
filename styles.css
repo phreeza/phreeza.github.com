@@ -13,6 +13,11 @@ ul, h1, h2, h3 {
 	margin: 0;
 	padding: 0;
 }
+.wrapper {
+	width: 800px;
+	margin: auto;
+}
+
 
 /*		
 		HEADER aka dickbar
@@ -29,9 +34,7 @@ header {
 	line-height: 50px;
 }
 header ul {
-	width: 800px;
 	height: 50px;
-	margin: auto;
 	list-style: none;
 	color: #FFFFFF;
 }
@@ -59,10 +62,14 @@ header ul li:first-child {
 h1.logo {
 	width: 301px;
 	height: 120px;
-	margin: 0 auto;
+	margin: 20px auto;
 	background: black;
 	overflow: hidden;
 }
 h2.claim {
 	text-align: center;
+}
+#task-wrapper {
+	width: 800px;
+	margin: auto;
 }

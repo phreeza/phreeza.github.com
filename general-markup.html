@@ -4,13 +4,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Rispen Mark-Up</title>
     <link href="styles.css" rel="stylesheet" />
-    <script type='text/javascript' src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
+    <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.15/jquery-ui.min.js"></script>
     <script type='text/javascript' src='countdown/jquery.the_final_countdown.js'></script>
     <script type='text/javascript' src="rispen.js"></script>
   </head>
   <body>
     <header>
-    <ul>
+    <ul id="top-navigation" class="wrapper">
       <li>http://rispen.nl/<input value="chiffre" /></li>
       <li>Lock/Unlock</li>
       <li>Delete</li>
@@ -19,13 +20,15 @@
     <div id="interaction">
     	<h1 class="logo"><a href="#">Rispen</a></h1>
 			<h2 class="claim">Helping you getting things done with Pomodoro®</h2>
-      <input id="description" placeholder="Enter Task" />
-      <progress id="progress" value="0" max="1500000">
-      <span>01:05</span>
-      </progress>
-      <span id="timer">01:05</span>
-      <button id="startstop">Start/Stop</button>
-      <ul>
+			<div id="task-wrapper" class="wrapper">
+        <input id="description" placeholder="Enter Task" />
+        <progress id="progress" value="0" max="1500000">
+          <span>01:05</span>
+        </progress>
+        <span id="timer">01:05</span>
+        <button id="startstop">Start/Stop</button>
+        <ul>
+      </div>
 	<li>Short break</li>
 	<li>Long break</li>
 	<li>Continue Task</li>
