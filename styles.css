@@ -1,0 +1,51 @@
+/*		
+		GENERAL CSS
+
+		Styling of standard HTML-tags and general CSS Reset
+*/
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+ul, h1, h2, h3 {
+	margin: 0;
+	padding: 0;
+}
+
+/*		
+		HEADER aka dickbar
+
+		This section describes the contents of the header-bar.
+		It‘‚ only meant for important settings like short-url, lock/unlock and deletion of the Pomodoro
+*/
+
+header {
+	position: fixed;
+	width: 100%;
+	height: 50px;
+	background: rgb(80,80,80);
+	line-height: 50px;
+}
+header ul {
+	width: 800px;
+	height: 50px;
+	margin: auto;
+	list-style: none;
+	color: #FFFFFF;
+}
+header ul li {
+	float: right;
+	margin-left: 20px;
+}
+header ul li:first-child {
+	float: left;
+	margin-left: 0;
+}
+
+#interaction {
+	height: 300px;
+	padding-top: 50px;
+	background: red;
+}
