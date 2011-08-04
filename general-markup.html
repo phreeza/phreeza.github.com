@@ -7,10 +7,10 @@
 		<script type='text/javascript' src='countdown/jquery.the_final_countdown.js'></script>
 		<script type='text/javascript'>
 		  $(function() {
-		      $("#timer_pomodoro").createTimer({time_in_seconds: 25*60;autostart: false});
+		      $("#timer_pomodoro").createTimer({time_in_seconds: 25*60,autostart: false});
 
 		      $("#startstop").click(function() {
-			if (data('countdown.state') == 'running')
+			if ($("#timer_pomodoro").data('countdown.state') == 'running')
 			{
 			$("#timer_pomodoro").resetTimer();
 			}
