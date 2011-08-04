@@ -17,6 +17,10 @@
 			else
 			{
 			$("#timer_pomodoro").startTimer();
+			var newli = document.createElement('li');
+			newli.innerHTML = $("#description").val();
+
+			$("#history").append(newli);
 			}
 			});
 		      });
@@ -28,7 +32,7 @@
 			<li>Lock/Unlock</li>
 			<li>Delete</li>
 		</ul>
-		<input placeholder="Enter Task" />
+		<input id="description" placeholder="Enter Task" />
 		<progress value="65" max="1500">
 			<span>01:05</span>
 		</progress>
@@ -40,7 +44,7 @@
 			<li>Continue Task</li>
 			<li>Start new task</li>
 		</ul>
-		<ul>
+		<ul id="history">
 			<li>
 				<p>Task <span>Time spent</span></p>
 			</li>
