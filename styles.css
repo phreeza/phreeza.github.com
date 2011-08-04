@@ -52,6 +52,8 @@ header ul li:first-child {
 
 /*
 		INTERACTION
+		
+		This
 */
 
 h1.logo {
@@ -61,6 +63,6 @@ h1.logo {
 	background: black;
 	overflow: hidden;
 }
-h2.description {
-	margin: 0 auto;
+h2.claim {
+	text-align: center;
 }
