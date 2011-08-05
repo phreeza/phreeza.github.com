@@ -50,17 +50,16 @@ header ul li:last-child {
 	margin-right: 0;
 }
 
-#interaction {
-	height: 300px;
-	padding-top: 50px;
-	background: url(http://clients.chrisgrabinski.com/rispen/images/header-bg.jpg) repeat-x top;
-}
-
 /*
 		INTERACTION
 		
 		This part describes all the content, the user interacts with handle new tasks.
 */
+
+#interaction {
+	padding: 70px 0 20px 0;
+	background: url(http://clients.chrisgrabinski.com/rispen/images/header-bg.jpg) repeat-x top;
+}
 
 h1.logo {
 	width: 301px;
@@ -87,9 +86,68 @@ h2.claim {
 	text-align: center;
 }
 
+h2.logo {
+	width: 0;
+	height: 50px;
+	margin: 0;
+	float: left;
+	background: url(http://clients.chrisgrabinski.com/rispen/images/rispen-logo-small.png);
+	overflow: hidden;
+	margin-left: 125px;
+}
+
+#description {
+	height: 30px;
+	width: 450px;
+	padding: 10px;
+	margin: 0;
+	margin-left: -125px;
+	font-size: 18pt;
+	font-weight: 300;
+	color: rgb(80,80,80);
+	text-shadow: 1px 1px rgb(230,230,230);
+	border: 1px solid rgb(250,250,250);
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	box-shadow: inset 0 0 16px rgb(220,220,220);
+	
+	-webkit-transition: all 0.4s ;
+	-moz-transition: all 0.4s ;
+	-o-transition: all 0.4s ;
+	transition: all 0.4s ;
+}
+#description:focus {
+	color: rgb(255,255,255);
+	text-shadow: 1px 1px rgb(200,15,0);
+	outline: none;
+	background: url(http://clients.chrisgrabinski.com/rispen/images/input-bg.png);
+	border: 1px dotted rgb(230,230,230);
+	box-shadow: inset 0 0 16px rgb(200,15,0);
+	
+	-webkit-transition: all 0.2s ;
+	-moz-transition: all 0.2s ;
+	-o-transition: all 0.2s ;
+	transition: all 0.2s ;
+}
+#description[disabled] {
+	position: absolute;
+	background: transparent;
+	box-shadow: none;
+	border: none;
+}
+
+.inactive {
+	display: none;
+}
+.active {
+	display: block;
+}
+
 #after-task {
 	width: 336px;
 	margin: auto;
+	display: none;
 }
 #after-task li {
 	float: left;

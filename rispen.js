@@ -13,16 +13,31 @@ $(function() {
   {
     $("#timer").resetTimer();
     $("#description").removeAttr("disabled")
+    $("#progress").attr({display: 'none',})
   }
     else
   {
     $("#timer").startTimer($("#timer").data('countdown.settings'));
     var newli = document.createElement('li');
     newli.innerHTML = "<p>"+$("#description").val()+"<span>Time</span></p>";
-	  $("#description").attr({
-      disabled: 'disabled',
-    });
+	  $("#description").attr({disabled: 'disabled',});
+	  $("#progress").addClass('active');
     $("#history").prepend(newli);
   }
   });
+
+	$('#description').click(
+
+function()
+  {
+    $('#rispen-head').slideUp('fast');
+    $('input').animate({
+  	  marginLeft: '0',
+    }, 100);
+    $('h2.logo').animate({
+  	  width: '125px',
+  	  marginLeft: '0',
+    }, 300);
+  });
+
 });
