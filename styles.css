@@ -7,6 +7,8 @@
 body {
 	margin: 0;
 	padding: 0;
+	font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif;
+	background: url(http://clients.chrisgrabinski.com/rispen/images/body-bg.jpg);
 }
 
 ul, h1, h2, h3 {
@@ -50,7 +52,7 @@ header ul li:first-child {
 #interaction {
 	height: 300px;
 	padding-top: 50px;
-	background: red;
+	background: url(http://clients.chrisgrabinski.com/rispen/images/header-bg.jpg) repeat-x top;
 }
 
 /*
@@ -63,8 +65,12 @@ h1.logo {
 	width: 301px;
 	height: 120px;
 	margin: 20px auto;
-	background: black;
+	background: url(http://clients.chrisgrabinski.com/rispen/images/rispen-logo.png);
 	overflow: hidden;
+}
+.logo a {
+	line-height: 9999px;
+	display: block;
 }
 h2.claim {
 	text-align: center;
