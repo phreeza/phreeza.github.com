@@ -35,18 +35,19 @@ header {
 	height: 50px;
 	background: rgb(80,80,80);
 	line-height: 50px;
+	font-size: 10pt;
 }
 header ul {
 	height: 50px;
 	color: #FFFFFF;
 }
 header ul li {
-	float: right;
-	margin-left: 20px;
-}
-header ul li:first-child {
 	float: left;
-	margin-left: 0;
+	margin-right: 20px;
+}
+header ul li:last-child {
+	float: right;
+	margin-right: 0;
 }
 
 #interaction {
@@ -64,7 +65,7 @@ header ul li:first-child {
 h1.logo {
 	width: 301px;
 	height: 120px;
-	margin: 20px auto;
+	margin: 20px auto 10px auto;
 	background: url(http://clients.chrisgrabinski.com/rispen/images/rispen-logo.png);
 	overflow: hidden;
 }
@@ -73,12 +74,17 @@ h1.logo {
 	display: block;
 }
 h2.claim {
+	color: rgb(80,80,80);
+	text-shadow: 1px 1px rgb(230,230,230);
 	text-align: center;
+	font-weight: 300;
+	margin: 10px 0 0 0;
 }
 
 #task-wrapper {
 	width: 800px;
 	margin: auto;
+	text-align: center;
 }
 
 #after-task {
@@ -102,10 +108,11 @@ h2.claim {
 
 #history li {
 	line-height: 28px;
-	background: aqua;
+	text-shadow: 1px 1px 1px rgb(255,255,255);
+	background: rgba(255,255,255,0.8);
 }
 #history li:nth-child(even) {
-	background: purple;
+	background: rgba(245,245,245,0.8);
 }
 #history li p {
 	width: 800px;
