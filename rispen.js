@@ -31,7 +31,7 @@ $(function() {
 function()
   {
     $('#rispen-head').slideUp('fast');
-    $('input').animate({
+    $('#description').animate({
   	  marginLeft: '0',
     }, 100);
     $('h2.logo').animate({
