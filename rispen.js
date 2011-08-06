@@ -6,7 +6,9 @@ $(function() {
     $("#progress").attr("value",$("#timer").data('countdown.duration'));
   }
   ,
-  autostart: false});
+  autostart: false,
+  buzzer: function(){ $("#after-task").slideDown(); }
+  });
 
   $("#startstop").click(function() {
     if ($("#timer").data('countdown.state') == 'running')
@@ -19,10 +21,14 @@ $(function() {
   {
     $("#timer").startTimer($("#timer").data('countdown.settings'));
     var newli = document.createElement('li');
+    newli.style.display="none";
+    newli.id="task";
     newli.innerHTML = "<p>"+$("#description").val()+"<span>Time</span></p>";
-	  $("#description").attr({disabled: 'disabled',});
-	  $("#progress").addClass('active');
+    $("#description").attr({disabled: 'disabled',});
+    $("#progress").addClass('active');
     $("#history").prepend(newli);
+    $("#task").slideDown("slow")
+
   }
   });
 
