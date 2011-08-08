@@ -21,9 +21,11 @@ $(function() {
   {
     $("#timer").startTimer($("#timer").data('countdown.settings'));
     var newli = document.createElement('li');
+    var now = new Date();
+    var isonow = ISODateString(now);
     newli.style.display="none";
     newli.id="task";
-    newli.innerHTML = "<p>"+$("#description").val()+"<abbr class=\"timeago\" title=\"2008-07-17T09:24:17Z\">July 17, 2008</abbr></p>";
+    newli.innerHTML = "<p>"+$("#description").val()+"<span><abbr class=\"timeago\" title=\""+isonow+"\">July 17, 2008</abbr></span></p>";
     $("#description").attr({disabled: 'disabled',});
     $("#progress").addClass('active');
     $("#progress").progressbar({"value":0});
@@ -47,5 +49,14 @@ function()
   	  marginLeft: '0',
     }, 300);
   });
+    
+function ISODateString(d){
+  function pad(n){return n<10 ? '0'+n : n}
+    return d.getUTCFullYear()+'-'
+        + pad(d.getUTCMonth()+1)+'-'
+        + pad(d.getUTCDate())+'T'
+        + pad(d.getUTCHours())+':'
+        + pad(d.getUTCMinutes())+':'
+        + pad(d.getUTCSeconds())+'Z'}
 
 });
