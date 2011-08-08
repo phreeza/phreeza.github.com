@@ -3,7 +3,7 @@ $(function() {
     time_in_seconds: 25*60,
   tick:function(timer, time_in_seconds, formatted_time)
   {
-    $("#progress").progressbar("option","value",$("#timer").data('countdown.duration')/1500000);
+    $("#progress").progressbar("option","value",$("#timer").data('countdown.duration')/15000.);
   }
   ,
   autostart: false,
