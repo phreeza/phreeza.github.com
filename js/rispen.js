@@ -15,7 +15,7 @@ $(function() {
   {
     $("#timer").resetTimer();
     $("#description").removeAttr("disabled")
-    $("#progress").attr({display: 'none',})
+    $("#progress").removeClass('active');
   }
     else
   {

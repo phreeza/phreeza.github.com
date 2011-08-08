@@ -223,37 +223,29 @@ input:focus:-moz-placeholder {
 	PROGRESS MUST BE MADE!
 */
 
-#progress {
-	height: 30px;
-	width: 450px;
-	padding: 10px;
-	margin: 0;
-	font-size: 18pt;
-	font-weight: 300;
-	color: rgb(80,80,80);
-	text-shadow: 1px 1px rgb(230,230,230);
-	border: 1px solid rgb(250,250,250);
+.ui-progressbar {
+	margin-left: 150px;
+	height: 50px;
+	background: url(http://clients.chrisgrabinski.com/rispen/images/input-bg.png);
+	border: 1px dotted rgb(230,230,230);
 	-moz-border-radius: 8px;
 	-webkit-border-radius: 8px;
 	border-radius: 8px;
-	box-shadow: inset 0 0 16px rgb(220,220,220);
-	
-	-webkit-transition: all 0.4s ;
-	-moz-transition: all 0.4s ;
-	-o-transition: all 0.4s ;
-	transition: all 0.4s ;
-}
-
-.ui-progressbar {
-	background: yellow;
+	box-shadow: inset 0 0 16px rgb(200,15,0);
+	overflow: hidden;
 } 
-.ui-widget {}
+.ui-widget {
+	height: 50px;
+	width: 450px;
+}
 .ui-widget-content {
-	background: red;
+	border: 1px solid red;
 } 
 .ui-corner-all {}
 .ui-progressbar-value {
-	background: yellow;
+	height:100%;
+	background: url(http://clients.chrisgrabinski.com/rispen/images/progress-bg.gif);
+	text-align: left;
 }
 /*
 	AFTER HOURS

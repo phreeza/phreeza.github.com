@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Rispen Mark-Up</title>
     <link href="css/styles.css" rel="stylesheet" />
-    <link href="css/jquery-ui-1.8.15.custom.css" rel="stylesheet" />
+    <!-- <link href="css/jquery-ui-1.8.15.custom.css" rel="stylesheet" /> -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Droid+Sans+Mono' rel='stylesheet' type='text/css'>
     <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
@@ -29,6 +29,7 @@
 			<div id="task-wrapper" class="wrapper">
 			  <h2 class="logo"><a href="http://rispen.nl">Rispen</a></h2>
         <input id="description" placeholder="Enter Task" />
+        <div id="progress" class="inactive"></div>
         <span id="timer">01:05</span>
         <button id="startstop">Start/Stop</button>
         <ul id="after-task">
@@ -37,8 +38,6 @@
 	        <li>Continue Task</li>
 	        <li>Start new task</li>
         </ul>
-      </div>
-      <div id="progress" style="height:40px">
       </div>
     </div>
     <ul id="history">
