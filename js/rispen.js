@@ -3,7 +3,7 @@ $(function() {
     time_in_seconds: 25*60,
   tick:function(timer, time_in_seconds, formatted_time)
   {
-    $("#progress").attr("value",$("#timer").data('countdown.duration'));
+    $("#progress").progressbar("option","value",$("#timer").data('countdown.duration')/150000);
   }
   ,
   autostart: false,
@@ -26,6 +26,7 @@ $(function() {
     newli.innerHTML = "<p>"+$("#description").val()+"<span>Time</span></p>";
     $("#description").attr({disabled: 'disabled',});
     $("#progress").addClass('active');
+    $("#progress").progressbar("value",0);
     $("#history").prepend(newli);
     $("#task").slideDown("slow")
 
