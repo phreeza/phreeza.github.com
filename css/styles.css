@@ -123,7 +123,7 @@ header ul li:last-child {
 #interaction {
 	padding: 20px 0;
 	background: url(http://clients.chrisgrabinski.com/rispen/images/header-bg.jpg) repeat-x top;
-	box-shadow: 0 2px 1px rgb(150,150,150);
+	box-shadow: 0 2px 1px rgb(100,100,100);
 	border-top: 1px solid rgb(255,255,255);
 	border-bottom: 1px solid rgb(220,220,220);
 }
@@ -148,27 +148,28 @@ h2.claim {
 }
 
 #task-wrapper {
-	width: 800px;
+	width: 470px;
 	margin: auto;
 	text-align: center;
 }
 
 h2.logo {
-	width: 0;
+	display: none;
+	width: 125px;
 	height: 50px;
 	margin: 0;
+	padding: 0;
 	float: left;
 	background: url(http://clients.chrisgrabinski.com/rispen/images/rispen-logo-small.png);
 	overflow: hidden;
-	margin-left: 125px;
 }
 
 #description {
+	float: right;
 	height: 30px;
 	width: 450px;
 	padding: 10px;
 	margin: 0;
-	margin-left: -125px;
 	font-size: 18pt;
 	font-weight: 300;
 	color: rgb(80,80,80);
@@ -178,11 +179,6 @@ h2.logo {
 	-webkit-border-radius: 8px;
 	border-radius: 8px;
 	box-shadow: inset 0 0 16px rgb(220,220,220);
-	
-	-webkit-transition: all 0.4s ;
-	-moz-transition: all 0.4s ;
-	-o-transition: all 0.4s ;
-	transition: all 0.4s ;
 }
 #description:focus {
 	color: rgb(255,255,255);
@@ -191,11 +187,6 @@ h2.logo {
 	background: url(http://clients.chrisgrabinski.com/rispen/images/input-bg.png);
 	border: 1px dotted rgb(230,230,230);
 	box-shadow: inset 0 0 16px rgb(200,15,0);
-	
-	-webkit-transition: all 0.2s ;
-	-moz-transition: all 0.2s ;
-	-o-transition: all 0.2s ;
-	transition: all 0.2s ;
 }
 input:focus::-webkit-input-placeholder {
 	color: rgb(255,255,255);
@@ -213,7 +204,7 @@ input:focus:-moz-placeholder {
 	color: rgb(255,255,255);
 	-webkit-text-fill-color: rgb(255,255,255);
 	text-shadow: 1px 1px rgb(200,15,0);
-	padding-left: 50px;	
+	padding-left: 165px;
 }
 
 .inactive {
@@ -222,14 +213,18 @@ input:focus:-moz-placeholder {
 .active {
 	display: block;
 }
+#startstop {
+	float: right;
+}
 
 /*
 	PROGRESS MUST BE MADE!
 */
 
 .ui-progressbar {
-	margin-left: 165px;
+	float: right;
 	height: 50px;
+	width: 645px;
 	background: url(http://clients.chrisgrabinski.com/rispen/images/input-bg.png);
 	border: 1px dotted rgb(230,230,230);
 	-moz-border-radius: 8px;
@@ -240,7 +235,7 @@ input:focus:-moz-placeholder {
 } 
 .ui-widget {
 	height: 50px;
-	width: 470px;
+	width: 645px;
 }
 .ui-widget-content {
 } 
@@ -293,4 +288,18 @@ input:focus:-moz-placeholder {
 }
 #history li span {
 	float: right;
+}
+
+/*
+		FOOTER
+		
+		Finally, we reached it!
+*/
+
+footer {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	height: 100px;
+	background: rgb(255,255,255);
 }

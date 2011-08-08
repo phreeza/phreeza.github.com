@@ -41,13 +41,14 @@ $(function() {
 function()
   {
     $('#rispen-head').slideUp('fast');
+    $('#task-wrapper').animate({
+  	  width: '800',
+    }, 100);
     $('#description').animate({
   	  marginLeft: '0',
+  	  width: '625'
     }, 100);
-    $('h2.logo').animate({
-  	  width: '125px',
-  	  marginLeft: '0',
-    }, 300);
+    $('h2.logo').fadeIn('slow');
   });
     
 function ISODateString(d){
