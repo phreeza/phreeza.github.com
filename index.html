@@ -1,63 +1,52 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Simple Pomodoro Timer</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-
-    <!-- The Columnal Grid (1140px wide base, load first), Type and image presets, and mobile stylesheet -->
-    <link rel="stylesheet" href="columnal/css/columnal.css" type="text/css" media="screen" />
-
-    <!-- Fixes for IE -->
-    <!--[if lt IE 9]>
-    <link rel="stylesheet" href="ccolumnal/ss/ie.css" type="text/css" media="screen" />
-    <![endif]-->
-
-    <!-- use "fixed-984px-ie.css" or "fixed-960px-ie.css for a 984px or 960px fixed width for IE6 and 7 -->
-    <!--[if lte IE 7]>
-    <link rel="stylesheet" href="columnal/css/fixed-984px-ie.css" type="text/css" media="screen" />
-    <![endif]-->
-
-    <!-- Fixes for IE6, only needed if IE 6 will be supported - width must match 984px or 960px of css file used above -->
-    <!-- Use .imagescale to fix IE6 issues with full-column width images (class must be added to any image wider than the column it is placed into) -->
-    <!--[if lte IE 6]>
-    <link rel="stylesheet" href="columnal/css/ie6-984px.css" type="text/css" media="screen" />
-    <![endif]-->
-    <!-- End fixes for IE -->
-
-    <!-- Customizations here --> 
-    <link rel="stylesheet" href="columnal/css/custom.css" type="text/css" media="screen" />
-
-    <!-- Page build tools - only needed while creating a site, remove when launching - Gray box colors and page debugging tools -->
-    <link rel="stylesheet" href="columnal/css/build.css" type="text/css" media="screen" />
-
-    <script type='text/javascript' src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
-    <script type='text/javascript' src='countdown/jquery.the_final_countdown.js'></script>
-    <script type='text/javascript'>
-      $(function() {
-	  $("#timer").createTimer({time_in_seconds: 25*60});
-
-	  $("#timer_reset").click(function() {
-	    $("#timer").resetTimer();
-	    });
-	  });
-</script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Rispen Mark-Up</title>
+    <link href="css/styles.css" rel="stylesheet" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans+Mono' rel='stylesheet' type='text/css'>
+    <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.15/jquery-ui.min.js"></script>
+    <script type='text/javascript' src='js/jquery.the_final_countdown.js'></script>
+    <script type='text/javascript' src="js/rispen.js"></script>
   </head>
-
   <body>
-    <div class="container">
-      <div class="row">
-	<div class="col_12">
-	  <h1>Your Pomodoro Timer</h1>
-	</div>
+    <header>
+    <ul id="top-navigation" class="wrapper">
+      <li>http://rispen.nl/<input value="chiffre" id="chiffre"/></li>
+      <li id="un-lock" class="lock">Lock/Unlock</li>
+      <li id="delete">Delete</li>
+    </ul>
+    </header>
+    <div id="interaction">
+    	<div id="rispen-head">
+    	  <h1 class="logo"><a href="#">Rispen</a></h1>
+			  <h2 class="claim">Helping you getting things done with Pomodoro®</h2>
+			</div>
+			<div id="task-wrapper" class="wrapper">
+			  <h2 class="logo"><a href="http://rispen.nl">Rispen</a></h2>
+        <input id="description" placeholder="Enter Task" />
+        <progress id="progress" value="0" max="1500000" class="inactive">
+          <span>01:05</span>
+        </progress>
+        <span id="timer">01:05</span>
+        <button id="startstop">Start/Stop</button>
+        <ul id="after-task">
+	        <li>Short break</li>
+	        <li>Long break</li>
+	        <li>Continue Task</li>
+	        <li>Start new task</li>
+        </ul>
       </div>
-    </div><!--class="container" -->
-    <div class="container">
-      <div class="row">
-	<div class="pre_1 col_10 omega">
-	  This Pomodoro: <span id="timer"></span>
-	  <button class="myButton" id="timer_reset">Reset Pomodoro</button>
-	</div>
-      </div>
-    </div><!--class="container" -->
+    </div>
+    <ul id="history">
+      <li>
+        <p>Task <span>Time spent</span></p>
+      </li>
+      <li>
+        <p>Task <span>Time spent</span></p>
+      </li>
+    </ul>
   </body>
 </html>
