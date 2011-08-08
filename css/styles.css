@@ -210,6 +210,10 @@ input:focus:-moz-placeholder {
 	background: transparent;
 	box-shadow: none;
 	border: none;
+	color: rgb(255,255,255);
+	-webkit-text-fill-color: rgb(255,255,255);
+	text-shadow: 1px 1px rgb(200,15,0);
+	padding-left: 50px;	
 }
 
 .inactive {
@@ -224,7 +228,7 @@ input:focus:-moz-placeholder {
 */
 
 .ui-progressbar {
-	margin-left: 150px;
+	margin-left: 165px;
 	height: 50px;
 	background: url(http://clients.chrisgrabinski.com/rispen/images/input-bg.png);
 	border: 1px dotted rgb(230,230,230);
@@ -236,16 +240,19 @@ input:focus:-moz-placeholder {
 } 
 .ui-widget {
 	height: 50px;
-	width: 450px;
+	width: 470px;
 }
 .ui-widget-content {
-	border: 1px solid red;
 } 
 .ui-corner-all {}
 .ui-progressbar-value {
 	height:100%;
-	background: url(http://clients.chrisgrabinski.com/rispen/images/progress-bg.gif);
+	background: rgba(255,255,0,0.5);
 	text-align: left;
+}
+#timer {
+	position: absolute;
+	
 }
 /*
 	AFTER HOURS
