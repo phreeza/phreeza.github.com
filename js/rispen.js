@@ -23,11 +23,12 @@ $(function() {
     var newli = document.createElement('li');
     newli.style.display="none";
     newli.id="task";
-    newli.innerHTML = "<p>"+$("#description").val()+"<span>Time</span></p>";
+    newli.innerHTML = "<p>"+$("#description").val()+"<abbr class=\"timeago\" title=\"2008-07-17T09:24:17Z\">July 17, 2008</abbr></p>";
     $("#description").attr({disabled: 'disabled',});
     $("#progress").addClass('active');
     $("#progress").progressbar({"value":0});
     $("#history").prepend(newli);
+    $("abbr.timeago").timeago();
     $("#task").slideDown("slow")
 
   }
