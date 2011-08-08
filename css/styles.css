@@ -1,3 +1,52 @@
+/*
+                              `.:/oshh:                                                             
+                        `-/oydNNMMMMMMm/`                                                           
+                   `-/shNMMMMMMMMMMMMMMNh.                                                          
+              `:+ydNMMMMMMMMMMMMMMMMMMMMNd`                                                         
+           `:smNMMMMMMMMMMMMMMMMMMMMMMMMMMy`                                                        
+        -ohNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMN/                                                        
+      -dNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMm:                                                       
+      `+mMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMN+                                                      
+        .sNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNs`                `--.                                
+         `:mMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNy`        ./osymmNMMs                                
+           .hMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMmdhysy. `.+shNMMMMMMMNds-                                
+            `hMMMMMMMMMMMMMMMMMMMMMMMNmdhssyhdmNMNNNNNMMMMNdy/-``                                   
+             `sMMMMMMMMMMMMMMMMMNmdhssyhmNMMMMMMMMMMNho+-.``                                        
+              `/mMMMMMMMMMMNdhyssydmNMMMMMMMMNmmdmmy+.                                              
+                .hNMMNmdhysshdmNMMMMMMNNmmdys+/-.```.:+oo.                                          
+                 `oyssyhdNNMMMMMMNmmdhyo//+-`         ``.+s-                                        
+               `-/sNNMMMMMMNmmddhyo/:`` `+Nmo/////////oo. .h/                                       
+         `.:ohmNMMMMMMNmddhhyo/:.```y+    .+hddy+/+syydh`  .h`                                      
+     .:oyNMMMMMMMmysNdhhho-``:+oo++omh      `yo://--sh-d.   /s.      ``                             
+    `mMMMMMNdhs:.``dmhh/```+o:/+-..-+ho`     om.`   ``/o`   `d/`    -dm.                            
+     :NNy+-``     oNhh.```s/./+-..:::-/y`    `/oo/::ss+:ydmmmNmo:.``.oN:                            
+      `          .Nhh/`-ohh.++...::/-.-d.     .++oys-:mNMNso//NhmNMNmy/        :+:---::+`           
+                 -Nhy`:shmd++.../:/-.::h`  .smNNMNMNmyMMN.`   h- ```           s+     `/s           
+                 .Nh+ :/``oh-../:/..::s/  +NMNh/--sdh/::-/o` `m-               so      /y           
+                 -mh/  s.  .+oo:/..+s+. `:NNh-`.+-`-/o+/``y: /d`               /d++++sshs           
+                 :mh/ `s.     -////-`:- `dNy`  oN-:+++/.  -. yy                `oddddddd-           
+                 .mh+  :/           syh/dNy`   .+s`.-.      .N:                  -hmds+`            
+                 `mdy` .s`          `://:.                  os                   .mN+`              
+                  /mh+` y`                                `+h`               `/++mNNm`              
+                   -dh/`y`                              `/h+`              `smo-``-m/               
+                    `odyh-`                           -ohy.               `hh.     m.               
+                      -smmy+:`                     -odNm+                `yh`  `-/+ds/:             
+                        `+shmdyo/---........-:/+oyhy+o.od/`             `yo`                        
+                            .omNdhyhdd+//omo+sNmyoms-s``sdmhso/-`     `:do                          
+                              `/y.  `-o.  `y:dmh+``Nss.o/:y..:odmy/../yy.                           
+                                `yo.  /y/:./m+ydy./h..s``+sy.   `:oyy+.                             
+                                 `mh: `-:h.-s..:Ndhds.-s-.s/m:                                      
+                                 :NNh. `s+`.y..:Nh/`sy..yy` /N.                                     
+                                .mooms`  -::o-.omh  `so.-y`  +d`                                    
+                               `d+``mh:    :sh.+mh.  `y..y.   yo                                    
+                              `sh  `dh:     `/s.yds`  o.:h.   .h`                                   
+                              :N-   dh:```    .y/dms-/o/.y     /o                                   
+                             `ho``-+Nmyyhmhoss:-y+`-/s``:/     `y`                                  
+                             /Nsdho+mh+hoo+:`    .:-/y-+:`      s:                                  
+                             :o/.  +Ny//            `./y.       +h                                  
+                                   hmy:`               `        .N`                                 
+*/
+
 /*		
 		GENERAL CSS
 
@@ -169,6 +218,46 @@ input:focus:-moz-placeholder {
 .active {
 	display: block;
 }
+
+/*
+	PROGRESS MUST BE MADE!
+*/
+
+#progress {
+	height: 30px;
+	width: 450px;
+	padding: 10px;
+	margin: 0;
+	font-size: 18pt;
+	font-weight: 300;
+	color: rgb(80,80,80);
+	text-shadow: 1px 1px rgb(230,230,230);
+	border: 1px solid rgb(250,250,250);
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	box-shadow: inset 0 0 16px rgb(220,220,220);
+	
+	-webkit-transition: all 0.4s ;
+	-moz-transition: all 0.4s ;
+	-o-transition: all 0.4s ;
+	transition: all 0.4s ;
+}
+
+.ui-progressbar {
+	background: yellow;
+} 
+.ui-widget {}
+.ui-widget-content {
+	background: red;
+} 
+.ui-corner-all {}
+.ui-progressbar-value {
+	background: yellow;
+}
+/*
+	AFTER HOURS
+*/
 
 #after-task {
 	width: 336px;
