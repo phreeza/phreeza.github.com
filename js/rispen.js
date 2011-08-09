@@ -79,11 +79,12 @@ $(function() {
       + pad(d.getUTCMinutes())+':'
       + pad(d.getUTCSeconds())+'Z'
   }
-
-  addTask("blabla",ISODateString(new Date()),false);
-  addTask("blabla",ISODateString(new Date()),false);
-  addTask("blabla",ISODateString(new Date()),false);
-  addTask("blabla",ISODateString(new Date()),false);
-
-
+  $.getJSON("http://rispennl.appspot.com/json",
+      function(data){
+	    console.log(data)
+	for (p in data)
+	  {
+	    addTask(data[p].content,data[p].date,false);
+	  }
+      })
 });
