@@ -30,7 +30,7 @@ $(function() {
     $("#description").attr({disabled: 'disabled',});
     $("#progress").addClass('active');
     $("#progress").progressbar({"value":0});
-    addTask($("#description").val(),true);
+    addTask($("#description").val(),ISODateString(new Date()),true);
   }
   });
 
@@ -57,14 +57,12 @@ $(function() {
 	$('h2.logo').fadeIn('slow');
       });
 
-  function addTask(task,slide)
+  function addTask(task,date,slide)
   {
     var newli = document.createElement('li');
-    var now = new Date();
-    var isonow = ISODateString(now);
     var taskid = $("#history").children().size();
     newli.id="task" + taskid;
-    newli.innerHTML = "<p>"+task+"<span><abbr class=\"timeago\" title=\""+isonow+"\">"+isonow+"</abbr></span></p>";
+    newli.innerHTML = "<p>"+task+"<span><abbr class=\"timeago\" title=\""+date+"\">"+date+"</abbr></span></p>";
     if (slide) newli.style.display="none";
     $("#history").prepend(newli);
     $("abbr.timeago").timeago();
@@ -79,6 +77,13 @@ $(function() {
       + pad(d.getUTCDate())+'T'
       + pad(d.getUTCHours())+':'
       + pad(d.getUTCMinutes())+':'
-      + pad(d.getUTCSeconds())+'Z'}
+      + pad(d.getUTCSeconds())+'Z'
+  }
+
+  addTask("blabla",ISODateString(new Date()),false);
+  addTask("blabla",ISODateString(new Date()),false);
+  addTask("blabla",ISODateString(new Date()),false);
+  addTask("blabla",ISODateString(new Date()),false);
+
 
 });
