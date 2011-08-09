@@ -57,17 +57,20 @@ $(function() {
 	$('h2.logo').fadeIn('slow');
       });
 
-  function addTask(task,date,slide)
+  function addTask(task,date,isnew)
   {
     var newli = document.createElement('li');
     var taskid = $("#history").children().size();
     newli.id="task" + taskid;
     newli.innerHTML = "<p>"+task+"<span><abbr class=\"timeago\" title=\""+date+"\">"+date+"</abbr></span></p>";
-    if (slide) newli.style.display="none";
+    if (isnew) newli.style.display="none";
     $("#history").prepend(newli);
     $("abbr.timeago").timeago();
-    if (slide) $("#task"+taskid).slideDown("slow");
-
+    if (isnew) 
+    {
+        $("#task"+taskid).slideDown("slow");
+        $.post("http://rispennl.appspot.com/save",{content:task});
+    }
   }
 
   function ISODateString(d){
