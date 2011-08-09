@@ -254,19 +254,25 @@ input:focus:-moz-placeholder {
 */
 
 #after-task {
-	width: 336px;
+	width: 800px;
 	margin: auto;
 	display: none;
+	text-align: right;
 }
 #after-task li {
-	float: left;
+	display: inline-block;
 	width: 64px;
 	height: 64px;
 	margin: 10px;
+	line-height: 999999pt;
 	overflow: hidden;
-	background: grey;
 }
-
+#shortbreak {
+	background: url(http://clients.chrisgrabinski.com/rispen/images/short-break.png);
+}
+#longbreak {
+	background: url(http://clients.chrisgrabinski.com/rispen/images/long-break.png);
+}
 /*
 		HISTORY
 		

@@ -17,6 +17,10 @@ $(function() {
     $("#description").removeAttr("disabled")
     $("#progress").removeClass('active');
   }
+    else if ($("#description").val() == '')
+  {
+  	$("#description").attr({placeholder: 'You must enter a task-description to proceed.',});
+  }
     else
   {
     $("#timer").startTimer($("#timer").data('countdown.settings'));
@@ -32,7 +36,6 @@ $(function() {
     $("#history").prepend(newli);
     $("abbr.timeago").timeago();
     $("#task").slideDown("slow")
-
   }
   });
 
