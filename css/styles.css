@@ -178,7 +178,7 @@ h2.logo {
 	-moz-border-radius: 8px;
 	-webkit-border-radius: 8px;
 	border-radius: 8px;
-	box-shadow: inset 0 0 16px rgb(220,220,220);
+
 }
 #description:focus {
 	color: rgb(255,255,255);
@@ -205,6 +205,15 @@ input:focus:-moz-placeholder {
 	-webkit-text-fill-color: rgb(255,255,255);
 	text-shadow: 1px 1px rgb(200,15,0);
 	padding-left: 165px;
+}
+.yuno {
+	color: rgb(255,255,255);
+	text-shadow: 1px 1px rgb(0,0,0);
+	outline: none;
+	background: url(http://clients.chrisgrabinski.com/rispen/images/input-yuno.jpg);
+	-webkit-text-fill-color: rgb(255,255,255);
+	border: 1px dotted rgb(230,230,230);
+	box-shadow: inset 0 0 16px rgb(85,120,180);
 }
 
 .inactive {

@@ -7,7 +7,7 @@ $(function() {
   }
   ,
   autostart: false,
-  buzzer: function(){ $("#after-task").slideDown(); }
+  buzzer: function(){ $("#after-task").slideDown('fast'); }
   });
 
   $("#startstop").click(function() {
@@ -19,7 +19,8 @@ $(function() {
   }
     else if ($("#description").val() == '')
   {
-  	$("#description").attr({placeholder: '(yಠ,ಠ)y  Y U NO ENTER TASK-DESCRIPTION?',});
+    $("#description").addClass('yuno');
+    $("#description").attr({placeholder: '(yಠ,ಠ)y  Y U NO ENTER TASK-DESCRIPTION?',});
   }
     else
   {
@@ -30,6 +31,8 @@ $(function() {
     newli.style.display="none";
     newli.id="task";
     newli.innerHTML = "<p>"+$("#description").val()+"<span><abbr class=\"timeago\" title=\""+isonow+"\">July 17, 2008</abbr></span></p>";
+    $("#description").removeClass('yuno');
+    $("#description").attr({placeholder: 'enter task',});
     $("#description").attr({disabled: 'disabled',});
     $("#progress").addClass('active');
     $("#progress").progressbar({"value":0});
@@ -38,6 +41,14 @@ $(function() {
     $("#task").slideDown("slow")
   }
   });
+
+	$('#newtask').click(function() {
+		$("#after-task").slideUp('fast');
+		$("#timer").resetTimer();
+    $("#description").removeAttr("disabled");
+    $("#description").val('')
+    $("#progress").removeClass('active');
+	});
 
 	$('#description').click(
 
