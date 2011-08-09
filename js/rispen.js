@@ -19,7 +19,7 @@ $(function() {
   }
     else if ($("#description").val() == '')
   {
-  	$("#description").attr({placeholder: 'You must enter a task-description to proceed.',});
+  	$("#description").attr({placeholder: '(yಠ,ಠ)y  Y U NO ENTER TASK-DESCRIPTION?',});
   }
     else
   {
