@@ -25,53 +25,60 @@ $(function() {
     else
   {
     $("#timer").startTimer($("#timer").data('countdown.settings'));
-    var newli = document.createElement('li');
-    var now = new Date();
-    var isonow = ISODateString(now);
-    newli.style.display="none";
-    newli.id="task";
-    newli.innerHTML = "<p>"+$("#description").val()+"<span><abbr class=\"timeago\" title=\""+isonow+"\">July 17, 2008</abbr></span></p>";
     $("#description").removeClass('yuno');
     $("#description").attr({placeholder: 'enter task',});
     $("#description").attr({disabled: 'disabled',});
     $("#progress").addClass('active');
     $("#progress").progressbar({"value":0});
-    $("#history").prepend(newli);
-    $("abbr.timeago").timeago();
-    $("#task").slideDown("slow")
+    addTask($("#description").val(),true);
   }
   });
 
-	$('#newtask').click(function() {
-		$("#after-task").slideUp('fast');
-		$("#timer").resetTimer();
+  $('#newtask').click(function() {
+    $("#after-task").slideUp('fast');
+    $("#timer").resetTimer();
     $("#description").removeAttr("disabled");
     $("#description").val('')
     $("#progress").removeClass('active');
-	});
-
-	$('#description').click(
-
-function()
-  {
-    $('#rispen-head').slideUp('fast');
-    $('#task-wrapper').animate({
-  	  width: '800',
-    }, 100);
-    $('#description').animate({
-  	  marginLeft: '0',
-  	  width: '625'
-    }, 100);
-    $('h2.logo').fadeIn('slow');
   });
-    
-function ISODateString(d){
-  function pad(n){return n<10 ? '0'+n : n}
+
+  $('#description').click(
+
+      function()
+      {
+	$('#rispen-head').slideUp('fast');
+	$('#task-wrapper').animate({
+	  width: '800',
+	}, 100);
+	$('#description').animate({
+	  marginLeft: '0',
+	  width: '625'
+	}, 100);
+	$('h2.logo').fadeIn('slow');
+      });
+
+  function addTask(task,slide)
+  {
+    var newli = document.createElement('li');
+    var now = new Date();
+    var isonow = ISODateString(now);
+    var taskid = $("#history").children().size();
+    newli.id="task" + taskid;
+    newli.innerHTML = "<p>"+task+"<span><abbr class=\"timeago\" title=\""+isonow+"\">"+isonow+"</abbr></span></p>";
+    if (slide) newli.style.display="none";
+    $("#history").prepend(newli);
+    $("abbr.timeago").timeago();
+    if (slide) $("#task"+taskid).slideDown("slow");
+
+  }
+
+  function ISODateString(d){
+    function pad(n){return n<10 ? '0'+n : n}
     return d.getUTCFullYear()+'-'
-        + pad(d.getUTCMonth()+1)+'-'
-        + pad(d.getUTCDate())+'T'
-        + pad(d.getUTCHours())+':'
-        + pad(d.getUTCMinutes())+':'
-        + pad(d.getUTCSeconds())+'Z'}
+      + pad(d.getUTCMonth()+1)+'-'
+      + pad(d.getUTCDate())+'T'
+      + pad(d.getUTCHours())+':'
+      + pad(d.getUTCMinutes())+':'
+      + pad(d.getUTCSeconds())+'Z'}
 
 });
