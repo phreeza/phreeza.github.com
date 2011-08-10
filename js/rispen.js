@@ -69,7 +69,7 @@ $(function() {
     if (isnew) 
     {
         $("#task"+taskid).slideDown("slow");
-        $.post("http://rispennl.appspot.com/save",{content:task,author:$.("#chiffre").val()});
+        $.post("http://rispennl.appspot.com/save",{content:task,author:$("#chiffre").val()});
     }
   }
 
