@@ -62,7 +62,7 @@ $(function() {
     var newli = document.createElement('li');
     var taskid = $("#history").children().size();
     newli.id="task" + taskid;
-    newli.innerHTML = "<p>"+task+"<span><abbr class=\"timeago\" title=\""+date+"\">"+date+"</abbr></span></p>";
+    newli.innerHTML = "<p>"+task+"<span><abbr class=\"timeago\" title=\""+date+"Z\">"+date+"Z</abbr></span></p>";
     if (isnew) newli.style.display="none";
     $("#history").prepend(newli);
     $("abbr.timeago").timeago();
@@ -82,13 +82,18 @@ $(function() {
       + pad(d.getUTCMinutes())+':'
       + pad(d.getUTCSeconds())+'Z'
   }
-  $.getJSON("http://rispennl.appspot.com/json",
-      {author:$("#chiffre").val()},
-      function(data){
-	    console.log(data)
-	for (p in data)
-	  {
-	    addTask(data[p].content,data[p].date,false);
-	  }
-      })
+
+  function repopTasks(user){
+      $.getJSON("http://rispennl.appspot.com/json",
+              {author:user},
+              function(data){
+                data.reverse();
+                for (p in data)
+                    {
+                        addTask(data[p].content,data[p].date,false);
+                    }
+              })
+  }
+
+  repopTasks($("#chiffre").val())
 });
