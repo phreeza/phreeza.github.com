@@ -80,7 +80,7 @@ $(function() {
       + pad(d.getUTCDate())+'T'
       + pad(d.getUTCHours())+':'
       + pad(d.getUTCMinutes())+':'
-      + pad(d.getUTCSeconds())+'Z'
+      + pad(d.getUTCSeconds())
   }
 
   function repopTasks(user){
