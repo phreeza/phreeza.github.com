@@ -83,7 +83,7 @@ $(function() {
       + pad(d.getUTCSeconds())+'Z'
   }
   $.getJSON("http://rispennl.appspot.com/json",
-      {author:$("#chiffre").val()}
+      {author:$("#chiffre").val()},
       function(data){
 	    console.log(data)
 	for (p in data)
