@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Rispen Markup</title>
+    <link href="css/styles2.css" rel="stylesheet" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans+Mono' rel='stylesheet' type='text/css'>
+    <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.15/jquery-ui.min.js"></script>
+    <script type='text/javascript' src='js/jquery.the_final_countdown.js'></script>
+    <script type="text/javascript" src="js/jquery.timeago.js"></script>
+    <script type='text/javascript' src="js/rispen.js"></script>
+    <link rel="image_src" href="images/rispen-logo.png" />
+  </head>
+  <body>
+    <header>
+      <ul id="top-navigation">
+        <li>Top</li>
+        <li>http://rispen.nl/<input id="identifier" value="dCe37Q" /></li>
+        <li id="lock-unlock">
+          <div id="lock-unlock-wrapper">
+            <button id="lock">Lock</button>
+            <button id="unlock">Unlock</button>
+          </div>
+        </li>
+        <li id="delete">Delete</li>
+      </ul>
+    </header>
+    <div id="interaction">
+      <div id="rispen-head">
+        <h1 class="logo"><a href="#">Rispen</a></h1>
+        <h2>Helping you to increase your productivity with Pomodoro®</h2>
+      </div>
+      <div id="main">
+        <div id="input">
+          <input id="description" placeholder="what do you wanna work on?" />
+          <button id="startstop">
+            <span id="start">Start</span>
+            <span id="stop">Stop <span id="timer">01:05</span></span>
+          </button>
+          <h2 class="logo"><a href="#">Rispen</a></h2>
+        </div>
+      </div>
+    </div>
+    <ul id="history">
+      <li class="break"><p>Short Break<span>5 minutes ago</span></p></li>
+      <li><p>Cleaning the markup<span>37 minutes ago</span></p></li>
+      <li><p>Tidying my flat<span>53 minutes ago</span></p></li>
+    </ul>
+    <script>
+      $('#lock').click( 
+        function() {
+          $('#lock-unlock-wrapper').animate({
+          marginTop: '-50',
+        }, 100);
+      });
+      $('#unlock').click( 
+        function() {
+          $('#lock-unlock-wrapper').animate({
+            marginTop: '0',
+          }, 100);
+      });
+    </script>
+  </body>
+</html>
+<!-- 
+Z̸̛͚͆̄ͬ̈́̉̅̚ͅA̷̷̭͇̦̅̿̄̒͜ͅL̛̟̮̘͖͇͈̰͈̗̄ͤ̑̚͝G̮̮̼̃̍ͩ̽̚O̶͍͇̊͊!̶̸̟͔̲̍͑ͥͫͩͮ̎͘
+-->
