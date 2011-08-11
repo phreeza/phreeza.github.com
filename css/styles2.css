@@ -103,12 +103,12 @@ header {
 }
 #lock {
 	background-color: transparent;
-	background-image: url(../images/lock.png);
+	background-image: url(http://clients.chrisgrabinski.com/rispen/images/lock.png);
 	background-repeat: no-repeat;
 }
 #unlock {
 	background-color: transparent;
-	background-image: url(../images/unlock.png);
+	background-image: url(http://clients.chrisgrabinski.com/rispen/images/unlock.png);
 	background-repeat: no-repeat;
 }
 
@@ -121,7 +121,7 @@ header {
 #interaction {
 	width: 100%;
 	padding: 30px 0;
-	background: rgb(250,240,210) url(../images/interaction-bg.jpg) repeat-x;
+	background: rgb(250,240,210) url(http://clients.chrisgrabinski.com/rispen/images/interaction-bg.jpg) repeat-x;
 	border-top: 2px solid rgb(240,240,240);
 	border-bottom: 1px solid rgb(230,220,185);
 	box-shadow: 4px 0 2px rgb(20,20,20);
