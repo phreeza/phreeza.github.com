@@ -47,14 +47,10 @@ $(function() {
       function()
       {
 	$('#rispen-head').slideUp('fast');
-	$('#task-wrapper').animate({
-	  width: '800',
-	}, 100);
-	$('#description').animate({
-	  marginLeft: '0',
-	  width: '625'
-	}, 100);
-	$('h2.logo').fadeIn('slow');
+	$('#description').delay(200).animate({
+	  width: '540'
+	}, 150);
+	$('h2.logo').delay(400).fadeIn('fast')
       });
 
   function addTask(task,date,isnew)
@@ -62,7 +58,7 @@ $(function() {
     var newli = document.createElement('li');
     var taskid = $("#history").children().size();
     newli.id="task" + taskid;
-    newli.innerHTML = "<p>"+task+"<span><abbr class=\"timeago\" title=\""+date+"Z\">"+date+"Z</abbr></span></p>";
+    newli.innerHTML = "<p>"+task+"<abbr class=\"timeago\" title=\""+date+"Z\">"+date+"Z</abbr></p>";
     if (isnew) newli.style.display="none";
     $("#history").prepend(newli);
     $("abbr.timeago").timeago();

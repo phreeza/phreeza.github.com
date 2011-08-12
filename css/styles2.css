@@ -252,13 +252,16 @@ h2 {
 #history li:first-child {
 	border-top: 1px solid rgb(240,240,240);
 }
-#history li p {
-	width: 800px;
-	margin: auto;
-	color: rgb(25,45,80);
+#history li div {
+
 }
-#history li span {
-	float: right;
+#history li p {
+  width: 800px;
+  margin: auto;
+  color: rgb(25,45,80);
+}
+.timeago {
+  float: right;
 	color: rgb(140,140,140);
 }
 
