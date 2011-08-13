@@ -19,15 +19,15 @@ $(function() {
   }
     else if ($("#description").val() == '')
   {
-    $("#description").addClass('yuno');
-    $("#description").attr({placeholder: '(yಠ,ಠ)y  Y U NO ENTER TASK-DESCRIPTION?',});
+    $("#description").attr({placeholder: 'You need to type in a task-description.',});
   }
     else
   {
     $("#timer").startTimer($("#timer").data('countdown.settings'));
-    $("#description").removeClass('yuno');
     $("#description").attr({placeholder: 'enter task',});
     $("#description").attr({disabled: 'disabled',});
+    $("#start").toggle();
+    $("#stop").toggle();
     $("#progress").addClass('active');
     $("#progress").progressbar({"value":0});
     addTask($("#description").val(),ISODateString(new Date()),true);
@@ -48,7 +48,7 @@ $(function() {
       {
 	$('#rispen-head').slideUp('fast');
 	$('#description').delay(200).animate({
-	  width: '540'
+	  width: '580'
 	}, 150);
 	$('h2.logo').delay(400).fadeIn('fast')
       });

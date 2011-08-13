@@ -126,9 +126,13 @@ header {
 	border-bottom: 1px solid rgb(230,220,185);
 	box-shadow: 4px 0 2px rgb(20,20,20);
 }
-#landing, #main {
+#landing, #main, #after-task {
 	width: 800px;
 	margin: auto;
+	clear: both;
+}
+#after-task {
+  display: none;
 }
 
 /*	LANDING PAGE */
@@ -173,7 +177,7 @@ h2 {
 	float: right;
 	width: 695px;
 	height: 35px;
-	padding: 5px 95px 5px 10px;
+	padding: 5px 55px 5px 10px;
 	border: 1px solid rgb(230, 220,200);
 	-webkit-border-radius: 8px;
 	-moz-border-radius: 8px;
@@ -188,72 +192,72 @@ h2 {
 	color: rgb(190,190,190);
 	-webkit-font-smoothing: antialiased;
 }
-#description:focus {
-	color: rgb(255,255,255);
-	text-shadow: 1px 1px 1px rgb(200,110,40);
-	outline: none;
-	background: url(http://clients.chrisgrabinski.com/rispen/images/input-bg.png);
-	border: 1px solid rgb(230,230,230);
-	box-shadow: inset 0 0 16px rgb(200,15,0);
+#description:focus, .active {
+  color: rgb(255,255,255);
+  text-shadow: 1px 1px 1px rgb(200,110,40);
+  outline: none;
+  background: url(http://clients.chrisgrabinski.com/rispen/images/input-bg.png);
+  border: 1px solid rgb(230,230,230);
+  box-shadow: inset 0 0 16px rgb(200,15,0);
 }
 #description:focus::-webkit-input-placeholder {
-	color: rgb(255,255,255);
-	text-shadow: 1px 1px rgb(200,15,0);
+  color: rgb(255,255,255);
+  text-shadow: 1px 1px rgb(200,15,0);
 }
 #description:focus:-moz-placeholder {
   color: rgb(255,255,255);
-	text-shadow: 1px 1px rgb(200,15,0);
+  text-shadow: 1px 1px rgb(200,15,0);
 }
 #startstop {
-	position: absolute;
-	width: 85px;
-	height: 35px;
-	margin: 6px 0 0 709px;
-	border: 1px solid rgb(190,90,60);
-	-webkit-border-radius: 6px;
-	-moz-border-radius: 6px;
-	border-radius: 6px;
-	background-image: -webkit-gradient(
-		linear,
-		left bottom,
-		left top,
-		color-stop(0, rgb(245,245,245)),
-		color-stop(1, rgb(200,200,200))
-	);
-	background-image: -moz-linear-gradient(
-		center bottom,
-		rgb(245,245,245) 0%,
-		rgb(200,200,200) 100%
-	);
-	box-shadow: inset 0 0 15px rgb(255,255,255);
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  margin: 6px 0 0 758px;
+  border: 1px solid rgb(190,110,70);
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0, rgb(220,100,20)),
+    color-stop(1, rgb(245,140,65))
+  );
+  background-image: -moz-linear-gradient(
+    center bottom,
+    rgb(220,100,20) 0%,
+    rgb(245,140,65) 100%
+  );
+  box-shadow: inset 0 0 15px rgb(255,170,90);
 }
 #startstop:active {
-	box-shadow: outset 0 -2px 1px rgb(200,110,40);
+  box-shadow: outset 0 -2px 1px rgb(200,110,40);
+}
+#start, #stop {
+  margin: 5px 5px 0 0;
 }
 #stop {
-	display: none;
+  display: none;
 }
 
 /*
-		HISTORY
-		
-		Self-explanatory.
+    HISTORY
+
+    Self-explanatory.
 */
 
 #history li {
-	padding: 10px 0;
-	line-height: 28px;
-	text-shadow: 1px 1px 1px rgb(255,255,255);
-	background: rgb(230,230,230);
+  padding: 10px 0;
+  line-height: 28px;
+  text-shadow: 1px 1px 1px rgb(255,255,255);
+  background: rgb(230,230,230);
 }
 #history li:nth-child(even) {
-	background: rgb(245,245,245);
+  background: rgb(245,245,245);
 }
 #history li:first-child {
-	border-top: 1px solid rgb(240,240,240);
-}
-#history li div {
-
+  border-top: 1px solid rgb(240,240,240);
 }
 #history li p {
   width: 800px;

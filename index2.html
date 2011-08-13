@@ -35,11 +35,23 @@
       <div id="main">
         <div id="input">
           <input id="description" placeholder="what do you wanna work on?" />
-          <button id="startstop">
-            <span id="start">Start</span>
-            <span id="stop">Stop <span id="timer">13:37</span></span>
+          <button id="startstop" class="inactive">
+            <img id="start" src="http://clients.chrisgrabinski.com/rispen/images/start.png" />
+            <img id="stop" src="http://clients.chrisgrabinski.com/rispen/images/stop.png" />
           </button>
+          <span id="timer">13:37</span>
           <h2 class="logo"><a href="#">Rispen</a></h2>
+        </div>
+        <div id="after-task">
+          <form id="after-task-form">
+            <label>Disturbances</label><input />
+          </form>
+          <ul id="option">
+            <li>new task</li>
+            <li>continue task</li>
+            <li>short break</li>
+            <li>long break</li>
+          </ul>
         </div>
       </div>
     </div>
