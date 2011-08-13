@@ -300,3 +300,17 @@ h2 {
 	color: rgb(140,140,140);
 }
 
+/*
+    FOOTER
+    
+    This thing just scrolls to the top at the moment
+*/
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 20px;
+  background: white;
+}
+
