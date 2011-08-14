@@ -217,29 +217,17 @@ h2 {
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
   border-radius: 6px;
-  background-image: -webkit-gradient(
-    linear,
-    left bottom,
-    left top,
-    color-stop(0, rgb(220,100,20)),
-    color-stop(1, rgb(245,140,65))
-  );
-  background-image: -moz-linear-gradient(
-    center bottom,
-    rgb(220,100,20) 0%,
-    rgb(245,140,65) 100%
-  );
-  box-shadow: inset 0 0 15px rgb(255,170,90);
+  box-shadow: inset 0 0 6px rgb(245,140,55);
+  background: rgb(235,125,45);
+  background-image: url(http://clients.chrisgrabinski.com/rispen/images/startstop.jpg);
+}
+#startstop:hover {
+  box-shadow: inset 0 0 6px rgb(255,180,125);
 }
 #startstop:active {
-  box-shadow: outset 0 -2px 1px rgb(200,110,40);
+  box-shadow: 0 1px 1px rgb(230, 220,200);
 }
-#start, #stop {
-  margin: 5px 5px 0 0;
-}
-#stop {
-  display: none;
-}
+
 
 /* After task */
 

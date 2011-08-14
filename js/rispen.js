@@ -26,8 +26,9 @@ $(function() {
     $("#timer").startTimer($("#timer").data('countdown.settings'));
     $("#description").attr({placeholder: 'enter task',});
     $("#description").attr({disabled: 'disabled',});
-    $("#start").toggle();
-    $("#stop").toggle();
+    $('#startstop').delay(200).animate({
+      backgroundPosition: '33px'
+    }, 150);
     $("#progress").addClass('active');
     $("#progress").progressbar({"value":0});
     addTask($("#description").val(),ISODateString(new Date()),true);
@@ -35,6 +36,9 @@ $(function() {
   });
 
   $('#newtask').click(function() {
+    $('#startstop').delay(200).animate({
+      backgroundPosition: '0px'
+    }, 150);
     $("#after-task").slideUp('fast');
     $("#timer").resetTimer();
     $("#description").removeAttr("disabled");
