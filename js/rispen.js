@@ -46,6 +46,29 @@ $(function() {
     $("#progress").removeClass('active');
   });
 
+  $('#shortbreak').click(function() {
+    $("#description").val('Short Break')
+    $('#startstop').delay(200).animate({
+      backgroundPosition: '0px'
+    }, 150);
+    $("#after-task").slideUp('fast');
+    $("#timer").resetTimer($.extend($("#timer").data('countdown.settings'),{time_in_seconds:5*60}));
+    $("#timer").startTimer($("#timer").data('countdown.settings'));
+    addTask($("#description").val(),ISODateString(new Date()),true);
+  });
+  
+  $('#longbreak').click(function() {
+    $("#description").val('Long Break')
+    $('#startstop').delay(200).animate({
+      backgroundPosition: '0px'
+    }, 150);
+    $("#after-task").slideUp('fast');
+    $("#timer").resetTimer($.extend($("#timer").data('countdown.settings'),{time_in_seconds:25*60}));
+    $("#timer").startTimer($("#timer").data('countdown.settings'));
+    addTask($("#description").val(),ISODateString(new Date()),true);
+  });
+
+
   $('#description').click( //TODO this should only happen in initial configuration, and not be called afterwards.
 
       function()
