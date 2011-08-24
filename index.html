@@ -2,9 +2,8 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Rispen Mark-Up</title>
-    <link href="css/styles.css" rel="stylesheet" />
-    <!-- <link href="css/jquery-ui-1.8.15.custom.css" rel="stylesheet" /> -->
+    <title>Rispen Markup</title>
+    <link href="css/styles2.css" rel="stylesheet" />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Droid+Sans+Mono' rel='stylesheet' type='text/css'>
     <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
@@ -12,39 +11,69 @@
     <script type='text/javascript' src='js/jquery.the_final_countdown.js'></script>
     <script type="text/javascript" src="js/jquery.timeago.js"></script>
     <script type='text/javascript' src="js/rispen.js"></script>
+    <link rel="image_src" href="images/rispen-logo.png" />
   </head>
   <body>
-    <header>
-    <ul id="top-navigation" class="wrapper">
-      <li>Top</li>
-      <li>http://rispen.nl/<input value="chiffre" id="chiffre"/></li>
-      <li id="un-lock" class="lock">Lock/Unlock</li>
-      <li id="delete">Delete</li>
-    </ul>
+    <header id="top">
+      <ul id="top-navigation">
+        <li>Top</li>
+        <li>http://rispen.nl/<input id="identifier" value="dCe37Q" /></li>
+        <li id="lock-unlock">
+          <div id="lock-unlock-wrapper">
+            <button id="lock">Lock</button>
+            <button id="unlock">Unlock</button>
+          </div>
+        </li>
+        <li id="delete">Delete</li>
+      </ul>
     </header>
     <div id="interaction">
-    	<div id="rispen-head">
-    	  <h1 class="logo"><a href="#">Rispen</a></h1>
-			  <h2 class="claim">Helping you getting things done with Pomodoro®</h2>
-			</div>
-			<div id="task-wrapper" class="wrapper">
-			  <h2 class="logo"><a href="http://rispen.nl">Rispen</a></h2>
-        <input id="description" placeholder="enter task" />
-        <div id="progress" class="inactive"><span id="timer">01:05</span></div>
-        <button id="startstop">Start/Stop</button>
-        <ul id="after-task">
-	        <li id="shortbreak">Short break</li>
-	        <li id="longbreak">Long break</li>
-	        <li id="continuetask">Continue Task</li>
-	        <li id="newtask">Start new task</li>
-        </ul>
-        <div style="clear: both;"></div>
+      <div id="rispen-head">
+        <h1 class="logo"><a href="#">Rispen</a></h1>
+        <h2>Helping you to increase your productivity with Pomodoro®</h2>
+      </div>
+      <div id="main">
+        <div id="input">
+          <input id="description" placeholder="what do you wanna work on?" />
+          <button id="startstop" class="inactive">
+          </button>
+          <span id="timer">13:37</span>
+          <h2 class="logo"><a href="#">Rispen</a></h2>
+        </div>
+        <div id="after-task">
+          <form id="after-task-form">
+            <label>Disturbances</label><input placeholder="have you been disturbed? :3" />
+          </form>
+          <ul id="options">
+            <li id="newtask">new task</li>
+            <li id="continuetask">continue task</li>
+            <li id="shortbreak">short break</li>
+            <li id="longbreak">long break</li>
+          </ul>
+        </div>
       </div>
     </div>
     <ul id="history">
     </ul>
-    <footer style="display: none;">
-    	<p>Rispen helps you become more productive by using the Pomodoro®-Technique.</p>
+    <footer>
+      <a href="#top">Scroll to top</a>
     </footer>
+    <script>
+      $('#lock').click( 
+        function() {
+          $('#lock-unlock-wrapper').animate({
+          marginTop: '-50',
+        }, 100);
+      });
+      $('#unlock').click( 
+        function() {
+          $('#lock-unlock-wrapper').animate({
+            marginTop: '0',
+          }, 100);
+      });
+    </script>
   </body>
 </html>
+<!-- 
+Z̸̛͚͆̄ͬ̈́̉̅̚ͅA̷̷̭͇̦̅̿̄̒͜ͅL̛̟̮̘͖͇͈̰͈̗̄ͤ̑̚͝G̮̮̼̃̍ͩ̽̚O̶͍͇̊͊!̶̸̟͔̲̍͑ͥͫͩͮ̎͘
+-->
