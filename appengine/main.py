@@ -29,6 +29,7 @@ from django.utils import simplejson as json
 class Pomodoro(db.Model):
   author = db.StringProperty(multiline=False)
   content = db.StringProperty(multiline=False)
+  item_type = db.StringProperty(multiline=False)
   date = db.DateTimeProperty(auto_now_add=True)
 
 
@@ -40,13 +41,19 @@ class JSONDump(webapp.RequestHandler):
   def get(self):
     self.response.headers['Access-Control-Allow-Origin'] = '*'
     pomodoros = db.GqlQuery("SELECT * "
-                            "FROM Pomodoro WHERE author = '%s' " 
-                            "ORDER BY date DESC LIMIT 10" % self.request.get('author'))
+                            "FROM Pomodoro WHERE author = '%s' "
+                            "ORDER BY date DESC LIMIT 10"
+                            % self.request.get('author'))
     pomodoro_list = []
     for pomodoro in pomodoros:
-      name = pomodoro.author
-      pomodoro_list.append({'user':name,'content':cgi.escape(pomodoro.content),'date':pomodoro.date.isoformat()})
-
+      pomodoro_list.append({
+          'id':str(pomodoro.key().id()),
+          'user':pomodoro.author,
+          'content':cgi.escape(pomodoro.content) if pomodoro.content else "",
+          'date':pomodoro.date.isoformat(),
+          'item_type':(cgi.escape(pomodoro.item_type) if pomodoro.item_type
+              else "")
+          })
     self.response.out.write(json.dumps(pomodoro_list))
 
 class Rispen(webapp.RequestHandler):
@@ -56,6 +63,8 @@ class Rispen(webapp.RequestHandler):
 
     pom.content = self.request.get('content')
     pom.author = self.request.get('author')
+    if self.request.get('item_type') in ["pomodoro","break"]:
+        pom.item_type = self.request.get('item_type')
     pom.put()
     self.redirect('/')
 
