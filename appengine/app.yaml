@@ -8,9 +8,9 @@ handlers:
   static_files: static/images/\1
   upload: static/images/(.*)
 
-- url: /index\.html
+- url: .*
   static_files: index.html
   upload: index\.html
 
-- url: .*
+- url: /(json|save)
   script: main.py
