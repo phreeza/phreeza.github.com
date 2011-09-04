@@ -34,7 +34,7 @@ class Pomodoro(db.Model):
 
 class MainPage(webapp.RequestHandler):
   def get(self):
-      self.redirect("/"+gibberish.gibberish(1))
+      self.redirect("/"+gibberish.gibberish())
 
 class JSONDump(webapp.RequestHandler):
   def get(self):
