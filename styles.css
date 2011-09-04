@@ -10,12 +10,6 @@ ul, ol, li {
   padding: 0;
   list-style: none
 }
-:focus, #description:focus {
-  outline: none;
-  background: rgb(255,255,255) 
-  border: 1px solid #ffb682 !important;
-  box-shadow: 0px 0px 2px #f58c41;
-}
 ::-webkit-input-placeholder {
   -webkit-font-smoothing: antialiased;
 }
@@ -23,18 +17,86 @@ ul, ol, li {
 /* Buttons */
 
 button {
-  border: 1px solid rgb(190,110,70);
-  -webkit-border-radius: 6px;
-  -moz-border-radius: 6px;
-  border-radius: 6px;
-  box-shadow: inset 0 0 6px rgb(245,140,55);
-  background: rgb(235,125,45);
+  padding: 10px;
+  margin-right: 10px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  box-shadow: inset 0 -2px 0 rgba(255,255,255,.5);
+  border: 1px solid rgba(0,0,0,.2);
+  background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0, rgb(210,210,210)),
+    color-stop(1, rgb(240,240,240))
+  );
+  background-image: -moz-linear-gradient(
+    center bottom,
+    rgb(210,210,210) 0%,
+    rgb(240,240,240) 100%
+  );
+  font-size: 11pt;
+  color: rgb(80,80,80);
+  text-shadow: 1px 1px 1px rgba(255,255,255,.5);
 }
 button:hover {
-  box-shadow: inset 0 0 6px rgb(255,180,125);
+  background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0, rgb(200,200,200)),
+    color-stop(1, rgb(230,230,230))
+  );
+  background-image: -moz-linear-gradient(
+    center bottom,
+    rgb(200,200,200) 0%,
+    rgb(230,230,230) 100%
+  );
 }
 button:active {
-  box-shadow: 0 1px 1px rgb(230, 220,200);
+  box-shadow: inset 0 2px 0px rgba(0,0,0,.1);
+}
+.primary {
+  background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0, #dc6414),
+    color-stop(1, #f58b40)
+  );
+  background-image: -moz-linear-gradient(
+    center bottom,
+    #dc6414 0%,
+    #f58b40 100%
+  );
+  color: rgb(255,255,255);
+  text-shadow: 1px 1px 1px rgba(0,0,0,.5);
+}
+.primary:hover {
+  background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0, rgb(210,90,10)),
+    color-stop(1, rgb(235,129,54))
+  );
+  background-image: -moz-linear-gradient(
+    center bottom,
+    rgb(210,90,10) 0%,
+    rgb(235,129,54) 100%
+  );
+}
+.small {
+  font-size: 10pt;
+  line-height: 10pt;
+  padding: 5px;
+}
+button.small {
+  box-shadow: inset 0 -1px 0 rgba(255,255,255,.5);
+}
+button.small:active {
+  box-shadow: inset 0 1px 0px rgba(0,0,0,.2);
 }
 
 /*
@@ -91,6 +153,7 @@ header ul, #main, #final, #history li div, #intro, footer {
 */
 
 header {
+  font-family: 'Droid Sans Mono', sans-serif;
   height: 40px;
   padding: 5px 0;
   background-image: -webkit-gradient(
@@ -106,6 +169,8 @@ header {
     rgb(25,25,25) 100%
   );
   border-bottom: 1px solid rgba(0,0,0,.2);
+  color: rgb(220,220,220);
+  font-size: 10pt;
 }
 header ul li {
   display: inline-block;
@@ -125,28 +190,27 @@ header ul li {
   line-height: 99999px;
 }
 #stats {
+  padding: 0 5px;
   height: 32px;
   line-height: 32px;
-  font-size: 11pt;
-  color: rgb(255,255,255);
-  text-shadow: 1px 1px 1px rgba(0,0,0,.5);
+  color: rgb(80,80,80);
+  text-shadow: 1px 1px 1px rgba(255,255,255,.5);
   background-image: -webkit-gradient(
     linear,
     left bottom,
     left top,
-    color-stop(0, #dc6414),
-    color-stop(1, #f58b40)
+    color-stop(0, rgb(210,210,210)),
+    color-stop(1, rgb(240,240,240))
   );
   background-image: -moz-linear-gradient(
     center bottom,
-    #dc6414 0%,
-    #f58b40 100%
-  );
-  box-shadow: inset 0 2px 1px rgba(0,0,0,0.5);
+    rgb(210,210,210) 0%,
+    rgb(240,240,240) 100%
+  );  box-shadow: inset 0 2px 0 rgba(0,0,0,0.1);
   border: 1px solid rgb(25,25,25);
-  -moz-border-radius: 8px;
-  -webkit-border-radius: 8px;
-  border-radius: 8px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
 }
 #stats-pomodoros {
   background: url(images/stats-pomodoros.png) left no-repeat;
@@ -167,53 +231,64 @@ header ul li {
 
 /* INPUT */
 
-input {
+#interaction {
+  padding: 20px 0;
+  background: rgb(250,200,130) url(images/noise-bg.png);
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  border-color: rgba(255,255,255,.5);
+}
+input, textarea {
   padding: 10px;
   height: 30px;
-  border: 1px solid rgba(255,255,255,.4);
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  border-radius: 8px;
-  box-shadow: inset 0 0 15px rgb(240,240,240);
+  border: 1px solid rgba(0,0,0,.3);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  box-shadow: inset 0 0 15px rgba(0,0,0,.15);
   font-size: 16pt;
   font-weight: 300;
   color: rgb(80,80,80);
   text-shadow: 1px 1px rgb(230,230,230);
+  text-rendering: optimizeLegibility;
 }
-
-
-#interaction {
-  padding: 20px 0;
-  background: rgb(250,200,130) url(images/noise-bg.png);
-  border-top: 1px solid rgba(255,255,255,.5);
-  border-bottom: 1px solid rgba(255,255,255,.2) ;
+input:hover, textarea:hover {
+  border: 1px solid #f58b40;
+  box-shadow: inset 0 0 15px rgba(0,0,0,.1);
+}
+:focus, input:focus, textarea:focus {
+  outline: none;
+  background: white !important;
+  border: 1px solid #f58b40; !important;
+  box-shadow: 0px 0px 8px #f58c41;
 }
 #description {
+  margin-bottom: 20px;
+}
+#description, textarea {
   width: 920px;
+  margin-bottom: 20px;
+}
+#final textarea {
+  width: 760px;
+  height: 50px;
+}
+#radio {
+  float: right;
+  margin: 0;
 }
 
 /* After Task */
 
 textarea {
-  width: 920px;
-  padding: 10px;
-  margin-top: 20px;
-  border: 1px solid rgb(230, 220,200);
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  border-radius: 8px;
-  box-shadow: inset 0 0 15px rgb(240,240,240);
-  font-size: 16pt;
-  font-weight: 300;
-  color: rgb(80,80,80);
-  text-shadow: 1px 1px rgb(230,230,230);
-  -webkit-appearance: textarea;
+  -webkit-appearance: none;
   -webkit-rtl-ordering: logical;
   -webkit-user-select: text;
   -webkit-box-orient: vertical;
-  resize: vertical;
+  resize: none;
   white-space: pre-wrap;
   word-wrap: break-word;
+  text-rendering: optimizeLegibility;
 }
 
 /*
@@ -249,6 +324,17 @@ textarea {
   text-shadow: 1px 1px 1px rgba(0,0,0,0.5) !important;
   font-weight: bold;
 }
+#history li.break {
+  border-top: 2px solid;
+  border-bottom: 1px solid;
+  border-color: rgba(0,0,0,.2);
+  background: rgb(80,80,80);
+}
+#history li.break {
+  color: rgb(200,200,200);
+  text-shadow: 1px 1px 1px rgba(0,0,0,.5);
+}
+
 /*
     INTRO
 */
@@ -259,9 +345,9 @@ textarea {
   margin: 20px auto;
   background: rgb(230,230,230);
   border: 1px solid rgb(220,220,220);
-  -moz-border-radius: 8px;
-  -webkit-border-radius: 8px;
-  border-radius: 8px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
 }
 #overview {
   height: 225px;
@@ -306,7 +392,7 @@ textarea {
 #short-url div:last-child {
   float: right;
   height: 38px;
-  width: 326px;
+  width: 400px;
   line-height: 38px;
   padding: 18px;
   padding-left: 40px;

@@ -4,14 +4,22 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Rispen lol</title>
     <link href="styles.css" rel="stylesheet" />
+    <link href="../../Downloads/jquery-ui-1.8.16.custom%20(1)/css/ui-lightness/jquery-ui-1.8.16.custom.css" rel="stylesheet" />
+    <script src="js/jquery-1.6.2.min.js"></script>
+    <script src="js/jquery-ui-1.8.16.custom.min.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans+Mono' rel='stylesheet' type='text/css'>
   </head>
   <body>
+  <script>
+	$(function() {
+		$( "#radio" ).buttonset();
+	});
+	</script>
     <header>
       <ul>
         <li id="home"><a href="#">Rispen Home</a></li>
-        <li id="stats"><span id="stats-pomodoros">13h 37mins</span> <span id="stats-breaks">5h 42mins</span></li>
-        <li id="settings">Settings</li>
-        <li id="lockunlock">Lock/Unlock</li>
+        <li id="stats"><span id="stats-pomodoros">13h 37m</span> <span id="stats-breaks">5h 42m</span></li>
+        <li id="settings">http://rispen.nl/thomas</li>
       </ul>
     </header>
     <div id="interaction">
@@ -20,6 +28,15 @@
       </div>
       <form id="final">
         <textarea placeholder="Write a short resumé about your work." ></textarea>
+        <div id="radio">
+          <input type="radio" id="radio1" name="radio" /><label for="radio1">-</label>
+          <input type="radio" id="radio2" name="radio" checked="checked" /><label for="radio2">o</label>
+          <input type="radio" id="radio3" name="radio" checked="checked" /><label for="radio3">+</label>
+        </div>
+        <button class="big primary">New Task</button>
+        <button>Continue Task</button>
+        <button>Short Break</button>
+        <button>Long Break</button>
       </form>
     </div>
     <ul id="history">
@@ -30,6 +47,12 @@
       <li>
         <div>Having fun and going out<span class="timeago">32 minutes ago</span></div>
       </li>
+      <li class="break">
+        <div>Short Break<span class="timeago">46 minutes ago</span></div>
+      </li>
+      <li>
+        <div>Going out and having fun<span class="timeago">58 minutes ago</span></div>
+      </li>
       <li>
         <div>Going out and having fun<span class="timeago">58 minutes ago</span></div>
       </li>
@@ -38,7 +61,7 @@
       <div id="overview">how to use this thing?</div>
       <div id="short-url">
         <div>You might wanna change your ID to something less cryptic like… <b>Tlahuizcalpantecuhtli</b></div>
-        <div>http://rispen.nl/<input id="identifier" placeholder="IrgTMzsr1m" /><button>Change</button></div>
+        <div>http://rispen.nl/<input id="identifier" class="small" placeholder="IrgTMzsr1m" /><button class="primary small">Change</button></div>
       </div>
     </div>
     <footer>
