@@ -31,7 +31,7 @@ $(function() {
     }, 150);
     $("#progress").addClass('active');
     $("#progress").progressbar({"value":0});
-    addTask($("#description").val(),ISODateString(new Date()),true);
+    addTask($("#description").val(),ISODateString(new Date()),true,0);
   }
   });
 
@@ -54,7 +54,7 @@ $(function() {
     $("#after-task").slideUp('fast');
     $("#timer").resetTimer($.extend($("#timer").data('countdown.settings'),{time_in_seconds:5*60}));
     $("#timer").startTimer($("#timer").data('countdown.settings'));
-    addTask($("#description").val(),ISODateString(new Date()),true);
+    addTask($("#description").val(),ISODateString(new Date()),true,0);
   });
   
   $('#longbreak').click(function() {
@@ -65,7 +65,7 @@ $(function() {
     $("#after-task").slideUp('fast');
     $("#timer").resetTimer($.extend($("#timer").data('countdown.settings'),{time_in_seconds:25*60}));
     $("#timer").startTimer($("#timer").data('countdown.settings'));
-    addTask($("#description").val(),ISODateString(new Date()),true);
+    addTask($("#description").val(),ISODateString(new Date()),true,0);
   });
 
 
@@ -98,19 +98,29 @@ $(function() {
       }
       );
 
-  function addTask(task,date,isnew)
+  function addTask(task,date,isnew,id)
   {
     var newli = document.createElement('li');
     var taskid = $("#history").children().size();
     newli.id="task" + taskid;
-    newli.innerHTML = "<p>"+task+"<abbr class=\"timeago\" title=\""+date+"Z\">"+date+"Z</abbr></p>";
+    newli.innerHTML = "<p>"+task+"<abbr class=\"timeago\" title=\""+date+"Z\">"+date+"Z</abbr><button class=\"delete\">Delete</button></p>";
     if (isnew) newli.style.display="none";
     $("#history").prepend(newli);
     $("abbr.timeago").timeago();
     if (isnew) 
     {
         $("#task"+taskid).slideDown("slow");
-        $.post("http://rispennl.appspot.com/save",{content:task,author:$("#identifier").val()});
+        $.post("http://rispennl.appspot.com/save",{content:task,author:$("#identifier").val(),item_type:"pomodoro"});
+    }
+    else
+    {
+        $("#task"+taskid+" p").children(".delete").click(
+            function()
+            {
+              $.post("http://rispennl.appspot.com/delete",{id:id});
+              $("#task"+taskid).slideUp("slow");
+            }
+            );
     }
   }
 
@@ -131,7 +141,7 @@ $(function() {
                 data.reverse();
                 for (p in data)
                     {
-                        addTask(data[p].content,data[p].date,false);
+                        addTask(data[p].content,data[p].date,false,data[p].id);
                     }
               })
   }

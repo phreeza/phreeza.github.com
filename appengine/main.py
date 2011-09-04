@@ -57,7 +57,7 @@ class JSONDump(webapp.RequestHandler):
     self.response.out.write(json.dumps(pomodoro_list))
 
 class PomodoroDeleter(webapp.RequestHandler):
-  def get(self):
+  def post(self):
     self.response.headers['Access-Control-Allow-Origin'] = '*'
     pomodoros = db.GqlQuery("SELECT * "
                             "FROM Pomodoro WHERE __key__ = KEY('Pomodoro', %i)"
