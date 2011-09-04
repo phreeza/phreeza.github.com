@@ -123,7 +123,7 @@ $(function() {
 
 $(document).ready(function() {
   if (window.location.protocol == "http:"){
-    $("#identifier").val(window.location.pathname);}
+    $("#identifier").val(window.location.pathname.split('/')[0]);}
 
 	$('a[href*=#]').bind("click", function(event) {
 		event.preventDefault();
