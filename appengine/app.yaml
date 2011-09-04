@@ -25,6 +25,9 @@ handlers:
 - url: /save
   script: main.py
 
+- url: /delete
+  script: main.py
+
 - url: .*
   static_files: index.html
   upload: index\.html

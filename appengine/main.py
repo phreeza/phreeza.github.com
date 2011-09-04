@@ -56,6 +56,15 @@ class JSONDump(webapp.RequestHandler):
           })
     self.response.out.write(json.dumps(pomodoro_list))
 
+class PomodoroDeleter(webapp.RequestHandler):
+  def get(self):
+    self.response.headers['Access-Control-Allow-Origin'] = '*'
+    pomodoros = db.GqlQuery("SELECT * "
+                            "FROM Pomodoro WHERE __key__ = KEY('Pomodoro', %i)"
+                            % int(self.request.get('id')))
+    pomodoros[0].delete()
+    self.redirect('/')
+
 class Rispen(webapp.RequestHandler):
   def post(self):
     pom = Pomodoro()
@@ -72,7 +81,8 @@ class Rispen(webapp.RequestHandler):
 application = webapp.WSGIApplication([
   ('/', MainPage),
   ('/save', Rispen),
-  ('/json', JSONDump)
+  ('/json', JSONDump),
+  ('/delete', PomodoroDeleter)
 ], debug=True)
 
 
