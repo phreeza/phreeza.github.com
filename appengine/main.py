@@ -18,6 +18,8 @@ import cgi
 import datetime
 import wsgiref.handlers
 
+import gibberish
+
 from google.appengine.ext import db
 from google.appengine.api import users
 from google.appengine.ext import webapp
@@ -32,9 +34,7 @@ class Pomodoro(db.Model):
 
 class MainPage(webapp.RequestHandler):
   def get(self):
-    self.response.out.write("""<html><body>Not implemented.
-        </body>
-      </html>""")
+      self.redirect("/"+gibberish.gibberish(1))
 
 class JSONDump(webapp.RequestHandler):
   def get(self):
