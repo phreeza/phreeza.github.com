@@ -79,6 +79,7 @@ $(function() {
 	}, 150);
 	$('h2.logo').delay(400).fadeIn('fast')
       });
+
   $('#identifier').keypress(
       function(e) {
         var code = (e.keyCode ? e.keyCode : e.which);
@@ -88,6 +89,15 @@ $(function() {
         }
       }
       );
+  $('#description').keypress(
+      function(e) {
+        var code = (e.keyCode ? e.keyCode : e.which);
+        if(code == 13) {
+          $('#startstop').click();
+        }
+      }
+      );
+
   function addTask(task,date,isnew)
   {
     var newli = document.createElement('li');
