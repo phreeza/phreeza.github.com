@@ -79,7 +79,15 @@ $(function() {
 	}, 150);
 	$('h2.logo').delay(400).fadeIn('fast')
       });
-
+  $('#identifier').keypress(
+      function(e) {
+        var code = (e.keyCode ? e.keyCode : e.which);
+        if(code == 13) {
+          //plain reload for now. TODO repopulate dynamically
+          window.location.href = "http://rispennl.appspot.com/"+$('#identifier').val();
+        }
+      }
+      );
   function addTask(task,date,isnew)
   {
     var newli = document.createElement('li');
