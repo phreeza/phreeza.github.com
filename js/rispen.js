@@ -118,12 +118,12 @@ $(function() {
               })
   }
 
+  if (window.location.protocol == "http:"){
+    $("#identifier").val(window.location.pathname.split('/')[1]);}
   repopTasks($("#identifier").val())
 });
 
 $(document).ready(function() {
-  if (window.location.protocol == "http:"){
-    $("#identifier").val(window.location.pathname.split('/')[1]);}
 
 	$('a[href*=#]').bind("click", function(event) {
 		event.preventDefault();
