@@ -88,9 +88,17 @@ button:active {
   );
 }
 .small {
+  height: 30px;
   font-size: 10pt;
   line-height: 10pt;
-  padding: 5px;
+  padding: 0 5px;
+}
+input.small {
+  font-family: 'Droid Sans Mono', sans-serif;
+  margin: 0 10px;
+}
+input.small:focus {
+  box-shadow: 0px 0px 4px #f58c41;
 }
 button.small {
   box-shadow: inset 0 -1px 0 rgba(255,255,255,.5);
@@ -143,7 +151,7 @@ button.small:active {
          `y.      .+`                                          -y                                   
 */
 
-header ul, #main, #final, #history li div, #intro, footer {
+header ul, #main, #final, #history li div, #intro, footer, .ui-progressbar {
   width: 940px;
   margin: auto;
 }
@@ -193,21 +201,21 @@ header ul li {
   padding: 0 5px;
   height: 32px;
   line-height: 32px;
-  color: rgb(80,80,80);
-  text-shadow: 1px 1px 1px rgba(255,255,255,.5);
+  color: rgb(255,255,255);
+  text-shadow: 1px 1px 1px rgba(0,0,0,.5);
   background-image: -webkit-gradient(
     linear,
     left bottom,
     left top,
-    color-stop(0, rgb(210,210,210)),
-    color-stop(1, rgb(240,240,240))
+    color-stop(0, rgb(70,70,70)),
+    color-stop(1, rgb(45,45,45))
   );
   background-image: -moz-linear-gradient(
     center bottom,
-    rgb(210,210,210) 0%,
-    rgb(240,240,240) 100%
+    rgb(70,70,70) 0%,
+    rgb(45,45,45) 100%
   );  box-shadow: inset 0 2px 0 rgba(0,0,0,0.1);
-  border: 1px solid rgb(25,25,25);
+  border: 1px solid rgba(255,255,255,.1);
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
   border-radius: 4px;
@@ -233,7 +241,7 @@ header ul li {
 
 #interaction {
   padding: 20px 0;
-  background: rgb(250,200,130) url(images/noise-bg.png);
+  background: rgb(250,200,130) url(images/noise-grey.png);
   border-top: 1px solid;
   border-bottom: 1px solid;
   border-color: rgba(255,255,255,.5);
@@ -260,13 +268,13 @@ input:hover, textarea:hover {
   outline: none;
   background: white !important;
   border: 1px solid #f58b40; !important;
-  box-shadow: 0px 0px 8px #f58c41;
+  box-shadow: 0px 0px 4px #f58c41;
 }
 #description {
   margin-bottom: 20px;
 }
 #description, textarea {
-  width: 920px;
+  width: 918px;
   margin-bottom: 20px;
 }
 #final textarea {
@@ -276,6 +284,23 @@ input:hover, textarea:hover {
 #radio {
   float: right;
   margin: 0;
+}
+.ui-progressbar {
+  height: 50px;
+}
+.ui-progressbar-value {
+  background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0, #dc6414),
+    color-stop(1, #f58b40)
+  );
+  background-image: -moz-linear-gradient(
+    center bottom,
+    #dc6414 0%,
+    #f58b40 100%
+  );
 }
 
 /* After Task */
@@ -370,11 +395,12 @@ textarea {
 }
 #short-url div:first-child {
   float: left;
-  width: 380px;
+  width: 452px;
   height: 38px;
-  padding: 18px;
+  padding: 20px;
   color: rgb(255,255,255);
   font-size: 13pt;
+  line-height: 15pt;
   text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
   background-image: -webkit-gradient(
     linear,
@@ -392,7 +418,7 @@ textarea {
 #short-url div:last-child {
   float: right;
   height: 38px;
-  width: 400px;
+  width: 390px;
   line-height: 38px;
   padding: 18px;
   padding-left: 40px;
@@ -400,32 +426,6 @@ textarea {
   color: rgb(255,255,255);
   font-size: 11pt;
 }
-#identifier {
-  height: 22px;
-  line-height: 22px;
-  padding: 5px;
-  font-size: 11pt;
-  color: rgb(80,80,80);
-  text-shadow: 1px 1px 1px rgb(255,255,255);
-  background-image: -webkit-gradient(
-    linear,
-    left bottom,
-    left top,
-    color-stop(0, #dcdcdc),
-    color-stop(1, #ffffff)
-  );
-  background-image: -moz-linear-gradient(
-    center bottom,
-    #dcdcdc 0%,
-    #ffffff 100%
-  );
-  box-shadow: inset 0 2px 1px rgba(0,0,0,0.5);
-  border: 1px solid rgb(25,25,25);
-  -moz-border-radius: 8px;
-  -webkit-border-radius: 8px;
-  border-radius: 8px;
-}
-
 
 /*
     FOOTER
