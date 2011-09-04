@@ -92,7 +92,7 @@ $(function() {
     if (isnew) 
     {
         $("#task"+taskid).slideDown("slow");
-        $.post("http://rispennl.appspot.com/save",{content:task,author:$("#chiffre").val()});
+        $.post("http://rispennl.appspot.com/save",{content:task,author:$("#identifier").val()});
     }
   }
 
@@ -118,10 +118,13 @@ $(function() {
               })
   }
 
-  repopTasks($("#chiffre").val())
+  repopTasks($("#identifier").val())
 });
 
 $(document).ready(function() {
+  if (window.location.protocol == "http:"){
+    $("#identifier").val(window.location.pathname);}
+
 	$('a[href*=#]').bind("click", function(event) {
 		event.preventDefault();
 		var ziel = $(this).attr("href");
