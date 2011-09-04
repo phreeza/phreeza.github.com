@@ -3,11 +3,14 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Rispen lol</title>
-    <link href="../../Downloads/jquery-ui-1.8.16.custom%20(1)/css/ui-lightness/jquery-ui-1.8.16.custom.css" rel="stylesheet" />
+    <link href="css/jquery-ui-1.8.16.custom.css" rel="stylesheet" />
     <link href="styles.css" rel="stylesheet" />
-    <script src="js/jquery-1.6.2.min.js"></script>
-    <script src="js/jquery-ui-1.8.16.custom.min.js"></script>
     <link href='http://fonts.googleapis.com/css?family=Droid+Sans+Mono' rel='stylesheet' type='text/css'>
+    <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.15/jquery-ui.min.js"></script>
+    <script type='text/javascript' src='js/jquery.the_final_countdown.js'></script>
+    <script type="text/javascript" src="js/jquery.timeago.js"></script>
+    <script type='text/javascript' src="js/rispen.js"></script>
   </head>
   <body>
   <script>
@@ -16,8 +19,8 @@
 	});
 	
 	$(function() {
-		$( "progress" ).progressbar({
-			value: 37
+		$( "#progress" ).progressbar({
+			value: 100
 		});
 	});
 	</script>
@@ -30,8 +33,10 @@
     </header>
     <div id="interaction">
       <div id="main">
-        <progress></progress>
-        <input id="description" placeholder="What do you want to do?" />
+        <button id="startstop">Start</button>
+        <input id="description" value="blablub" placeholder="What do you want to do?" />
+        <div id="progress"></div>
+        <span id="timer">13:37</span>
       </div>
       <form id="final">
         <textarea placeholder="Write a short resumé about your work." ></textarea>
@@ -40,10 +45,10 @@
           <input type="radio" id="radio2" name="radio" checked="checked" /><label for="radio2">o</label>
           <input type="radio" id="radio3" name="radio" checked="checked" /><label for="radio3">+</label>
         </div>
-        <button class="big primary">New Task</button>
-        <button>Continue Task</button>
-        <button>Short Break</button>
-        <button>Long Break</button>
+        <button id="newtask" class="big primary">New Task</button>
+        <button id="continuetask">Continue Task</button>
+        <button id="shortbreak">Short Break</button>
+        <button id="longbreak">Long Break</button>
       </form>
     </div>
     <ul id="history">

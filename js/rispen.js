@@ -7,7 +7,12 @@ $(function() {
   }
   ,
   autostart: false,
-  buzzer: function(){ $("#after-task").slideDown('fast'); }
+    buzzer: function(){ 
+      $("#final").slideDown('fast'); 
+      $("#description").removeClass('active');
+      $("#progress").removeClass('active');
+      $("#startstop").css('display', 'none');
+    }
   });
 
   $("#startstop").click(function() {
@@ -30,6 +35,7 @@ $(function() {
       backgroundPosition: '33px'
     }, 150);
     $("#progress").addClass('active');
+    $("#description").addClass('active');
     $("#progress").progressbar({"value":0});
     addTask($("#description").val(),ISODateString(new Date()),true);
   }
@@ -39,7 +45,7 @@ $(function() {
     $('#startstop').delay(200).animate({
       backgroundPosition: '0px'
     }, 150);
-    $("#after-task").slideUp('fast');
+    $("#final").slideUp('fast');
     $("#timer").resetTimer();
     $("#description").removeAttr("disabled");
     $("#description").val('')
@@ -51,7 +57,7 @@ $(function() {
     $('#startstop').delay(200).animate({
       backgroundPosition: '0px'
     }, 150);
-    $("#after-task").slideUp('fast');
+    $("#final").slideUp('fast');
     $("#timer").resetTimer($.extend($("#timer").data('countdown.settings'),{time_in_seconds:5*60}));
     $("#timer").startTimer($("#timer").data('countdown.settings'));
     addTask($("#description").val(),ISODateString(new Date()),true);
@@ -62,30 +68,18 @@ $(function() {
     $('#startstop').delay(200).animate({
       backgroundPosition: '0px'
     }, 150);
-    $("#after-task").slideUp('fast');
+    $("#final").slideUp('fast');
     $("#timer").resetTimer($.extend($("#timer").data('countdown.settings'),{time_in_seconds:25*60}));
     $("#timer").startTimer($("#timer").data('countdown.settings'));
     addTask($("#description").val(),ISODateString(new Date()),true);
   });
-
-
-  $('#description').click( //TODO this should only happen in initial configuration, and not be called afterwards.
-
-      function()
-      {
-	$('#rispen-head').slideUp('fast');
-	$('#description').delay(200).animate({
-	  width: '580'
-	}, 150);
-	$('h2.logo').delay(400).fadeIn('fast')
-      });
 
   function addTask(task,date,isnew)
   {
     var newli = document.createElement('li');
     var taskid = $("#history").children().size();
     newli.id="task" + taskid;
-    newli.innerHTML = "<p>"+task+"<abbr class=\"timeago\" title=\""+date+"Z\">"+date+"Z</abbr></p>";
+    newli.innerHTML = "<div>"+task+"<button class=\"delete small\">Delete</button><abbr class=\"timeago\" title=\""+date+"Z\">"+date+"Z</abbr></div>";
     if (isnew) newli.style.display="none";
     $("#history").prepend(newli);
     $("abbr.timeago").timeago();
