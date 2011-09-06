@@ -91,6 +91,11 @@ $(function() {
         }
       }
       );
+  $('#resumen').keyup(function(){
+    var text = $('#resumen').val();
+    var textlength = text.length;
+    if(textlength > 140){$('#resumen').val(text.substr(0,140));}
+  });
 
   function addTask(task,date,isnew,id)
   {
