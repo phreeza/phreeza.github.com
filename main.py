@@ -21,7 +21,6 @@ import wsgiref.handlers
 import gibberish
 
 from google.appengine.ext import db
-from google.appengine.api import users
 from google.appengine.ext import webapp
 
 from django.utils import simplejson as json
