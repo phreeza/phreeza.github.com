@@ -94,6 +94,7 @@ $(function() {
 
   function addTask(task,date,isnew,id)
   {
+    task = strip_html(task);
     var newli = document.createElement('li');
     var taskid = $("#history").children().size();
     newli.id="task" + taskid;
@@ -141,6 +142,13 @@ $(function() {
               })
   }
 
+  function strip_html(html)
+  {
+    var tmp = document.createElement("DIV");
+    tmp.innerHTML = html;
+    return tmp.textContent||tmp.innerText;
+  }
+ 
   if (window.location.protocol == "http:"){
     $("#identifier").val(window.location.pathname.split('/')[1]);}
   repopTasks($("#identifier").val())
