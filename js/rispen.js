@@ -119,7 +119,7 @@ $(function() {
     }
     else
     {
-        $("#task"+taskid+" p").children(".delete").click(
+        $("#task"+taskid+" div").children(".delete").click(
             function()
             {
               $.post("http://rispennl.appspot.com/delete",{id:id});
