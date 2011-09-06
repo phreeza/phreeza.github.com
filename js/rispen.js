@@ -7,7 +7,7 @@ $(function() {
   }
   ,
   autostart: false,
-    buzzer: function(){ 
+    buzzer: function(){
       $("#final").slideDown('fast'); 
       $("#description").removeClass('active');
       $("#progress").fadeOut('fast');
@@ -37,6 +37,7 @@ $(function() {
     $("#description").addClass('active');
     $("#progress").progressbar({"value":0});
     addTask($("#description").val(),ISODateString(new Date()),true,0);
+    $("#progress").fadeIn('fast');
   }
   });
 
@@ -73,18 +74,6 @@ $(function() {
     addTask($("#description").val(),ISODateString(new Date()),true,0);
   });
 
-
-  $('#description').click( //TODO this should only happen in initial configuration, and not be called afterwards.
-
-      function()
-      {
-	$('#rispen-head').slideUp('fast');
-	$('#description').delay(200).animate({
-	  width: '580'
-	}, 150);
-	$('h2.logo').delay(400).fadeIn('fast')
-      });
-
   $('#identifier').keypress(
       function(e) {
         var code = (e.keyCode ? e.keyCode : e.which);
@@ -115,6 +104,7 @@ $(function() {
     if (isnew) 
     {
         $("#task"+taskid).slideDown("slow");
+        $("#task"+taskid).addClass("running");
         $.post("http://rispennl.appspot.com/save",{content:task,author:$("#identifier").val(),item_type:"pomodoro"});
     }
     else

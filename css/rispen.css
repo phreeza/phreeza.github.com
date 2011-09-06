@@ -165,7 +165,7 @@ header #home {
   width: 100px;
   height: 40px;
   margin-right: 20px;
-  background: url(../../images/h1-logo.png) no-repeat;
+  background: url(../images/h1-logo.png) no-repeat;
 }
 header #home a {
   display: block;
@@ -199,12 +199,12 @@ header #stats {
   border-radius: 4px;
 }
 header #stats #stats-pomodoros {
-  background: url(../../images/stats-pomodoros.png) left no-repeat;
+  background: url(../images/stats-pomodoros.png) left no-repeat;
   padding-left: 25px;
   margin: 0 5px;
 }
 header #stats #stats-breaks {
-  background: url(../../images/stats-breaks.png) left no-repeat;
+  background: url(../images/stats-breaks.png) left no-repeat;
   padding-left: 25px;
   margin: 0 5px;
 }
@@ -223,7 +223,7 @@ header ul li {
 }
 #interaction {
   padding: 20px 0;
-  background: #fac882 url(../../images/noise-grey.png);
+  background: #fac882 url(../images/noise-grey.png);
   border-top: 1px solid;
   border-bottom: 1px solid;
   border-color: rgba(255, 255, 255, 0.5);
@@ -341,7 +341,7 @@ header ul li {
   float: left;
   width: 17px;
   height: 23px;
-  background: url(../../images/delete.png);
+  background: url(../images/delete.png);
   border: 0;
   line-height: 9999px;
 }
@@ -352,7 +352,7 @@ header ul li {
   border-top: 2px solid rgba(0, 0, 0, 0.1);
 }
 #history li.running {
-  background-image: url(../../images/running-bg-animated.gif) !important;
+  background-image: url(../images/running-bg-animated.gif) !important;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   color: #ffffff !important;
   -webkit-text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
@@ -367,4 +367,16 @@ header ul li {
   background: #646464;
   color: #c8c8c8;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+#bottomNavigation {
+  background: #999;
+}
+#bottomNavigation ul {
+  width: 940px;
+  margin: auto;
+}
+#bottomNavigation ul li {
+  padding: 10px 0;
+  display: inline-block;
+  font-size: 11pt;
 }

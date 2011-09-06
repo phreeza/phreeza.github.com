@@ -181,7 +181,7 @@ header {
     width: 100px;
     height: 40px;
     margin-right: 20px;
-    background: url(../../images/h1-logo.png) no-repeat;
+    background: url(../images/h1-logo.png) no-repeat;
     a {
       display: block;
       line-height: 99999px;
@@ -198,12 +198,12 @@ header {
     border: 1px solid rgba(255,255,255,.1);
     .border-radius;
     #stats-pomodoros {
-      background: url(../../images/stats-pomodoros.png) left no-repeat;
+      background: url(../images/stats-pomodoros.png) left no-repeat;
       padding-left: 25px;
       margin: 0 5px;
     }
     #stats-breaks {
-      background: url(../../images/stats-breaks.png) left no-repeat;
+      background: url(../images/stats-breaks.png) left no-repeat;
       padding-left: 25px;
       margin: 0 5px;
     }
@@ -227,7 +227,7 @@ header {
 
 #interaction {
   padding: 20px 0;
-  background: rgb(250,200,130) url(../../images/noise-grey.png);
+  background: rgb(250,200,130) url(../images/noise-grey.png);
   border-top: 1px solid;
   border-bottom: 1px solid;
   border-color: rgba(255,255,255,.5);
@@ -314,7 +314,7 @@ header {
           float: left;
           width: 17px;
           height: 23px;
-          background: url(../../images/delete.png);
+          background: url(../images/delete.png);
           border: 0;
           line-height: 9999px;
         }
@@ -326,7 +326,7 @@ header {
         border-top: 2px solid rgba(0,0,0,.1);
       }
       &.running {
-        background-image: url(../../images/running-bg-animated.gif) !important;
+        background-image: url(../images/running-bg-animated.gif) !important;
         border-bottom: 1px solid rgba(0,0,0,0.1);
         color: rgb(255,255,255) !important;
         .text-shadow(1px 1px 1px rgba(0,0,0,0.5));
@@ -341,4 +341,19 @@ header {
         text-shadow: 1px 1px 1px rgba(0,0,0,.5);
       }
     }
+}
+
+// Section: Bottom Navigation
+// ---
+
+#bottomNavigation {
+  background: #999;
+  ul {
+    .container;
+    li {
+      padding: 10px 0;
+      display: inline-block;
+      font-size: 11pt;
+    }
+  }
 }
