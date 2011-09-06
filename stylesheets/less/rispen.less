@@ -8,6 +8,11 @@
 @gridWidth:     940px;
 @inputPadding:  10px;
 
+.container(@width: @gridWidth) {
+  width: @width;
+  margin: auto;
+}
+
 // Border-Radius
 
 .border-radius(@radius: 4px) {
@@ -204,8 +209,7 @@ header {
     }
   }
   ul  {
-    width: @gridWidth;
-    margin: auto;
+    .container;
     li {
       display: inline-block;
       height: 40px;
@@ -228,9 +232,8 @@ header {
   border-bottom: 1px solid;
   border-color: rgba(255,255,255,.5);
   #main {
-    width: @gridWidth;
+    .container;
     min-height: 50px;
-    margin: auto;
   }
 }
 
@@ -256,8 +259,7 @@ header {
   /* background-image: url(http://clients.chrisgrabinski.com/rispen/images/startstop.jpg); */
 }
 #final {
-  width: @gridWidth;
-  margin: auto;
+  .container;
   display: none;
   textarea {
     width: 760px;
@@ -273,6 +275,9 @@ header {
     border: 1px solid rgba(0,0,0,.4);
     #gradient > .vertical(rgb(210,210,210),rgb(240,240,240));
   }
+}
+#progress {
+  display: none;
 }
 .ui-progressbar {
   width: @gridWidth;
@@ -304,8 +309,7 @@ header {
       vertical-align: middle;
       margin-bottom: 2px;
       div {
-        width: @gridWidth;
-        margin: auto;
+        .container;
         .delete {
           float: left;
           width: 17px;

@@ -230,8 +230,8 @@ header ul li {
 }
 #interaction #main {
   width: 940px;
-  min-height: 50px;
   margin: auto;
+  min-height: 50px;
 }
 #description {
   margin-bottom: 20px;
@@ -287,6 +287,9 @@ header ul li {
   -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#d2d2d2', endColorstr='#f0f0f0', GradientType=0)";
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#d2d2d2', endColorstr='#f0f0f0', GradientType=0);
   background-image: linear-gradient(#d2d2d2, #f0f0f0);
+}
+#progress {
+  display: none;
 }
 .ui-progressbar {
   width: 940px;

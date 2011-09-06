@@ -1,6 +1,6 @@
 $(function() {
   $("#timer").createTimer({
-    time_in_seconds: 25*60, // hack for editing the post-pomodoro screen. TODO revert to 25*60,
+    time_in_seconds: 5, // hack for editing the post-pomodoro screen. TODO revert to 25*60,
   tick:function(timer, time_in_seconds, formatted_time)
   {
     $("#progress").progressbar("option","value",$("#timer").data('countdown.duration')/15000.);
@@ -10,7 +10,7 @@ $(function() {
     buzzer: function(){ 
       $("#final").slideDown('fast'); 
       $("#description").removeClass('active');
-      $("#progress").removeClass('active');
+      $("#progress").fadeOut('fast');
       $("#startstop").css('display', 'none');
     }
   });
@@ -20,7 +20,7 @@ $(function() {
   {
     $("#timer").resetTimer();
     $("#description").removeAttr("disabled")
-    $("#progress").removeClass('active');
+    $("#progress").fadeOut('fast');
   }
     else if ($("#description").val() == '')
   {
@@ -34,10 +34,10 @@ $(function() {
     $('#startstop').delay(200).animate({
       backgroundPosition: '33px'
     }, 150);
-    $("#progress").addClass('active');
     $("#description").addClass('active');
     $("#progress").progressbar({"value":0});
     addTask($("#description").val(),ISODateString(new Date()),true);
+    $("#progress").fadeIn('slow');
   }
   });
 
@@ -49,7 +49,7 @@ $(function() {
     $("#timer").resetTimer();
     $("#description").removeAttr("disabled");
     $("#description").val('')
-    $("#progress").removeClass('active');
+    $("#progress").fadeOut('fast');
   });
 
   $('#shortbreak').click(function() {
