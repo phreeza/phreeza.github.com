@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Rispen lol</title>
     <link href="css/jquery-ui-1.8.16.custom.css" rel="stylesheet" />
-    <link href="styles.css" rel="stylesheet" />
+    <link href="stylesheets/css/rispen.css" rel="stylesheet" />
     <link href='http://fonts.googleapis.com/css?family=Droid+Sans+Mono' rel='stylesheet' type='text/css'>
     <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
     <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.15/jquery-ui.min.js"></script>
@@ -33,8 +33,8 @@
     </header>
     <div id="interaction">
       <div id="main">
-        <button id="startstop">Start</button>
-        <input id="description" value="blablub" placeholder="What do you want to do?" />
+        <button id="startstop" class="primary">Start</button>
+        <input id="description" type="text" value="blablub" placeholder="What do you want to do?" />
         <div id="progress"></div>
         <span id="timer">13:37</span>
       </div>
@@ -69,32 +69,5 @@
         <div>Going out and having fun<span class="timeago">58 minutes ago</span></div>
       </li>
     </ul>
-    <div id="intro">
-      <div id="overview">how to use this thing?</div>
-      <div id="short-url">
-        <div>You might wanna change your ID to something less cryptic like… <b>Tlahuizcalpantecuhtli</b></div>
-        <div>http://rispen.nl/<input id="identifier" class="small" placeholder="IrgTMzsr1m" /><button class="primary small">Change</button></div>
-      </div>
-    </div>
-    <footer>
-      <ul id="social">
-        <li>Social</li>
-        <li>Flattr</li>
-        <li>Google +1</li>
-        <li>Twitter</li>
-        <li>Facebook</li>
-      </ul>
-      <ul id="rispen">
-        <li>Trivia</li>
-        <li>About</li>
-        <li>Team</li>
-        <li>Contact</li>
-      </ul>
-      <ul id="powered-by">
-        <li>Powered by</li>
-        <li id="python"><a href="http://www.python.org/">Python</a></li>
-        <li id="google-app-engine"><a href="http://code.google.com/appengine/">Google App Engine</a></li>
-      </ul>
-    </footer>
   </body>
 </html>

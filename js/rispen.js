@@ -1,6 +1,6 @@
 $(function() {
   $("#timer").createTimer({
-    time_in_seconds: 2, // hack for editing the post-pomodoro screen. TODO revert to 25*60,
+    time_in_seconds: 25*60, // hack for editing the post-pomodoro screen. TODO revert to 25*60,
   tick:function(timer, time_in_seconds, formatted_time)
   {
     $("#progress").progressbar("option","value",$("#timer").data('countdown.duration')/15000.);
@@ -79,7 +79,7 @@ $(function() {
     var newli = document.createElement('li');
     var taskid = $("#history").children().size();
     newli.id="task" + taskid;
-    newli.innerHTML = "<div>"+task+"<button class=\"delete small\">Delete</button><abbr class=\"timeago\" title=\""+date+"Z\">"+date+"Z</abbr></div>";
+    newli.innerHTML = "<div><button class=\"delete small\">Delete</button>"+task+"<abbr class=\"timeago\" title=\""+date+"Z\">"+date+"Z</abbr></div>";
     if (isnew) newli.style.display="none";
     $("#history").prepend(newli);
     $("abbr.timeago").timeago();
