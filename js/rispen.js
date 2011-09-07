@@ -97,6 +97,24 @@ $(function() {
     if(textlength > 140){$('#resumen').val(text.substr(0,140));}
   });
 
+
+  $('#history li').hover(
+      function() 
+      {
+        $(this).children('div').children('.hoverNavigation').animate({width: '200px'},1000);
+      }
+      );
+
+  // Progress-Bar
+
+  $( "#progress" ).progressbar({
+    value: 100
+  });
+
+  // Radio Buttons
+
+  $( "#radio" ).buttonset();
+
   function addTask(task,date,isnew,id)
   {
     task = strip_html(task);
@@ -109,9 +127,9 @@ $(function() {
     $("abbr.timeago").timeago();
     if (isnew) 
     {
-        $("#task"+taskid).slideDown("slow");
-        $("#task"+taskid).addClass("running");
-        $.post("http://rispennl.appspot.com/save",{content:task,author:$("#identifier").val(),item_type:"pomodoro"});
+      $("#task"+taskid).slideDown("slow");
+      $("#task"+taskid).addClass("running");
+      $.post("http://rispennl.appspot.com/save",{content:task,author:$("#identifier").val(),item_type:"pomodoro"});
     }
     else
     {
@@ -171,29 +189,3 @@ $('html,body').animate({
   });
   return false;
 });
-
-// jQuery Magic
-
-$(function() {
-
-  $('#history li').hover(function() {
-    $(this).children('div').children('.hoverNavigation').animate({width: 200px}),1000,
-    );
-});
-
-// jQuery UI
-
-// Progress-Bar
-
-  $(function() {
-    $( "#progress" ).progressbar({
-      value: 100
-    });
-  });
-
-// Radio Buttons
-
-  $(function() {
-    $( "#radio" ).buttonset();
-  });
-	
