@@ -101,7 +101,13 @@ $(function() {
   $('#history li').hover(
       function() 
       {
+        $(this).children('div').children('.hoverNavigation').stop();
         $(this).children('div').children('.hoverNavigation').animate({width: '200px'},1000);
+      },
+      function() 
+      {
+        $(this).children('div').children('.hoverNavigation').stop();
+        $(this).children('div').children('.hoverNavigation').animate({width: '0px'},1000);
       }
       );
 
