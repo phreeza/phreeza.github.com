@@ -161,13 +161,39 @@ $(function() {
 
 $(document).ready(function() {
 
-	$('a[href*=#]').bind("click", function(event) {
-		event.preventDefault();
-		var ziel = $(this).attr("href");
+$('a[href*=#]').bind("click", function(event) {
+event.preventDefault();
+var ziel = $(this).attr("href");
 
-		$('html,body').animate({
-			scrollTop: $(ziel).offset().top
-		}, 500 , function (){location.hash = ziel;});
+$('html,body').animate({
+  scrollTop: $(ziel).offset().top
+  }, 500 , function (){location.hash = ziel;});
+  });
+  return false;
 });
-return false;
+
+// jQuery Magic
+
+$(function() {
+
+  $('#history li').hover(function() {
+    $(this).children('div').children('.hoverNavigation').animate({width: 200px}),1000,
+    );
 });
+
+// jQuery UI
+
+// Progress-Bar
+
+  $(function() {
+    $( "#progress" ).progressbar({
+      value: 100
+    });
+  });
+
+// Radio Buttons
+
+  $(function() {
+    $( "#radio" ).buttonset();
+  });
+	

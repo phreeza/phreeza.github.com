@@ -13,17 +13,6 @@
     <script type='text/javascript' src="js/rispen.js"></script>
   </head>
   <body>
-  <script>
-	$(function() {
-		$( "#radio" ).buttonset();
-	});
-	
-	$(function() {
-		$( "#progress" ).progressbar({
-			value: 100
-		});
-	});
-	</script>
     <header>
       <ul>
         <li id="home"><a href="#">Rispen Home</a></li>
@@ -53,7 +42,10 @@
     </div>
     <ul id="history">
       <li class="break">
-        <div>Short Break<span class="timeago">46 minutes ago</span></div>
+        <div>
+          <div class="hoverNavigation">tst</div>
+          <a class="btn small" style="display: none;" href="#">Delete</a>Short Break<span class="timeago">46 minutes ago</span>
+        </div>
       </li>
     </ul>
     <div id="bottomNavigation">

@@ -325,8 +325,7 @@ header ul li {
   width: 100%;
 }
 #history li {
-  padding: 10px 0;
-  line-height: 28px;
+  line-height: 48px;
   color: #505050;
   text-shadow: 1px 1px 1px #ffffff;
   background: #e6e6e6;
@@ -338,6 +337,7 @@ header ul li {
   margin: auto;
 }
 #history li div .delete {
+  display: none;
   float: left;
   width: 17px;
   height: 23px;
@@ -347,6 +347,26 @@ header ul li {
 }
 #history li div .timeago {
   float: right;
+}
+#history li div .hoverNavigation {
+  position: absolute;
+  overflow: hidden;
+  background-color: #f58b40;
+  background-repeat: repeat-x;
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#dc6414), to(#f58b40));
+  background-image: -moz-linear-gradient(#dc6414, #f58b40);
+  background-image: -ms-linear-gradient(#dc6414, #f58b40);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #dc6414), color-stop(100%, #f58b40));
+  background-image: -webkit-linear-gradient(#dc6414, #f58b40);
+  background-image: -o-linear-gradient(#dc6414, #f58b40);
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#dc6414', endColorstr='#f58b40', GradientType=0)";
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#dc6414', endColorstr='#f58b40', GradientType=0);
+  background-image: linear-gradient(#dc6414, #f58b40);
+  width: 0px;
+  margin-left: 840px;
+  -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
 }
 #history li:first-child {
   border-top: 2px solid rgba(0, 0, 0, 0.1);
