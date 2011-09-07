@@ -102,12 +102,12 @@ $(function() {
       function() 
       {
         $(this).children('div').children('.hoverNavigation').stop();
-        $(this).children('div').children('.hoverNavigation').animate({width: '200px'},1000);
+        $(this).children('div').children('.hoverNavigation').animate({width: '48px'},100);
       },
       function() 
       {
         $(this).children('div').children('.hoverNavigation').stop();
-        $(this).children('div').children('.hoverNavigation').animate({width: '0px'},1000);
+        $(this).children('div').children('.hoverNavigation').animate({width: '0px'},100);
       }
       );
 
