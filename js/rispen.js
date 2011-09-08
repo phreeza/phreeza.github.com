@@ -3,7 +3,7 @@ $(function() {
     time_in_seconds: 5, // hack for editing the post-pomodoro screen. TODO revert to 25*60,
   tick:function(timer, time_in_seconds, formatted_time)
   {
-    $("#progress").progressbar("option","value",$("#timer").data('countdown.duration')/15000.);
+    $("#progress").progressbar("option","value",time_in_seconds*100/5);
   }
   ,
   autostart: false,
