@@ -428,7 +428,7 @@ header ul dl dd {
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
   font-weight: bold;
 }
-#history li.running .delete {
+#history li.running .delete, #history li.running .expand {
   display: none;
 }
 #history li.break {
