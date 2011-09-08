@@ -77,7 +77,7 @@ class PomodoroDeleter(webapp.RequestHandler):
         self.redirect('/')
 
 class PomodoroCreator(webapp.RequestHandler):
-    def post(self):
+    def get(self):
         pom = Pomodoro()
         self.response.headers['Access-Control-Allow-Origin'] = '*'
         try:
