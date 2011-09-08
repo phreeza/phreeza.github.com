@@ -92,6 +92,7 @@ class PomodoroCreator(webapp.RequestHandler):
             pom.author = author
 
         pom.content = self.request.get('content')
+        pom.status = "new"
         pom.author.name = self.request.get('author')
         if self.request.get('item_type') in ["pomodoro","break"]:
             pom.item_type = self.request.get('item_type')
@@ -112,10 +113,23 @@ class AuthorRename(webapp.RequestHandler):
 class StatsGetter(webapp.RequestHandler):
     pass
 
+class StatusChanger(webapp.RequestHandler):
+    def get(self):
+        self.response.headers['Access-Control-Allow-Origin'] = '*'
+        pomodoros = db.GqlQuery("SELECT * "
+                                "FROM Pomodoro WHERE __key__ = KEY('Pomodoro', %i)"
+                                % int(self.request.get('id')))
+        pomodoros[0].status = "complete"
+        pomodoros[0].feedback_text = self.request.get('feedback_text')
+        pomodoros[0].feedback_rating = self.request.get('feedback_rating')
+        pomodoros[0].put()
+        self.redirect('/')
+
 
 application = webapp.WSGIApplication([
   ('/', MainPage),
   ('/save', PomodoroCreator),
+  ('/complete', StatusChanger),
   ('/json', JSONDump),
   ('/delete', PomodoroDeleter)
 ], debug=True)
