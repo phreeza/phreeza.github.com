@@ -12,6 +12,8 @@ $(function() {
       $("#description").removeClass('active');
       $("#progress").fadeOut('fast');
       $("#startstop").css('display', 'none');
+      var taskid = $("#history").children().size()-1;
+      $("#task"+taskid).removeClass("running");
     }
   });
 
