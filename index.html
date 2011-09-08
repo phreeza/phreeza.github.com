@@ -67,7 +67,39 @@
           <h2>Eternal happiness and lots of ponies</h2>
           <p>Rispen is a fun and easy to use Pomodoro-Timer that goes beyond everything other Pomodoro-Applications do. Our advanced analytics features allow you for optimizing your workflows, find and eliminate disturbances and thus bring you a better and more fulfilling work-experience.</p>
         </div>
-        <div id="twitter">dsf</div>
+        <div id="twitter">
+          <script src="http://widgets.twimg.com/j/2/widget.js"></script>
+<script>
+new TWTR.Widget({
+  version: 2,
+  type: 'profile',
+  rpp: 5,
+  interval: 30000,
+  width: 280,
+  height: 400,
+  theme: {
+    shell: {
+      background: '#333333',
+      color: '#ffffff'
+    },
+    tweets: {
+      background: '#000000',
+      color: '#ffffff',
+      links: '#ff851a'
+    }
+  },
+  features: {
+    scrollbar: false,
+    loop: false,
+    live: false,
+    hashtags: false,
+    timestamp: false,
+    avatars: false,
+    behavior: 'all'
+  }
+}).render().setUser('rispenapp').start();
+</script>
+        </div>
         <div id="social">
           <h2>Buttons for you</h2>
           <g:plusone size="medium"></g:plusone>
