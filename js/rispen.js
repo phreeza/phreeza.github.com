@@ -19,7 +19,6 @@ $(function() {
     if ($("#timer").data('countdown.state') == 'running')
   {
     $("#timer").resetTimer();
-    $("#description").removeAttr("disabled")
     $("#progress").fadeOut('fast');
   }
     else if ($("#description").val() == '')
@@ -40,6 +39,19 @@ $(function() {
     $("#progress").fadeIn('fast');
   }
   });
+  
+// Display of Stop Task 
+  
+  $("#startstop").hover(function() {
+    if ($("#timer").data('countdown.state') == 'running')
+  {
+    $("#startstop div").animate({
+      marginTop: '-50px'
+    }, 100);
+  }
+  });
+  
+
 
   $('#newtask').click(function() {
     $('#startstop').delay(200).animate({
