@@ -133,7 +133,7 @@ $(function() {
     var newli = document.createElement('li');
     var taskid = $("#history").children().size();
     newli.id="task" + taskid;
-    newli.innerHTML = "<div><a href=\"#\" class=\"expand\">Expand</a><button class=\"delete small\">Delete</button>"+task+"<abbr class=\"timeago\" title=\""+date+"Z\">"+date+"Z</abbr></div>";
+    newli.innerHTML = "<div><a href=\"#\" class=\"expand\"><span>Expand</span></a>"+task+"<span class=\"delete\">×</span><abbr class=\"timeago\" title=\""+date+"Z\">"+date+"Z</abbr></div>";
     if (isnew) newli.style.display="none";
     $("#history").prepend(newli);
     $("abbr.timeago").timeago();

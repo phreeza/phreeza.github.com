@@ -341,16 +341,6 @@ header ul dl dd {
   width: 940px;
   margin: auto;
 }
-#history li div .delete {
-  float: left;
-  line-height: 48px;
-  vertical-align: center;
-  width: 17px;
-  height: 23px;
-  background: url(../images/delete.png);
-  border: 0;
-  line-height: 9999px;
-}
 #history li div .timeago {
   float: right;
   line-height: 48px;
@@ -385,6 +375,31 @@ header ul dl dd {
   height: 10px;
   margin-top: 20px;
   margin-right: 5px;
+}
+#history li div .delete {
+  float: right;
+  margin-left: 10px;
+  font-weight: bold;
+  font-size: 24pt;
+}
+#history li div .summary {
+  margin: 0;
+  padding: 0;
+  font-size: 11pt;
+  line-height: 14pt;
+}
+#history li div .summary:before {
+  content: 'Summary:';
+  margin-right: 10px;
+}
+#history li div .rating {
+  font-size: 11pt;
+  line-height: 14pt;
+  padding-bottom: 20px;
+}
+#history li div .rating:before {
+  content: 'Your Rating';
+  margin-right: 10px;
 }
 #history li:first-child {
   border-top: 2px solid rgba(0, 0, 0, 0.1);
