@@ -1,11 +1,14 @@
 ul,
 ol,
 li,
-iframe {
+iframe,
+p,
+a {
   margin: 0;
   padding: 0;
   list-style: none;
   border: 0;
+  text-decoration: none;
 }
 body {
   margin: 0;
@@ -202,6 +205,7 @@ header ul #stats:before {
 header ul #url {
   width: 310px;
   text-align: right;
+  letter-spacing: 1pt;
 }
 header ul dl {
   display: inline;
@@ -226,7 +230,7 @@ header ul dl dd {
 }
 #interaction {
   padding: 20px 0;
-  background: #fac882 url(../images/noise-grey.png);
+  background: #b4b4b4 url(../images/noise-grey.png);
   border-top: 1px solid;
   border-bottom: 1px solid;
   border-color: rgba(255, 255, 255, 0.5);
@@ -251,14 +255,21 @@ header ul dl dd {
 }
 #startstop {
   position: absolute;
-  width: 100px;
+  overflow: hidden;
+  height: 13px;
+  width: 76px;
   z-index: 10;
   margin: 9px 0 0 833px;
   /* background-image: url(http://clients.chrisgrabinski.com/rispen/images/startstop.jpg); */
 
 }
-#startstop #timer {
-  display: none;
+#startstop div span {
+  display: block;
+  width: 75px;
+  height: 25px;
+  line-height: 13px;
+  text-align: center;
+  font-size: 10pt;
 }
 #final {
   width: 940px;
@@ -418,7 +429,7 @@ header ul dl dd {
   border-bottom: 1px solid;
   border-color: rgba(0, 0, 0, 0.2);
   background: #646464;
-  color: #c8c8c8;
+  color: #ffffff;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
 #bottomNavigation {
@@ -452,7 +463,7 @@ header ul dl dd {
   -moz-text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
   letter-spacing: -0.6pt;
-  margin: 0;
+  margin: 0 0 10px 0;
   padding: 0;
 }
 #about .aboutContainer #information {

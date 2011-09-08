@@ -71,11 +71,12 @@
 
 // CSS Reset
 
-ul, ol, li, iframe {
+ul, ol, li, iframe, p, a {
   margin: 0;
   padding: 0;
   list-style: none;
   border: 0;
+  text-decoration: none;
 }
 
 // General Settings
@@ -218,6 +219,7 @@ header {
     #url {
       width: 310px;
       text-align: right;
+      letter-spacing: 1pt;
     }
     dl {
       display: inline;
@@ -249,7 +251,7 @@ header {
 
 #interaction {
   padding: 20px 0;
-  background: rgb(250,200,130) url(../images/noise-grey.png);
+  background: rgb(180,180,180) url(../images/noise-grey.png);
   border-top: 1px solid;
   border-bottom: 1px solid;
   border-color: rgba(255,255,255,.5);
@@ -274,12 +276,21 @@ header {
 }
 #startstop {
   position: absolute;
-  width: 100px;
+  overflow: hidden;
+  height: 13px;
+  width: 76px;
   z-index: 10;
   margin: 9px 0 0 833px;
   /* background-image: url(http://clients.chrisgrabinski.com/rispen/images/startstop.jpg); */
-  #timer {
-    display: none;
+  div {
+    span {
+      display: block;
+      width: 75px;
+      height: 25px;
+      line-height: 13px;
+      text-align: center;
+      font-size: 10pt;
+    }
   }
 }
 #final {
@@ -395,7 +406,7 @@ header {
         border-bottom: 1px solid;
         border-color: rgba(0,0,0,.2);
         background: rgb(100,100,100);
-        color: rgb(200,200,200);
+        color: rgb(255,255,255);
         text-shadow: 1px 1px 1px rgba(0,0,0,.5);
       }
     }
@@ -433,7 +444,7 @@ header {
       font-size: 14pt;
       .text-shadow;
       letter-spacing: -0.6pt;
-      margin: 0;
+      margin: 0 0 10px 0;
       padding: 0;
     }
     #information {

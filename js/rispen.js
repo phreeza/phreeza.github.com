@@ -29,12 +29,11 @@ $(function() {
     else
   {
     $("#timer").startTimer($("#timer").data('countdown.settings'));
-    $("#timer").fadeIn('fast');
+    $("#startstop div").animate({
+      marginTop: '-25px'
+    }, 100);
     $("#description").attr({placeholder: 'enter task',});
     $("#description").attr({disabled: 'disabled',});
-    $('#startstop').delay(200).animate({
-      backgroundPosition: '33px'
-    }, 150);
     $("#description").addClass('active');
     $("#progress").progressbar({"value":0});
     addTask($("#description").val(),ISODateString(new Date()),true,0);
