@@ -388,11 +388,16 @@ header ul dl dd {
   margin-right: 5px;
 }
 #history li div .delete {
+  opacity: .5;
   float: right;
   margin-left: 10px;
   font-weight: bold;
   font-size: 24pt;
   cursor: pointer;
+}
+#history li div .delete:hover {
+  opacity: 1;
+  color: #e62323;
 }
 #history li div .expandables {
   display: none;
