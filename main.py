@@ -45,7 +45,7 @@ class JSONDump(webapp.RequestHandler):
         authors = db.GqlQuery("SELECT * "
                             "FROM Author WHERE name = '%s' "
                             % self.request.get('author'))
-        if len(authors)>0:
+        if authors.count(limit=2) > 0:
             pomodoros = authors[0].pomodoros
         else:
             pomodoros = []
@@ -55,7 +55,7 @@ class JSONDump(webapp.RequestHandler):
         for pomodoro in pomodoros:
             pomodoro_list.append({
                 'id':str(pomodoro.key().id()),
-                'user':pomodoro.author,
+                'user':pomodoro.author.name,
                 'content':cgi.escape(pomodoro.content) if pomodoro.content else "",
                 'date':pomodoro.date.isoformat(),
                 'item_type':(cgi.escape(pomodoro.item_type) if pomodoro.item_type
