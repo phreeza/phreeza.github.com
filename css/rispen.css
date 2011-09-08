@@ -392,6 +392,7 @@ header ul dl dd {
   margin-left: 10px;
   font-weight: bold;
   font-size: 24pt;
+  cursor: pointer;
 }
 #history li div .summary {
   margin: 0;
@@ -424,6 +425,9 @@ header ul dl dd {
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
   font-weight: bold;
 }
+#history li.running #summary, #history li.running #rating {
+  display: none;
+}
 #history li.break {
   border-top: 2px solid;
   border-bottom: 1px solid;
@@ -434,8 +438,8 @@ header ul dl dd {
 }
 #bottomNavigation {
   background: #ff7800;
-  border-top: 1px solid rgba(255, 255, 255, 0.4);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
 }
 #bottomNavigation ul {
   width: 940px;
@@ -450,7 +454,7 @@ header ul dl dd {
   padding: 20px 0;
   background: #323232;
   color: #ffffff;
-  border-top: 2px solid rgba(0, 0, 0, 0.5);
+  border-top: 2px solid rgba(0, 0, 0, 0.2);
 }
 #about .aboutContainer {
   width: 940px;

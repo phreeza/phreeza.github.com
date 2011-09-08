@@ -370,6 +370,7 @@ header {
           margin-left: 10px;
           font-weight: bold;
           font-size: 24pt;
+          cursor: pointer;
         }
         .summary {
           margin: 0;
@@ -400,6 +401,9 @@ header {
         color: rgb(255,255,255) !important;
         .text-shadow(1px 1px 1px rgba(0,0,0,0.5));
         font-weight: bold;
+        #summary, #rating {
+          display: none;
+        }
       }
       &.break {
         border-top: 2px solid;
@@ -417,8 +421,8 @@ header {
 
 #bottomNavigation {
   background: @baseColor;
-  border-top: 1px solid rgba(255,255,255,.4);
-  border-bottom: 1px solid rgba(255,255,255,.2);
+  border-top: 1px solid rgba(0,0,0,.2);
+  border-bottom: 1px solid rgba(255,255,255,.4);
   ul {
     .container;
     li {
@@ -436,7 +440,7 @@ header {
   padding: 20px 0;
   background: @darkGrey;
   color: @white;
-  border-top: 2px solid rgba(0,0,0,.5);
+  border-top: 2px solid rgba(0,0,0,.2);
   .aboutContainer {
     .container;
     vertical-align: top;
