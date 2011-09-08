@@ -395,6 +395,7 @@ header ul dl dd {
   cursor: pointer;
 }
 #history li div .summary {
+  display: none;
   margin: 0;
   padding: 0;
   font-size: 11pt;
@@ -405,6 +406,7 @@ header ul dl dd {
   margin-right: 10px;
 }
 #history li div .rating {
+  display: none;
   font-size: 11pt;
   line-height: 14pt;
   padding-bottom: 20px;
@@ -424,10 +426,6 @@ header ul dl dd {
   -moz-text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
   font-weight: bold;
-}
-#history li.running div .summary, #history li.running div .rating {
-  display: none;
-  padding-bottom: 0;
 }
 #history li.break {
   border-top: 2px solid;
