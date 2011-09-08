@@ -135,7 +135,19 @@ $(function() {
     {
       $("#task"+taskid).slideDown("slow");
       $("#task"+taskid).addClass("running");
-      $.post("http://rispennl.appspot.com/save",{content:task,author:$("#identifier").val(),item_type:"pomodoro"});
+      $.getJSON("http://rispennl.appspot.com/save",
+          {content:task,author:$("#identifier").val(),item_type:"pomodoro"},
+          function(data){
+          $("#task"+taskid+" div").children(".delete").click(
+              function()
+              {
+                $.post("http://rispennl.appspot.com/delete",{id:data.id});
+                $("#task"+taskid).slideUp("slow");
+              }
+              );
+          
+          }
+          );
     }
     else
     {
