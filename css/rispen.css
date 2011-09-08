@@ -434,8 +434,8 @@ header ul dl dd {
 }
 #bottomNavigation {
   background: #ff7800;
-  border-top: 1px solid rgba(255, 255, 255, 0.4);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
 }
 #bottomNavigation ul {
   width: 940px;
@@ -450,7 +450,7 @@ header ul dl dd {
   padding: 20px 0;
   background: #323232;
   color: #ffffff;
-  border-top: 2px solid rgba(0, 0, 0, 0.5);
+  border-top: 2px solid rgba(0, 0, 0, 0.2);
 }
 #about .aboutContainer {
   width: 940px;
