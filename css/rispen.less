@@ -365,12 +365,17 @@ header {
           margin-top: 20px;
           margin-right: 5px;
         }
-        .delete {
+        .delete { 
+          opacity: .5;
           float: right;
           margin-left: 10px;
           font-weight: bold;
           font-size: 24pt;
           cursor: pointer;
+          &:hover {
+            opacity: 1;
+            color: rgb(230,35,35);
+          }
         }
         .expandables {
           display: none;
