@@ -138,13 +138,20 @@ $(function() {
       $.getJSON("http://rispennl.appspot.com/save",
           {content:task,author:$("#identifier").val(),item_type:"pomodoro"},
           function(data){
-          $("#task"+taskid+" div").children(".delete").click(
+            //assign delete button
+            $("#task"+taskid+" div").children(".delete").click(
               function()
               {
                 $.post("http://rispennl.appspot.com/delete",{id:data.id});
                 $("#task"+taskid).slideUp("slow");
               }
               );
+            //assign feedback sending function
+            $("#newtask").unbind("click.sendfeedback");
+            $("#newtask").bind("click.sendfeedback", function()
+              {
+              $.getJSON("http://rispennl.appspot.com/complete",{id:data.id,feedback_text:strip_html($("#resumen").val()),feedback_rating:1});
+              });
           
           }
           );
