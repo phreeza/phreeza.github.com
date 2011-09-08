@@ -394,24 +394,25 @@ header ul dl dd {
   font-size: 24pt;
   cursor: pointer;
 }
-#history li div .summary {
+#history li div .expandables {
   display: none;
+}
+#history li div .expandables .summary {
   margin: 0;
   padding: 0;
   font-size: 11pt;
   line-height: 14pt;
 }
-#history li div .summary:before {
+#history li div .expandables .summary:before {
   content: 'Summary:';
   margin-right: 10px;
 }
-#history li div .rating {
-  display: none;
+#history li div .expandables .rating {
   font-size: 11pt;
   line-height: 14pt;
   padding-bottom: 20px;
 }
-#history li div .rating:before {
+#history li div .expandables .rating:before {
   content: 'Your Rating';
   margin-right: 10px;
 }
@@ -426,6 +427,9 @@ header ul dl dd {
   -moz-text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
   font-weight: bold;
+}
+#history li.running .delete {
+  display: none;
 }
 #history li.break {
   border-top: 2px solid;

@@ -372,25 +372,26 @@ header {
           font-size: 24pt;
           cursor: pointer;
         }
-        .summary {
+        .expandables {
           display: none;
-          margin: 0;
-          padding: 0;
-          font-size: 11pt;
-          line-height: 14pt;
-          &:before {
-            content: 'Summary:';
-            margin-right: 10px;
+          .summary {
+            margin: 0;
+            padding: 0;
+            font-size: 11pt;
+            line-height: 14pt;
+            &:before {
+              content: 'Summary:';
+              margin-right: 10px;
+            }
           }
-        }
-        .rating {
-          display: none;
-          font-size: 11pt;
-          line-height: 14pt;
-          padding-bottom: 20px;
-          &:before {
-            content: 'Your Rating';
-            margin-right: 10px;
+          .rating {
+            font-size: 11pt;
+            line-height: 14pt;
+            padding-bottom: 20px;
+            &:before {
+              content: 'Your Rating';
+              margin-right: 10px;
+            }
           }
         }
       }
@@ -403,6 +404,9 @@ header {
         color: rgb(255,255,255) !important;
         .text-shadow(1px 1px 1px rgba(0,0,0,0.5));
         font-weight: bold;
+        .delete {
+          display: none;
+        }
       }
       &.break {
         border-top: 2px solid;

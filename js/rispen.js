@@ -63,7 +63,6 @@ $(function() {
   );
   
 
-
   $('#newtask').click(function() {
     $('#startstop').delay(200).animate({
       backgroundPosition: '0px'
@@ -156,7 +155,7 @@ $(function() {
     var newli = document.createElement('li');
     var taskid = $("#history").children().size();
     newli.id="task" + taskid;
-    newli.innerHTML = "<div><a href=\"#\" class=\"expand\"><span>Expand</span></a>"+task+"<span class=\"delete\">×</span><abbr class=\"timeago\" title=\""+date+"Z\">"+date+"Z</abbr><p class=\"summary\">epic win</p><p class=\"rating\">+1</p></div>";
+    newli.innerHTML = "<div><a href=\"#\" class=\"expand\"><span>Expand</span></a>"+task+"<span class=\"delete\">×</span><abbr class=\"timeago\" title=\""+date+"Z\">"+date+"Z</abbr><div class=\"expandables\"><p class=\"summary\">epic win</p><p class=\"rating\">+1</p></div></div>";
     if (isnew) newli.style.display="none";
     $("#history").prepend(newli);
     $("abbr.timeago").timeago();
@@ -195,6 +194,9 @@ $(function() {
             }
             );
     }
+    $("#task"+taskid+" .expand").click(function() {
+    $(this).parent().children('.expandables').slideToggle('fast');
+});
   }
 
   function ISODateString(d){
