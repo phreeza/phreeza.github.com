@@ -418,12 +418,12 @@ header ul dl dd {
   background: #323232;
   color: #ffffff;
 }
-#about div {
+#about .aboutContainer {
   width: 940px;
   margin: auto;
   vertical-align: top;
 }
-#about div h2 {
+#about .aboutContainer h2 {
   font-size: 14pt;
   -webkit-text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
   -moz-text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
@@ -432,16 +432,18 @@ header ul dl dd {
   margin: 0;
   padding: 0;
 }
-#about div #information {
+#about .aboutContainer #information {
   float: left;
   margin: 0;
   width: 580px;
+  font-size: 11pt;
+  line-height: 16pt;
 }
-#about div #twitter {
+#about .aboutContainer #twitter {
   width: 280px;
   float: right;
 }
-#about div #social {
+#about .aboutContainer #social {
   clear: both;
 }
 footer ul {
