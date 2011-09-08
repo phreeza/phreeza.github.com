@@ -403,7 +403,32 @@ header {
 // ---
 
 #about {
+  padding: 20px 0;
   background: @darkGrey;
+  color: @white;
+  div {
+    .container;
+    vertical-align: top;
+    h2 {
+      font-size: 14pt;
+      .text-shadow;
+      letter-spacing: -0.6pt;
+      margin: 0;
+      padding: 0;
+    }
+    #information {
+      float: left;
+      margin: 0;
+      width: 580px;
+    }
+    #twitter {
+      width: 280px;
+      float: right;
+    }
+    #social {
+      clear: both;
+    }
+  }
 
   
 }
@@ -438,13 +463,6 @@ footer {
   width: 120px;
   font-weight: bold;
   content: 'Powered by';
-}
-#social:before {
-  display: block;
-  float: left;
-  width: 120px;
-  font-weight: bold;
-  content: 'Social';
 }
 #team:before {
   display: block;

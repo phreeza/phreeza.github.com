@@ -414,7 +414,35 @@ header ul dl dd {
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
 #about {
+  padding: 20px 0;
   background: #323232;
+  color: #ffffff;
+}
+#about div {
+  width: 940px;
+  margin: auto;
+  vertical-align: top;
+}
+#about div h2 {
+  font-size: 14pt;
+  -webkit-text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  -moz-text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  letter-spacing: -0.6pt;
+  margin: 0;
+  padding: 0;
+}
+#about div #information {
+  float: left;
+  margin: 0;
+  width: 580px;
+}
+#about div #twitter {
+  width: 280px;
+  float: right;
+}
+#about div #social {
+  clear: both;
 }
 footer ul {
   width: 940px;
@@ -441,13 +469,6 @@ footer ul:before {
   width: 120px;
   font-weight: bold;
   content: 'Powered by';
-}
-#social:before {
-  display: block;
-  float: left;
-  width: 120px;
-  font-weight: bold;
-  content: 'Social';
 }
 #team:before {
   display: block;
