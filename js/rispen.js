@@ -91,10 +91,10 @@ $(function() {
         }
       }
       );
-  $('#resumen').keyup(function(){
-    var text = $('#resumen').val();
+  $('#resumen,#description').keyup(function(){
+    var text = $(this).val();
     var textlength = text.length;
-    if(textlength > 140){$('#resumen').val(text.substr(0,140));}
+    if(textlength > 140){$(this).val(text.substr(0,140));}
   });
 
 
