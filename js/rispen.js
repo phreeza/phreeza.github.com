@@ -150,13 +150,15 @@ $(function() {
 
   $( "#radio" ).buttonset();
 
-  function addTask(task,date,isnew,id)
+  function addTask(task,date,isnew,id,fb_text,fb_rating)
   {
+    fb_rating = typeof(fb_rating) != 'undefined' ? fb_rating : "";
+    fb_text = typeof(fb_text) != 'undefined' ? fb_text : "";
     task = strip_html(task);
     var newli = document.createElement('li');
     var taskid = $("#history").children().size();
     newli.id="task" + taskid;
-    newli.innerHTML = "<div><a href=\"#\" class=\"expand\"><span>Expand</span></a>"+task+"<span class=\"delete\">×</span><abbr class=\"timeago\" title=\""+date+"Z\">"+date+"Z</abbr><p class=\"summary\">epic win</p><p class=\"rating\">+1</p></div>";
+    newli.innerHTML = "<div><a href=\"#\" class=\"expand\"><span>Expand</span></a>"+task+"<span class=\"delete\">×</span><abbr class=\"timeago\" title=\""+date+"Z\">"+date+"Z</abbr><p class=\"summary\">"+fb_text+"</p><p class=\"rating\">"+fb_rating+"</p></div>";
     if (isnew) newli.style.display="none";
     $("#history").prepend(newli);
     $("abbr.timeago").timeago();
@@ -214,7 +216,9 @@ $(function() {
                 task_list.reverse();
                 for (p in task_list)
                 {
-                  addTask(task_list[p].content,task_list[p].date,false,task_list[p].id);
+                  addTask(task_list[p].content,task_list[p].date,false,task_list[p].id,
+                    task_list[p].feedback_text,
+                    task_list[p].feedback_rating);
                 }
               });
   }
