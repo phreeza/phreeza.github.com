@@ -164,9 +164,9 @@ $(function() {
     if (isnew) 
     {
       $("#task"+taskid).slideDown("slow");
-      $("#task"+taskid).addClass("running");
+      //$("#task"+taskid).addClass("running");
       $.getJSON("http://rispennl.appspot.com/save",
-          {author:$("#identifier").val(),item_type:type},
+          {content:task,author:$("#identifier").val(),item_type:type},
           function(data){
             //assign delete button
             $("#task"+taskid+" div").children(".delete").click(
