@@ -236,9 +236,6 @@ header ul dl dd {
   margin: auto;
   min-height: 50px;
 }
-#description {
-  margin-bottom: 20px;
-}
 #description.active {
   z-index: 9;
   position: absolute;
@@ -259,6 +256,9 @@ header ul dl dd {
   margin: 9px 0 0 833px;
   /* background-image: url(http://clients.chrisgrabinski.com/rispen/images/startstop.jpg); */
 
+}
+#startstop #timer {
+  display: none;
 }
 #final {
   width: 940px;
@@ -422,8 +422,9 @@ header ul dl dd {
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
 #bottomNavigation {
-  background: #999;
+  background: #ff7800;
   border-top: 1px solid rgba(255, 255, 255, 0.4);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 #bottomNavigation ul {
   width: 940px;
@@ -434,20 +435,11 @@ header ul dl dd {
   display: inline-block;
   font-size: 11pt;
 }
-#intro {
-  width: 940px;
-  margin: auto;
-  -moz-border-radius: 4px;
-  -webkit-border-radius: 4px;
-  border-radius: 4px;
-  height: 300px;
-  margin-top: 20px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-}
 #about {
   padding: 20px 0;
   background: #323232;
   color: #ffffff;
+  border-top: 2px solid rgba(0, 0, 0, 0.5);
 }
 #about .aboutContainer {
   width: 940px;

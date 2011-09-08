@@ -29,6 +29,7 @@ $(function() {
     else
   {
     $("#timer").startTimer($("#timer").data('countdown.settings'));
+    $("#timer").fadeIn('fast');
     $("#description").attr({placeholder: 'enter task',});
     $("#description").attr({disabled: 'disabled',});
     $('#startstop').delay(200).animate({

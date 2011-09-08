@@ -260,7 +260,6 @@ header {
 }
 
 #description {
-  margin-bottom: 20px;
   &.active {
     z-index: 9;
     position: absolute;
@@ -279,6 +278,9 @@ header {
   z-index: 10;
   margin: 9px 0 0 833px;
   /* background-image: url(http://clients.chrisgrabinski.com/rispen/images/startstop.jpg); */
+  #timer {
+    display: none;
+  }
 }
 #final {
   .container;
@@ -403,8 +405,9 @@ header {
 // ---
 
 #bottomNavigation {
-  background: #999;
+  background: @baseColor;
   border-top: 1px solid rgba(255,255,255,.4);
+  border-bottom: 1px solid rgba(255,255,255,.2);
   ul {
     .container;
     li {
@@ -415,17 +418,6 @@ header {
   }
 }
 
-// Section: Introduction
-// ---
-
-#intro {
-  .container;
-  .border-radius;
-  height: 300px;
-  margin-top: 20px;
-  border: 1px solid rgba(0,0,0,.1);
-}
-
 // Section: About
 // ---
 
@@ -433,6 +425,7 @@ header {
   padding: 20px 0;
   background: @darkGrey;
   color: @white;
+  border-top: 2px solid rgba(0,0,0,.5);
   .aboutContainer {
     .container;
     vertical-align: top;
