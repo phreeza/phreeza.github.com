@@ -187,13 +187,13 @@ $(function() {
   function repopTasks(user){
       $.getJSON("http://rispennl.appspot.com/json",
               {author:user},
-              function(data){
-                data.reverse();
-                for (p in data)
-                    {
-                      addTask(data[p].content,data[p].date,false,data[p].id);
-                    }
-              })
+              function(task_list){
+                task_list.reverse();
+                for (p in task_list)
+                {
+                  addTask(task_list[p].content,task_list[p].date,false,task_list[p].id);
+                }
+              });
   }
 
   function strip_html(html)
@@ -204,9 +204,10 @@ $(function() {
   }
  
   if (window.location.protocol == "http:"){
-    $("#identifier").val(window.location.pathname.split('/')[1]);}
-  repopTasks($("#identifier").val());
-  var oldname = $("#identifier").val()
+    $("#identifier").val(window.location.pathname.split('/')[1]);
+    var oldname = $("#identifier").val();
+    repopTasks(oldname);
+  }
 });
 
 $(document).ready(function() {
