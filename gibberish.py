@@ -28,7 +28,7 @@ endings = set(['ist','er','on','ette','ian','or'])
 
 # each syllable is consonant-vowel-consonant "pronounceable"
 
-# you could trow in number combinations, maybe capitalized versions... 
+# you could trow in number combinations, maybe capitalized versions...
 
 def gibberish():
     return ''.join([

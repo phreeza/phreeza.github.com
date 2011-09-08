@@ -36,49 +36,49 @@ class Pomodoro(db.Model):
 
 
 class MainPage(webapp.RequestHandler):
-  def get(self):
-      self.redirect("/"+gibberish.gibberish())
+    def get(self):
+        self.redirect("/"+gibberish.gibberish())
 
 class JSONDump(webapp.RequestHandler):
-  def get(self):
-    self.response.headers['Access-Control-Allow-Origin'] = '*'
-    pomodoros = db.GqlQuery("SELECT * "
-                            "FROM Pomodoro WHERE author = '%s' "
-                            "ORDER BY date DESC LIMIT 10"
-                            % self.request.get('author'))
-    pomodoro_list = []
-    for pomodoro in pomodoros:
-      pomodoro_list.append({
-          'id':str(pomodoro.key().id()),
-          'user':pomodoro.author,
-          'content':cgi.escape(pomodoro.content) if pomodoro.content else "",
-          'date':pomodoro.date.isoformat(),
-          'item_type':(cgi.escape(pomodoro.item_type) if pomodoro.item_type
-              else "")
-          })
-    self.response.out.write(json.dumps(pomodoro_list))
+    def get(self):
+        self.response.headers['Access-Control-Allow-Origin'] = '*'
+        pomodoros = db.GqlQuery("SELECT * "
+                                "FROM Pomodoro WHERE author = '%s' "
+                                "ORDER BY date DESC LIMIT 10"
+                                % self.request.get('author'))
+        pomodoro_list = []
+        for pomodoro in pomodoros:
+            pomodoro_list.append({
+                'id':str(pomodoro.key().id()),
+                'user':pomodoro.author,
+                'content':cgi.escape(pomodoro.content) if pomodoro.content else "",
+                'date':pomodoro.date.isoformat(),
+                'item_type':(cgi.escape(pomodoro.item_type) if pomodoro.item_type
+                    else "")
+                })
+        self.response.out.write(json.dumps(pomodoro_list))
 
 class PomodoroDeleter(webapp.RequestHandler):
-  def post(self):
-    self.response.headers['Access-Control-Allow-Origin'] = '*'
-    pomodoros = db.GqlQuery("SELECT * "
-                            "FROM Pomodoro WHERE __key__ = KEY('Pomodoro', %i)"
-                            % int(self.request.get('id')))
-    pomodoros[0].delete()
-    self.redirect('/')
+    def post(self):
+        self.response.headers['Access-Control-Allow-Origin'] = '*'
+        pomodoros = db.GqlQuery("SELECT * "
+                                "FROM Pomodoro WHERE __key__ = KEY('Pomodoro', %i)"
+                                % int(self.request.get('id')))
+        pomodoros[0].delete()
+        self.redirect('/')
 
 class PomodoroCreator(webapp.RequestHandler):
-  def post(self):
-    pom = Pomodoro()
-    self.response.headers['Access-Control-Allow-Origin'] = '*'
+    def post(self):
+        pom = Pomodoro()
+        self.response.headers['Access-Control-Allow-Origin'] = '*'
 
-    pom.content = self.request.get('content')
-    pom.author = Author()
-    pom.author.name = self.request.get('author') #todo check if author already exists
-    if self.request.get('item_type') in ["pomodoro","break"]:
-        pom.item_type = self.request.get('item_type')
-    pom.put()
-    self.redirect('/')
+        pom.content = self.request.get('content')
+        pom.author = Author()
+        pom.author.name = self.request.get('author') #todo check if author already exists
+        if self.request.get('item_type') in ["pomodoro","break"]:
+            pom.item_type = self.request.get('item_type')
+        pom.put()
+        self.redirect('/')
 
 
 application = webapp.WSGIApplication([
@@ -90,8 +90,8 @@ application = webapp.WSGIApplication([
 
 
 def main():
-  wsgiref.handlers.CGIHandler().run(application)
+    wsgiref.handlers.CGIHandler().run(application)
 
 
 if __name__ == '__main__':
-  main()
+    main()
