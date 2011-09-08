@@ -33,7 +33,7 @@ $(function() {
     $("#startstop div").animate({
       marginTop: '-25px'
     }, 100);
-    $("#description").attr({placeholder: 'enter task',});
+    $("#description").attr({placeholder: 'What do you want to do? (^o^)/',});
     $("#description").attr({disabled: 'disabled',});
     $("#description").addClass('active');
     $("#progress").progressbar({"value":100});
