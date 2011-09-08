@@ -62,7 +62,7 @@ class JSONDump(webapp.RequestHandler):
                 'user':pomodoro.author.name,
                 'content':cgi.escape(pomodoro.content) if pomodoro.content else "",
                 'date':pomodoro.date.isoformat(),
-                'feedback_rating':(cgi.escape(pomodoro.feedback_rating)
+                'feedback_rating':(pomodoro.feedback_rating
                     if pomodoro.feedback_rating else -1),
                 'feedback_text':(cgi.escape(pomodoro.feedback_text)
                     if pomodoro.feedback_text else ""),
