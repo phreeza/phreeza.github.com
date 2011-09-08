@@ -96,7 +96,15 @@ class PomodoroCreator(webapp.RequestHandler):
         if self.request.get('item_type') in ["pomodoro","break"]:
             pom.item_type = self.request.get('item_type')
         pom.put()
-        self.redirect('/')
+        pomodoro_dict = {
+            'id':str(pom.key().id()),
+            'user':pom.author.name,
+            'content':cgi.escape(pom.content) if pom.content else "",
+            'date':pom.date.isoformat(),
+            'item_type':(cgi.escape(pom.item_type) if pom.item_type
+                else "")
+            }
+        self.response.out.write(json.dumps(pomodoro_dict))
 
 class AuthorRename(webapp.RequestHandler):
     pass
