@@ -79,8 +79,7 @@ $(function() {
       function(e) {
         var code = (e.keyCode ? e.keyCode : e.which);
         if(code == 13) {
-          //plain reload for now. TODO repopulate dynamically
-          window.location.href = "http://rispennl.appspot.com/"+$('#identifier').val();
+          $("#rename").click();
         }
       }
       );
@@ -115,7 +114,7 @@ $(function() {
   $("#rename").click(function(){
     $.getJSON("http://rispennl.appspot.com/rename",
       {newname:$("#identifier").val(),oldname:oldname});
-    oldname = $("#identifier").val()
+    window.location.href = "http://rispennl.appspot.com/"+$('#identifier').val();
   })
 
   // Progress-Bar
