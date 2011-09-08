@@ -382,6 +382,25 @@ header ul dl dd {
   font-weight: bold;
   font-size: 24pt;
 }
+#history li div .summary {
+  margin: 0;
+  padding: 0;
+  font-size: 11pt;
+  line-height: 14pt;
+}
+#history li div .summary:before {
+  content: 'Summary:';
+  margin-right: 10px;
+}
+#history li div .rating {
+  font-size: 11pt;
+  line-height: 14pt;
+  padding-bottom: 20px;
+}
+#history li div .rating:before {
+  content: 'Your Rating';
+  margin-right: 10px;
+}
 #history li:first-child {
   border-top: 2px solid rgba(0, 0, 0, 0.1);
 }

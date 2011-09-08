@@ -358,6 +358,25 @@ header {
           font-weight: bold;
           font-size: 24pt;
         }
+        .summary {
+          margin: 0;
+          padding: 0;
+          font-size: 11pt;
+          line-height: 14pt;
+          &:before {
+            content: 'Summary:';
+            margin-right: 10px;
+          }
+        }
+        .rating {
+          font-size: 11pt;
+          line-height: 14pt;
+          padding-bottom: 20px;
+          &:before {
+            content: 'Your Rating';
+            margin-right: 10px;
+          }
+        }
       }
       &:first-child {
         border-top: 2px solid rgba(0,0,0,.1);
