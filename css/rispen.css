@@ -140,6 +140,9 @@ input[type=text]#identifier, textarea#identifier {
   line-height: 10pt;
   padding: 0 5px;
   margin: 0 5px;
+  -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.15);
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.15);
 }
 textarea {
   -webkit-appearance: none;
@@ -152,67 +155,65 @@ textarea {
   text-rendering: optimizeLegibility;
 }
 header {
-  font-family: 'Droid Sans Mono', sans-serif;
-  height: 60px;
-  padding: 50px 0 20px 0;
-  background-color: #191919;
-  background-repeat: repeat-x;
-  background-image: -khtml-gradient(linear, left top, left bottom, from(#323232), to(#191919));
-  background-image: -moz-linear-gradient(#323232, #191919);
-  background-image: -ms-linear-gradient(#323232, #191919);
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #323232), color-stop(100%, #191919));
-  background-image: -webkit-linear-gradient(#323232, #191919);
-  background-image: -o-linear-gradient(#323232, #191919);
-  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#323232', endColorstr='#191919', GradientType=0)";
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#323232', endColorstr='#191919', GradientType=0);
-  background-image: linear-gradient(#323232, #191919);
+  background: #ff7800;
   border-top: 10px solid #323232;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  background: #ff7800;
-  color: #dcdcdc;
-  font-size: 10pt;
+  font-size: 11pt;
 }
-header #home {
-  overflow: hidden;
-  width: 136px;
-  height: 55px;
-  margin-right: 20px;
-  background: url(../images/h1-logo.png) no-repeat;
-}
-header #home a {
-  display: block;
-  line-height: 99999px;
-}
-header #stats {
+header ul {
+  width: 940px;
+  margin: auto;
+  padding: 40px 0 20px 0;
   color: #ffffff;
   -webkit-text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
   -moz-text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
-header #stats:before {
-  content: url(../images/analytics.png);
-}
-header #stats #stats-pomodoros {
-  background: url(../images/stats-pomodoros.png) left no-repeat;
-  padding-left: 25px;
-  margin: 0 5px;
-}
-header #stats #stats-breaks {
-  background: url(../images/stats-breaks.png) left no-repeat;
-  padding-left: 25px;
-  margin: 0 5px;
-}
-header ul {
-  width: 940px;
-  margin: auto;
-}
 header ul li {
   display: inline-block;
-  height: 40px;
-  line-height: 40px;
+  height: 55px;
+  line-height: 55px;
   vertical-align: middle;
 }
-#settings {
+header ul #home {
+  width: 136px;
+  margin-right: 44px;
+  background: url(../images/h1-logo.png);
+  margin: 0 40px 0 0;
+}
+header ul #home a {
+  display: block;
+  line-height: 999999pt;
+}
+header ul #stats {
+  width: 400px;
+}
+header ul #stats:before {
+  content: url(../images/analytics.png);
+}
+header ul #url {
+  width: 310px;
+  text-align: right;
+}
+header ul dl {
+  display: inline;
+  border: 0;
+  padding: 0;
+}
+header ul dl dt, header ul dl dd {
+  display: inline-block;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+header ul dl dt {
+  font-weight: bold;
+  margin-right: 10px;
+}
+header ul dl dd {
+  margin-right: 10px;
+}
+#url {
   float: right;
 }
 #interaction {
