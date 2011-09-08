@@ -92,11 +92,17 @@ class PomodoroCreator(webapp.RequestHandler):
             pom.author = author
 
         pom.content = self.request.get('content')
-        pom.author.name = self.request.get('author') #todo check if author already exists
+        pom.author.name = self.request.get('author')
         if self.request.get('item_type') in ["pomodoro","break"]:
             pom.item_type = self.request.get('item_type')
         pom.put()
         self.redirect('/')
+
+class AuthorRename(webapp.RequestHandler):
+    pass
+
+class StatsGetter(webapp.RequestHandler):
+    pass
 
 
 application = webapp.WSGIApplication([
