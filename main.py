@@ -25,11 +25,14 @@ from google.appengine.ext import webapp
 
 from django.utils import simplejson as json
 
+class Author(db.Model):
+    name = db.StringProperty()
+
 class Pomodoro(db.Model):
-  author = db.StringProperty(multiline=False)
-  content = db.StringProperty(multiline=False)
-  item_type = db.StringProperty(multiline=False)
-  date = db.DateTimeProperty(auto_now_add=True)
+    author = db.ReferenceProperty(Author)
+    content = db.StringProperty(multiline=False)
+    item_type = db.StringProperty(multiline=False)
+    date = db.DateTimeProperty(auto_now_add=True)
 
 
 class MainPage(webapp.RequestHandler):
@@ -64,13 +67,14 @@ class PomodoroDeleter(webapp.RequestHandler):
     pomodoros[0].delete()
     self.redirect('/')
 
-class Rispen(webapp.RequestHandler):
+class PomodoroCreator(webapp.RequestHandler):
   def post(self):
     pom = Pomodoro()
     self.response.headers['Access-Control-Allow-Origin'] = '*'
 
     pom.content = self.request.get('content')
-    pom.author = self.request.get('author')
+    pom.author = Author()
+    pom.author.name = self.request.get('author') #todo check if author already exists
     if self.request.get('item_type') in ["pomodoro","break"]:
         pom.item_type = self.request.get('item_type')
     pom.put()
