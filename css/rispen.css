@@ -425,8 +425,9 @@ header ul dl dd {
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
   font-weight: bold;
 }
-#history li.running div #summary, #history li.running div #rating {
+#history li.running div .summary, #history li.running div .rating {
   display: none;
+  padding-bottom: 0;
 }
 #history li.break {
   border-top: 2px solid;
