@@ -62,7 +62,8 @@ class JSONDump(webapp.RequestHandler):
                 'user':pomodoro.author.name,
                 'content':cgi.escape(pomodoro.content) if pomodoro.content else "",
                 'date':pomodoro.date.isoformat(),
-                'feedback_rating':(cgi.escape(pomodoro.feedback_rating)),
+                'feedback_rating':(cgi.escape(pomodoro.feedback_rating)
+                    if pomodoro.feedback_rating else -1),
                 'feedback_text':(cgi.escape(pomodoro.feedback_text)
                     if pomodoro.feedback_text else ""),
                 'item_type':(cgi.escape(pomodoro.item_type) if pomodoro.item_type
@@ -122,10 +123,11 @@ class StatusChanger(webapp.RequestHandler):
         pomodoros = db.GqlQuery("SELECT * "
                                 "FROM Pomodoro WHERE __key__ = KEY('Pomodoro', %i)"
                                 % int(self.request.get('id')))
-        pomodoros[0].status = "complete"
-        pomodoros[0].feedback_text = self.request.get('feedback_text')
-        pomodoros[0].feedback_rating = self.request.get('feedback_rating')
-        pomodoros[0].put()
+        pom = pomodoros[0]
+        pom.status = "complete"
+        pom.feedback_text = self.request.get('feedback_text')
+        pom.feedback_rating = int(self.request.get('feedback_rating'))
+        pom.put()
         self.redirect('/')
 
 

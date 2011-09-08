@@ -28,6 +28,9 @@ handlers:
 - url: /delete
   script: main.py
 
+- url: /complete
+  script: main.py
+
 - url: .*
   static_files: index.html
   upload: index\.html
