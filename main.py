@@ -31,6 +31,9 @@ class Author(db.Model):
 class Pomodoro(db.Model):
     author = db.ReferenceProperty(Author,collection_name = 'pomodoros')
     content = db.StringProperty(multiline=False)
+    status = db.StringProperty(multiline=False)
+    feedback_text = db.StringProperty(multiline=False)
+    feedback_rating = db.IntegerProperty()
     item_type = db.StringProperty(multiline=False)
     date = db.DateTimeProperty(auto_now_add=True)
 
@@ -47,6 +50,7 @@ class JSONDump(webapp.RequestHandler):
                             % self.request.get('author'))
         if authors.count(limit=2) > 0:
             pomodoros = authors[0].pomodoros
+            pomodoros.order('-date')
         else:
             pomodoros = []
 
