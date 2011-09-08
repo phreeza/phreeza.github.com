@@ -29,7 +29,7 @@ class Author(db.Model):
     name = db.StringProperty()
 
 class Pomodoro(db.Model):
-    author = db.ReferenceProperty(Author)
+    author = db.ReferenceProperty(Author,collection_name = 'pomodoros')
     content = db.StringProperty(multiline=False)
     item_type = db.StringProperty(multiline=False)
     date = db.DateTimeProperty(auto_now_add=True)
@@ -42,11 +42,16 @@ class MainPage(webapp.RequestHandler):
 class JSONDump(webapp.RequestHandler):
     def get(self):
         self.response.headers['Access-Control-Allow-Origin'] = '*'
-        pomodoros = db.GqlQuery("SELECT * "
-                                "FROM Pomodoro WHERE author = '%s' "
-                                "ORDER BY date DESC LIMIT 10"
-                                % self.request.get('author'))
+        authors = db.GqlQuery("SELECT * "
+                            "FROM Author WHERE name = '%s' "
+                            % self.request.get('author'))
+        if len(authors)>0:
+            pomodoros = authors[0].pomodoros
+        else:
+            pomodoros = []
+
         pomodoro_list = []
+
         for pomodoro in pomodoros:
             pomodoro_list.append({
                 'id':str(pomodoro.key().id()),
@@ -71,9 +76,18 @@ class PomodoroCreator(webapp.RequestHandler):
     def post(self):
         pom = Pomodoro()
         self.response.headers['Access-Control-Allow-Origin'] = '*'
+        try:
+            authors = db.GqlQuery("SELECT * "
+                                "FROM Author WHERE name = '%s' "
+                                % self.request.get('author'))
+            pom.author = authors[0]
+        except IndexError:
+            author = Author()
+            author.name = self.request.get('author')
+            author.put()
+            pom.author = author
 
         pom.content = self.request.get('content')
-        pom.author = Author()
         pom.author.name = self.request.get('author') #todo check if author already exists
         if self.request.get('item_type') in ["pomodoro","break"]:
             pom.item_type = self.request.get('item_type')
@@ -83,7 +97,7 @@ class PomodoroCreator(webapp.RequestHandler):
 
 application = webapp.WSGIApplication([
   ('/', MainPage),
-  ('/save', Rispen),
+  ('/save', PomodoroCreator),
   ('/json', JSONDump),
   ('/delete', PomodoroDeleter)
 ], debug=True)
