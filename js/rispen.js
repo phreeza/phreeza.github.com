@@ -49,7 +49,16 @@ $(function() {
       marginTop: '-50px'
     }, 100);
   }
-  });
+  },function() {
+    if ($("#timer").data('countdown.state') == 'running')
+  {
+    $("#startstop div").animate({
+      marginTop: '-25px'
+    }, 100);
+  }
+  }
+  
+  );
   
 
 
