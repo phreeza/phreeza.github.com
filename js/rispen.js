@@ -82,7 +82,7 @@ $(function() {
     $("#final").slideUp('fast');
     $("#timer").resetTimer($.extend($("#timer").data('countdown.settings'),{time_in_seconds:5*60}));
     $("#timer").startTimer($("#timer").data('countdown.settings'));
-    addTask($("#description").val(),ISODateString(new Date()),true,0);
+    addBreak("shortBreak",ISODateString(new Date()),true,0);
   });
   
   $('#longbreak').click(function() {
@@ -93,7 +93,7 @@ $(function() {
     $("#final").slideUp('fast');
     $("#timer").resetTimer($.extend($("#timer").data('countdown.settings'),{time_in_seconds:25*60}));
     $("#timer").startTimer($("#timer").data('countdown.settings'));
-    addTask($("#description").val(),ISODateString(new Date()),true,0);
+    addBreak("longBreak",ISODateString(new Date()),true,0);
   });
 
   $('#identifier').keypress(
@@ -148,6 +148,49 @@ $(function() {
   // Radio Buttons
 
   $( "#radio" ).buttonset();
+
+  function addBreak(type,date,isnew,id)
+  {
+    var newli = document.createElement('li');
+    var taskid = $("#history").children().size();
+    if (type == "longBreak") var task = "Long Break"
+    if (type == "shortBreak") var task = "Short Break"
+    newli.innerHTML = "<div>"+task+"<span class=\"delete\">×</span><abbr class=\"timeago\" title=\""+date+"Z\">"+date+"Z</abbr></div>";
+    newli.id="task" + taskid;
+    newli.addClass(type);
+    if (isnew) newli.style.display="none";
+    $("#history").prepend(newli);
+    $("abbr.timeago").timeago();
+    if (isnew) 
+    {
+      $("#task"+taskid).slideDown("slow");
+      $("#task"+taskid).addClass("running");
+      $.getJSON("http://rispennl.appspot.com/save",
+          {author:$("#identifier").val(),item_type:type},
+          function(data){
+            //assign delete button
+            $("#task"+taskid+" div").children(".delete").click(
+              function()
+              {
+                $.post("http://rispennl.appspot.com/delete",{id:data.id});
+                $("#task"+taskid).slideUp("slow");
+              }
+              );
+          }
+          );
+    }
+    else
+    {
+      $("#task"+taskid+" div").children(".delete").click(
+          function()
+          {
+            $.post("http://rispennl.appspot.com/delete",{id:id});
+            $("#task"+taskid).slideUp("slow");
+          }
+          );
+    }
+
+  }
 
   function addTask(task,date,isnew,id,fb_text,fb_rating)
   {

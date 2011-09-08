@@ -98,7 +98,7 @@ class PomodoroCreator(webapp.RequestHandler):
         pom.content = self.request.get('content')
         pom.status = "new"
         pom.author.name = self.request.get('author')
-        if self.request.get('item_type') in ["pomodoro","break"]:
+        if self.request.get('item_type') in ["pomodoro","longBreak","shortBreak"]:
             pom.item_type = self.request.get('item_type')
         pom.put()
         pomodoro_dict = {
