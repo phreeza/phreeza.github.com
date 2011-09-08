@@ -392,6 +392,7 @@ header ul dl dd {
   margin-left: 10px;
   font-weight: bold;
   font-size: 24pt;
+  cursor: pointer;
 }
 #history li div .summary {
   margin: 0;
