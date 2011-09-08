@@ -71,10 +71,11 @@
 
 // CSS Reset
 
-ul, ol, li {
+ul, ol, li, iframe {
   margin: 0;
   padding: 0;
-  list-style: none
+  list-style: none;
+  border: 0;
 }
 
 // General Settings
@@ -90,7 +91,9 @@ body {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
-
+a span {
+  display: none;
+}
 
 // Buttons
 // ---
@@ -349,6 +352,15 @@ header {
           #gradient > .vertical(#ccc,#eee);
           width: 0px;
           .box-shadow(inset 0 0 5px rgba(0,0,0,.5));
+        }
+        .expand {
+          float: left;
+          background: url(../images/expand.png) no-repeat center;
+          display: block;
+          width: 16px;
+          height: 10px;
+          margin-top: 20px;
+          margin-right: 5px;
         }
       }
       &:first-child {
