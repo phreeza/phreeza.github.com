@@ -112,7 +112,16 @@ class PomodoroCreator(webapp.RequestHandler):
         self.response.out.write(json.dumps(pomodoro_dict))
 
 class AuthorRename(webapp.RequestHandler):
-    pass
+    def get(self):
+        self.response.headers['Access-Control-Allow-Origin'] = '*'
+        authors = db.GqlQuery("SELECT * "
+                            "FROM Author WHERE name = '%s' "
+                            % self.request.get('oldname'))
+        if authors.count(limit=2) > 0:
+            author = authors[0]
+            author.name = self.request.get('newname')
+            author.put()
+        self.redirect('/')
 
 class StatsGetter(webapp.RequestHandler):
     pass
@@ -135,6 +144,7 @@ application = webapp.WSGIApplication([
   ('/', MainPage),
   ('/save', PomodoroCreator),
   ('/complete', StatusChanger),
+  ('/rename', AuthorRename),
   ('/json', JSONDump),
   ('/delete', PomodoroDeleter)
 ], debug=True)

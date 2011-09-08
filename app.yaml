@@ -28,6 +28,9 @@ handlers:
 - url: /delete
   script: main.py
 
+- url: /rename
+  script: main.py
+
 - url: /complete
   script: main.py
 
