@@ -35,7 +35,7 @@ $(function() {
     $("#description").attr({placeholder: 'enter task',});
     $("#description").attr({disabled: 'disabled',});
     $("#description").addClass('active');
-    $("#progress").progressbar({"value":0});
+    $("#progress").progressbar({"value":100});
     addTask($("#description").val(),ISODateString(new Date()),true,0);
     $("#progress").fadeIn('fast');
   }
@@ -82,6 +82,7 @@ $(function() {
         }
       }
       );
+
   $('#description').keypress(
       function(e) {
         var code = (e.keyCode ? e.keyCode : e.which);
