@@ -308,8 +308,8 @@ header {
   .border-radius;
 }
 .ui-progressbar-value {
-  #gradient > .vertical(#dc6414,#f58b40);
-  .box-shadow(0px 0px 4px #f58c41);
+  #gradient > .vertical(@baseColor,darken(@baseColor, 5%));
+  .box-shadow(0px 0px 4px lighten(@baseColor,5%));
   .border-radius;
 }
 
@@ -403,7 +403,9 @@ header {
 // ---
 
 #about {
-  .container;
+  background: @darkGrey;
+
+  
 }
 
 // Section: Footer

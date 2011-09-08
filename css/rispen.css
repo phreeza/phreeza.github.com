@@ -299,20 +299,20 @@ header ul dl dd {
   border-radius: 4px;
 }
 .ui-progressbar-value {
-  background-color: #f58b40;
+  background-color: #e66c00;
   background-repeat: repeat-x;
-  background-image: -khtml-gradient(linear, left top, left bottom, from(#dc6414), to(#f58b40));
-  background-image: -moz-linear-gradient(#dc6414, #f58b40);
-  background-image: -ms-linear-gradient(#dc6414, #f58b40);
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #dc6414), color-stop(100%, #f58b40));
-  background-image: -webkit-linear-gradient(#dc6414, #f58b40);
-  background-image: -o-linear-gradient(#dc6414, #f58b40);
-  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#dc6414', endColorstr='#f58b40', GradientType=0)";
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#dc6414', endColorstr='#f58b40', GradientType=0);
-  background-image: linear-gradient(#dc6414, #f58b40);
-  -webkit-box-shadow: 0px 0px 4px #f58c41;
-  -moz-box-shadow: 0px 0px 4px #f58c41;
-  box-shadow: 0px 0px 4px #f58c41;
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#ff7800), to(#e66c00));
+  background-image: -moz-linear-gradient(#ff7800, #e66c00);
+  background-image: -ms-linear-gradient(#ff7800, #e66c00);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ff7800), color-stop(100%, #e66c00));
+  background-image: -webkit-linear-gradient(#ff7800, #e66c00);
+  background-image: -o-linear-gradient(#ff7800, #e66c00);
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff7800', endColorstr='#e66c00', GradientType=0)";
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff7800', endColorstr='#e66c00', GradientType=0);
+  background-image: linear-gradient(#ff7800, #e66c00);
+  -webkit-box-shadow: 0px 0px 4px #ff861a;
+  -moz-box-shadow: 0px 0px 4px #ff861a;
+  box-shadow: 0px 0px 4px #ff861a;
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
   border-radius: 4px;
@@ -414,8 +414,7 @@ header ul dl dd {
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
 #about {
-  width: 940px;
-  margin: auto;
+  background: #323232;
 }
 footer ul {
   width: 940px;
