@@ -111,6 +111,12 @@ $(function() {
       }
       );
 
+  $("#rename").click(function(){
+    $.getJSON("http://rispennl.appspot.com/rename",
+      {newname:$("#identifier").val(),oldname:oldname});
+    oldname = $("#identifier").val()
+  })
+
   // Progress-Bar
 
   $( "#progress" ).progressbar({
@@ -185,7 +191,7 @@ $(function() {
                 data.reverse();
                 for (p in data)
                     {
-                        addTask(data[p].content,data[p].date,false,data[p].id);
+                      addTask(data[p].content,data[p].date,false,data[p].id);
                     }
               })
   }
@@ -199,7 +205,8 @@ $(function() {
  
   if (window.location.protocol == "http:"){
     $("#identifier").val(window.location.pathname.split('/')[1]);}
-  repopTasks($("#identifier").val())
+  repopTasks($("#identifier").val());
+  var oldname = $("#identifier").val()
 });
 
 $(document).ready(function() {
