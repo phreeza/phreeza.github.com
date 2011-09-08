@@ -1,7 +1,8 @@
 // Color Settings
 
-@baseColor:     red;
-@white:         white;
+@baseColor:     rgb(255,120,0);
+@white:         rgb(255,255,255);
+@darkGrey:      rgb(50,50,50);
 
 // Grid
 
@@ -53,7 +54,7 @@
     filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1)",@startColor,@endColor)); // IE6 & IE7
     background-image: linear-gradient(left, @startColor, @endColor); // Le standard
   }
-  .vertical (@startColor: #555, @endColor: #333) {
+  .vertical (@startColor: #ccc, @endColor: #eee) {
     background-color: @endColor;
     background-repeat: repeat-x;
     background-image: -khtml-gradient(linear, left top, left bottom, from(@startColor), to(@endColor)); // Konqueror
@@ -96,23 +97,23 @@ body {
 
 button, .btn, {
   padding: 10px;
-  margin-right: 10px;
   .border-radius;
   .box-shadow(inset 0 -2px 0 rgba(255,255,255,.5));
   border: 1px solid rgba(0,0,0,.2);
-  #gradient > .vertical(rgb(210,210,210),rgb(240,240,240));
+  #gradient > .vertical;
   &:hover {
-    #gradient > .vertical(rgb(240,240,240),rgb(210,210,210));
+    #gradient > .vertical(lighten(#ccc, 4%),lighten(#eee, 4%));
   }
   &:active {
     .box-shadow(inset 0 2px 0px rgba(0,0,0,.1));
   }
   &.primary {
-    #gradient > .vertical(#dc6414,#f58b40);
+    /* #gradient > .vertical(#dc6414,#f58b40); */
+    #gradient > .vertical(@baseColor,darken(@baseColor, 5%);
     color: rgb(255,255,255);
     .text-shadow;
     &:hover {
-      #gradient > .vertical(#f58b40,#dc6414);
+      #gradient > .vertical(lighten(@baseColor, 5%),@baseColor, 5%);
     }
   }
   &.small {
@@ -133,7 +134,7 @@ button, .btn, {
 // Input & Textarea
 
 input[type=text], textarea {
-  width: @gridWidth - (@inputPadding * 2);
+  width: @gridWidth - (@inputPadding * 2) - 2px;
   padding: @inputPadding;
   height: 30px;
   border: 1px solid rgba(0,0,0,.4);
@@ -154,6 +155,15 @@ input[type=text], textarea {
     border: 1px solid #f58b40 !important;
     .box-shadow(0px 0px 4px #f58c41);
   }
+  &#identifier {
+    font-family: 'Droid Sans Mono', sans-serif;
+    width: 80px;
+    height: 30px;
+    font-size: 10pt;
+    line-height: 10pt;
+    padding: 0 5px;
+    margin: 0 5px;
+  }
 }
 textarea {
   -webkit-appearance: none;
@@ -170,16 +180,18 @@ textarea {
 
 header {
   font-family: 'Droid Sans Mono', sans-serif;
-  height: 40px;
-  padding: 5px 0;
+  height: 60px;
+  padding: 50px 0 20px 0;
   #gradient > .vertical(rgb(50,50,50),rgb(25,25,25));
+  border-top: 10px solid @darkGrey;
   border-bottom: 1px solid rgba(0,0,0,.2);
+  background: @baseColor;
   color: rgb(220,220,220);
   font-size: 10pt;
   #home {
     overflow: hidden;
-    width: 100px;
-    height: 40px;
+    width: 136px;
+    height: 55px;
     margin-right: 20px;
     background: url(../images/h1-logo.png) no-repeat;
     a {
@@ -188,15 +200,11 @@ header {
     }
   }
   #stats {
-    padding: 0 5px;
-    height: 32px;
-    line-height: 32px;
     color: rgb(255,255,255);
     .text-shadow(1px 1px 1px rgba(0,0,0,.5));
-    #gradient > .vertical;
-    .box-shadow(inset 0 2px 0 rgba(0,0,0,0.1));
-    border: 1px solid rgba(255,255,255,.1);
-    .border-radius;
+    &:before {
+      content: url(../images/analytics.png);
+    }
     #stats-pomodoros {
       background: url(../images/stats-pomodoros.png) left no-repeat;
       padding-left: 25px;
@@ -302,7 +310,7 @@ header {
   width: 100%;
     li {
       line-height: 48px;
-      color: rgb(80,80,80);
+      color: #ccc;
       text-shadow: 1px 1px 1px rgb(255,255,255);
       background: rgb(230,230,230);
       vertical-align: middle;
@@ -312,6 +320,7 @@ header {
         .delete {
           float: left;
           line-height: 48px;
+          vertical-align: center;
           width: 17px;
           height: 23px;
           background: url(../images/delete.png);
@@ -320,12 +329,13 @@ header {
         }
         .timeago {
           float: right;
+          line-height: 48px;
         }
         .hoverNavigation {
           float: left;
           overflow: hidden;
           .border-radius;
-          #gradient > .vertical(#dc6414,#f58b40);
+          #gradient > .vertical(#ccc,#eee);
           width: 0px;
           .box-shadow(inset 0 0 5px rgba(0,0,0,.5));
         }
@@ -356,6 +366,7 @@ header {
 
 #bottomNavigation {
   background: #999;
+  border-top: 1px solid rgba(255,255,255,.4);
   ul {
     .container;
     li {
@@ -374,7 +385,7 @@ header {
   .border-radius;
   height: 300px;
   margin-top: 20px;
-  background: red;
+  border: 1px solid rgba(0,0,0,.1);
 }
 
 // Section: About
