@@ -4,6 +4,8 @@ $(function() {
   tick:function(timer, time_in_seconds, formatted_time)
   {
     $("#progress").progressbar("option","value",time_in_seconds*100/5);//also change this 5 back to 25*60
+    document.title = formatted_time + " - Rispen";
+
   }
   ,
   autostart: false,
