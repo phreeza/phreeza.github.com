@@ -413,9 +413,8 @@ header dl dd {
 #history li div .expand {
   float: left;
   width: 16px;
-  height: 10px;
-  margin-top: 20px;
   margin-right: 5px;
+  font-size: 11pt;
 }
 #history li div .delete {
   opacity: .5;
