@@ -25,7 +25,8 @@ $(function() {
   }
     else if (trim($("#description").val()) == '')
   {
-    $("#description").attr({placeholder: 'You need to type in a task-description.',});
+    $("#description").val('');
+    $("#description").attr({placeholder: 'You need to type in a task description.',});
   }
     else
   {
