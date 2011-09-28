@@ -23,7 +23,7 @@ $(function() {
     $("#timer").resetTimer();
     $("#progress").fadeOut('fast');
   }
-    else if ($("#description").val() == '')
+    else if (trim($("#description").val()) == '')
   {
     $("#description").attr({placeholder: 'You need to type in a task-description.',});
   }
@@ -275,6 +275,10 @@ $(function() {
     var tmp = document.createElement("DIV");
     tmp.innerHTML = html;
     return tmp.textContent||tmp.innerText;
+  }
+
+  function trim(stringToTrim) {
+      return stringToTrim.replace(/^\s+|\s+$/g,"");
   }
  
   if (window.location.protocol == "http:"){
