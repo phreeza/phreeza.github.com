@@ -294,6 +294,7 @@ header dl dd {
   font-size: 10pt;
 }
 #summary {
+  display: none;
   width: 580px;
   margin: auto;
 }
