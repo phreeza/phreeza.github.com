@@ -135,6 +135,7 @@ button, .btn, {
     }
   }
   &.small {
+    min-width: 100px;
     height: 30px;
     font-size: 10pt;
     line-height: 10pt;
@@ -152,7 +153,7 @@ button, .btn, {
 // Input & Textarea
 
 input[type=text], textarea {
-  width: @gridWidth - (@inputPadding * 2) - 2px;
+  width: 580px;
   padding: @inputPadding;
   height: 30px;
   border: 1px solid rgba(0,0,0,.4);
@@ -193,7 +194,7 @@ textarea {
   white-space: pre-wrap;
   word-wrap: break-word;
   text-rendering: optimizeLegibility;
-  margin-top: 20px;
+  margin: 20px 0;
 }
 
 // Topbar 
@@ -264,7 +265,8 @@ header {
   border-bottom: 1px solid;
   border-color: rgba(255,255,255,.5);
   #main {
-    .container;
+    width: 580px;
+    margin: auto;
     min-height: 50px;
   }
 }
@@ -290,7 +292,7 @@ header {
   height: 13px;
   width: 76px;
   z-index: 10;
-  margin: 9px 0 0 833px;
+  margin: 9px 0 0 496px;
   /* background-image: url(http://clients.chrisgrabinski.com/rispen/images/startstop.jpg); */
   div {
     span {
@@ -304,14 +306,16 @@ header {
   }
 }
 #summary {
-  .container;
+  width: 580px;
+  margin: auto;
   textarea {
     width: 580px;
     height: 120px;
   }
 }
 #continueProcess {
-  .container;
+  width: 580px;
+  margin: auto;
   display: none;
 }
 #radio {
@@ -333,7 +337,7 @@ header {
   display: none;
 }
 .ui-progressbar {
-  width: @gridWidth - 2px;
+  width: 580px - 2px;
   position: absolute;
   z-index: 8;
   height: 50px;

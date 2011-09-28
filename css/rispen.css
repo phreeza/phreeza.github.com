@@ -106,6 +106,7 @@ button.primary:hover, .btn.primary:hover {
   background-image: linear-gradient(#ff861a, #ff7800);
 }
 button.small, .btn.small {
+  min-width: 100px;
   height: 30px;
   font-size: 10pt;
   line-height: 10pt;
@@ -120,7 +121,7 @@ button.small:active, .btn.small:active {
   box-shadow: inset 0 1px 0px rgba(0, 0, 0, 0.2);
 }
 input[type=text], textarea {
-  width: 918px;
+  width: 580px;
   padding: 10px;
   height: 30px;
   border: 1px solid rgba(0, 0, 0, 0.4);
@@ -173,7 +174,7 @@ textarea {
   white-space: pre-wrap;
   word-wrap: break-word;
   text-rendering: optimizeLegibility;
-  margin-top: 20px;
+  margin: 20px 0;
 }
 header {
   height: 120px;
@@ -239,7 +240,7 @@ header dl dd {
   border-color: rgba(255, 255, 255, 0.5);
 }
 #interaction #main {
-  width: 940px;
+  width: 580px;
   margin: auto;
   min-height: 50px;
 }
@@ -264,7 +265,7 @@ header dl dd {
   height: 13px;
   width: 76px;
   z-index: 10;
-  margin: 9px 0 0 833px;
+  margin: 9px 0 0 496px;
   /* background-image: url(http://clients.chrisgrabinski.com/rispen/images/startstop.jpg); */
 
 }
@@ -277,7 +278,7 @@ header dl dd {
   font-size: 10pt;
 }
 #summary {
-  width: 940px;
+  width: 580px;
   margin: auto;
 }
 #summary textarea {
@@ -285,7 +286,7 @@ header dl dd {
   height: 120px;
 }
 #continueProcess {
-  width: 940px;
+  width: 580px;
   margin: auto;
   display: none;
 }
@@ -322,7 +323,7 @@ header dl dd {
   display: none;
 }
 .ui-progressbar {
-  width: 938px;
+  width: 578px;
   position: absolute;
   z-index: 8;
   height: 50px;
