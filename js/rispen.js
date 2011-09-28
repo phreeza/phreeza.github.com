@@ -291,6 +291,11 @@ $(function() {
     var oldname = $("#identifier").val();
     repopTasks(oldname);
   }
+  else {
+    $("#identifier").val("localuser");
+    repopTasks("localuser");
+  
+  }
 });
 
 $(document).ready(function() {
