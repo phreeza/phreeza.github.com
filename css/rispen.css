@@ -47,7 +47,7 @@ a span {
   width: 940px;
   margin: auto;
 }
-button, .btn {
+button, .btn, .ui-button {
   padding: 10px;
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
@@ -68,7 +68,7 @@ button, .btn {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeeee', endColorstr='#cccccc', GradientType=0);
   background-image: linear-gradient(#eeeeee, #cccccc);
 }
-button:hover, .btn:hover {
+button:hover, .btn:hover, .ui-button:hover {
   background-color: #d6d6d6;
   background-repeat: repeat-x;
   background-image: -khtml-gradient(linear, left top, left bottom, from(#f8f8f8), to(#d6d6d6));
@@ -81,12 +81,12 @@ button:hover, .btn:hover {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f8f8f8', endColorstr='#d6d6d6', GradientType=0);
   background-image: linear-gradient(#f8f8f8, #d6d6d6);
 }
-button:active, .btn:active {
+button:active, .btn:active, .ui-button:active {
   -webkit-box-shadow: inset 0 2px 0px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: inset 0 2px 0px rgba(0, 0, 0, 0.1);
   box-shadow: inset 0 2px 0px rgba(0, 0, 0, 0.1);
 }
-button.primary, .btn.primary {
+button.primary, .btn.primary, .ui-button.primary {
   /* #gradient > .vertical(#dc6414,#f58b40); */
 
   background-color: #e66c00;
@@ -105,7 +105,7 @@ button.primary, .btn.primary {
   -moz-text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
-button.primary:hover, .btn.primary:hover {
+button.primary:hover, .btn.primary:hover, .ui-button.primary:hover {
   background-color: #ff7800;
   background-repeat: repeat-x;
   background-image: -khtml-gradient(linear, left top, left bottom, from(#ff861a), to(#ff7800));
@@ -118,7 +118,7 @@ button.primary:hover, .btn.primary:hover {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff861a', endColorstr='#ff7800', GradientType=0);
   background-image: linear-gradient(#ff861a, #ff7800);
 }
-button.small, .btn.small {
+button.small, .btn.small, .ui-button.small {
   min-width: 100px;
   height: 30px;
   font-size: 10pt;
@@ -128,12 +128,12 @@ button.small, .btn.small {
   -moz-box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5);
   box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5);
 }
-button.small:active, .btn.small:active {
+button.small:active, .btn.small:active, .ui-button.small:active {
   -webkit-box-shadow: inset 0 1px 0px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: inset 0 1px 0px rgba(0, 0, 0, 0.2);
   box-shadow: inset 0 1px 0px rgba(0, 0, 0, 0.2);
 }
-button.send, .btn.send {
+button.send, .btn.send, .ui-button.send {
   float: right;
 }
 input[type=text], textarea {
@@ -313,7 +313,7 @@ header dl dd {
   -webkit-border-radius: 4px;
   border-radius: 4px;
   border: 1px solid rgba(0, 0, 0, 0.2);
-  margin-left: 5px;
+  margin-right: 5px;
   background-color: #cccccc;
   background-repeat: repeat-x;
   background-image: -khtml-gradient(linear, left top, left bottom, from(#eeeeee), to(#cccccc));
