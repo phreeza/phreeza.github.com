@@ -21,8 +21,18 @@ body {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
+a:link, a:visited, a:active {
+  color: #ff7800;
+}
+a:hover {
+  color: #cc6000;
+}
 a span {
   display: none;
+}
+.wrapper {
+  width: 940px;
+  margin: auto;
 }
 button, .btn {
   padding: 10px;
@@ -166,68 +176,60 @@ textarea {
   margin-top: 20px;
 }
 header {
+  height: 120px;
   background: #ff7800;
   border-top: 10px solid #323232;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   font-size: 11pt;
-}
-header ul {
-  width: 940px;
-  margin: auto;
-  padding: 40px 0 20px 0;
   color: #ffffff;
   -webkit-text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
   -moz-text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  vertical-align: bottom;
 }
-header ul li {
-  display: inline-block;
-  height: 55px;
-  vertical-align: middle;
-}
-header ul #home {
+header #home {
+  float: left;
   overflow: hidden;
   width: 136px;
   margin-right: 44px;
   background: url(../images/h1-logo.png);
-  margin: 0 40px 0 0;
+  margin: 50px 40px 0 0;
 }
-header ul #home a {
+header #home a {
   display: block;
   height: 55px;
   line-height: 999999pt;
 }
-header ul #stats {
+header #stats {
   width: 400px;
+  color: white;
+  background: url(../images/analytics.png) left no-repeat;
+  padding-left: 28px;
+  line-height: 21px;
 }
-header ul #stats:before {
-  content: url(../images/analytics.png);
-}
-header ul #url {
-  width: 310px;
-  text-align: right;
+header #url {
+  float: right;
   letter-spacing: 1pt;
+  margin-top: 67px;
 }
-header ul dl {
-  display: inline;
+header dl {
+  float: left;
+  margin-top: 72px;
   border: 0;
   padding: 0;
 }
-header ul dl dt, header ul dl dd {
+header dl dt, header dl dd {
   display: inline-block;
   list-style: none;
   margin: 0;
   padding: 0;
 }
-header ul dl dt {
+header dl dt {
   font-weight: bold;
   margin-right: 10px;
 }
-header ul dl dd {
+header dl dd {
   margin-right: 10px;
-}
-#url {
-  float: right;
 }
 #interaction {
   padding: 20px 0;

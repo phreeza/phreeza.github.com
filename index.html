@@ -14,18 +14,16 @@
   </head>
   <body>
     <header>
-      <ul>
-        <li id="home"><a href="#">Home</a></li>
-        <li id="stats">
-          <dl>
-            <dt>Pomodoros</dt>
-            <dd>13h 37m</dd>
-            <dt>Breaks</dt>
-            <dd>42h 23m</dd>
-          </dl>
-        </li>
-        <li id="url">http://rispen.nl/<input id="identifier" class="small" type="text" /><button id="rename" class="small">Rename</button></li>
-      </ul>
+      <div class="wrapper">
+        <h1 id="home"><a href="#">Home</a></h1>
+        <dl id="stats">
+          <dt>Pomodoros</dt>
+          <dd>13h 37m</dd>
+          <dt>Breaks</dt>
+          <dd>42h 23m</dd>
+        </dl>
+        <div id="url">http://rispen.nl/<input id="identifier" class="small" type="text" /><button id="rename" class="small">Rename</button></div>
+      </div>
     </header>
     <div id="interaction">
       <div id="main">
@@ -84,11 +82,11 @@
     </div>
     <footer>
       <ul id="fuel">
-        <li>Python</li>
-        <li>Google App Engine</li>
+        <li><a href="http://www.python.org/">Python</a></li>
+        <li><a href="http://code.google.com/appengine/">Google App Engine</a></li>
       </ul>
       <ul id="team">
-        <li>Rispen is a project by Thomas McColgan and Christopher Grabinski. Google us.</li>
+        <li>Rispen is a project by <a href="https://twitter.com/#!/phreeza">Thomas McColgan</a> and <a href="https://twitter.com/#!/chrisgrabinski">Christopher Grabinski.</a></li>
       </ul>
     </footer>
   </body>

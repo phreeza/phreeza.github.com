@@ -92,8 +92,22 @@ body {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
+
+a:link, a:visited, a:active {
+  color: @baseColor;
+}
+a:hover {
+  color: darken(@baseColor,10%);
+}
+
+
 a span {
   display: none;
+}
+
+.wrapper {
+  width: @gridWidth;
+  margin: auto;
 }
 
 // Buttons
@@ -185,45 +199,42 @@ textarea {
 // Topbar 
 
 header {
+  height: 120px;
   background: @baseColor;
   border-top: 10px solid @darkGrey;
   border-bottom: 1px solid rgba(0,0,0,.2);
   font-size: 11pt;
-  ul {
-    .container;
-    padding: 40px 0 20px 0;
-    color: rgb(255,255,255);
-    .text-shadow;
-    li {
-      display: inline-block;
+  color: rgb(255,255,255);
+  .text-shadow;
+  vertical-align: bottom;
+  #home {
+    float: left;
+    overflow: hidden;
+    width: 136px;
+    margin-right: 44px;
+    background: url(../images/h1-logo.png);
+    margin: 50px 40px 0 0;
+    a {
+      display: block;
       height: 55px;
-      vertical-align: middle;
+      line-height: 999999pt;
     }
-    #home {
-      overflow: hidden;
-      width: 136px;
-      margin-right: 44px;
-      background: url(../images/h1-logo.png);
-      margin: 0 40px 0 0;
-      a {
-        display: block;
-        height: 55px;
-        line-height: 999999pt;
-      }
-    }
-    #stats {
+  }
+  #stats {
       width: 400px;
-      &:before {
-        content: url(../images/analytics.png);
-      }
-    }
-    #url {
-      width: 310px;
-      text-align: right;
+      color: white;
+      background: url(../images/analytics.png) left no-repeat;
+      padding-left: 28px;
+      line-height: 21px;
+  }
+  #url {
+      float: right;
       letter-spacing: 1pt;
-    }
-    dl {
-      display: inline;
+      margin-top: 67px;
+  }
+  dl {
+      float: left;
+      margin-top: 72px;
       border: 0;
       padding: 0;
       dt, dd {
@@ -241,10 +252,6 @@ header {
         margin-right: 10px;
       }
     }
-  }
-}
-#url {
-  float: right;
 }
 
 // Section: Task Input
