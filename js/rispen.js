@@ -24,6 +24,8 @@ $(function() {
   {
     $("#timer").resetTimer();
     $("#progress").fadeOut('fast');
+    var taskid = $("#history").children().size()-1;
+    $("#task"+taskid).removeClass("running");
   }
     else if (trim($("#description").val()) == '')
   {
