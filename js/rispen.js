@@ -8,7 +8,7 @@ $(function() {
   ,
   autostart: false,
     buzzer: function(){
-      $("#final").slideDown('fast'); 
+      $("#summary").slideDown('fast'); 
       $("#description").removeClass('active');
       $("#progress").fadeOut('fast');
       $("#startstop").css('display', 'none');
@@ -67,7 +67,7 @@ $(function() {
     $('#startstop').delay(200).animate({
       backgroundPosition: '0px'
     }, 150);
-    $("#final").slideUp('fast');
+    $("#summary").slideUp('fast');
     $("#timer").resetTimer();
     $("#description").removeAttr("disabled");
     $("#description").val('')
@@ -79,7 +79,7 @@ $(function() {
     $('#startstop').delay(200).animate({
       backgroundPosition: '0px'
     }, 150);
-    $("#final").slideUp('fast');
+    $("#summary").slideUp('fast');
     $("#timer").resetTimer($.extend($("#timer").data('countdown.settings'),{time_in_seconds:5*60}));
     $("#timer").startTimer($("#timer").data('countdown.settings'));
     addBreak("shortBreak",ISODateString(new Date()),true,0);
@@ -90,7 +90,7 @@ $(function() {
     $('#startstop').delay(200).animate({
       backgroundPosition: '0px'
     }, 150);
-    $("#final").slideUp('fast');
+    $("#summary").slideUp('fast');
     $("#timer").resetTimer($.extend($("#timer").data('countdown.settings'),{time_in_seconds:25*60}));
     $("#timer").startTimer($("#timer").data('countdown.settings'));
     addBreak("longBreak",ISODateString(new Date()),true,0);

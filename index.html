@@ -37,18 +37,22 @@
         <input id="description" type="text" placeholder="What do you want to do? (^o^)/" />
         <div id="progress"></div>
       </div>
-      <form id="final">
-        <textarea id="resumen" placeholder="Write a short resumé about your work." ></textarea>
-        <div id="radio">
-          <input type="radio" id="radio1" name="radio" /><label for="radio1">-</label>
-          <input type="radio" id="radio2" name="radio" checked="checked" /><label for="radio2">o</label>
-          <input type="radio" id="radio3" name="radio" checked="checked" /><label for="radio3">+</label>
-        </div>
+      <div id="summary">
+        <form id="final">
+          <textarea id="resumen" placeholder="Write a short resumé about your work." ></textarea>
+          <div id="radio">
+            <input type="radio" id="radio1" name="radio" /><label for="radio1">-</label>
+            <input type="radio" id="radio2" name="radio" checked="checked" /><label for="radio2">o</label>
+            <input type="radio" id="radio3" name="radio" checked="checked" /><label for="radio3">+</label>
+          </div>
+        </form>
+      </div>
+      <div id="continueProcess">
         <button id="newtask" class="big primary">New Task</button>
         <button id="continuetask">Continue Task</button>
         <button id="shortbreak">Short Break</button>
         <button id="longbreak">Long Break</button>
-      </form>
+      </div>
     </div>
     <ul id="history">
       <li class="longBreak">
