@@ -14,6 +14,24 @@
   margin: auto;
 }
 
+// Clearfix
+
+.clearfix:after {
+  content: ".";  
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+// für IE7
+* + html .clearfix {
+  display: inline-block;
+}
+// für IE6
+* html .clearfix {
+  height: 1%;
+}
+
 // Border-Radius
 
 .border-radius(@radius: 4px) {
