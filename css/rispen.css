@@ -276,14 +276,19 @@ header dl dd {
   text-align: center;
   font-size: 10pt;
 }
-#final {
+#summary {
   width: 940px;
   margin: auto;
   display: none;
 }
-#final textarea {
+#summary textarea {
   width: 580px;
   height: 120px;
+}
+#continueProcess {
+  width: 940px;
+  margin: auto;
+  display: none;
 }
 #radio {
   float: right;
