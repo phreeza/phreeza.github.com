@@ -1,6 +1,6 @@
 $(function() {
   $("#timer").createTimer({
-    time_in_seconds: 25*60, // hack for editing the post-pomodoro screen. TODO revert to 25*60,
+    time_in_seconds: 25, // hack for editing the post-pomodoro screen. TODO revert to 25*60,
   tick:function(timer, time_in_seconds, formatted_time)
   {
     $("#progress").progressbar("option","value",time_in_seconds*100./(25*60.));//also change this 5 back to 25*60
