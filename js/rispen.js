@@ -230,6 +230,7 @@ $(function() {
               {
               $.getJSON("http://rispennl.appspot.com/complete",{id:data.id,feedback_text:strip_html($("#resumen").val()),feedback_rating:1});
               $("#task"+taskid+" .summary").html($("#resumen").val());
+              //TODO: pull rating from radiobutton
               $("#task"+taskid+" .rating").html(1);
               });
           }
