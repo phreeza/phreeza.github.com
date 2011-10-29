@@ -233,6 +233,7 @@ $(function() {
               //TODO: pull rating from radiobutton
               $("#task"+taskid+" .rating").html(1);
               $("#main").hide();
+              $("#summary").hide();
               $("#continueProcess").show();
               });
           }
