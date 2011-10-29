@@ -232,6 +232,8 @@ $(function() {
               $("#task"+taskid+" .summary").html($("#resumen").val());
               //TODO: pull rating from radiobutton
               $("#task"+taskid+" .rating").html(1);
+              $("#main").hide();
+              $("#continueProcess").show();
               });
           }
           );
