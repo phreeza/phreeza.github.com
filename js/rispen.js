@@ -1,128 +1,105 @@
-$(function() {
-  $("#timer").createTimer({
-    time_in_seconds: 5, // hack for editing the post-pomodoro screen. TODO revert to 25*60,
-  tick:function(timer, time_in_seconds, formatted_time)
-  {
-    $("#progress").progressbar("option","value",$("#timer").data('countdown.duration')/15000.);
-  }
-  ,
-  autostart: false,
-    buzzer: function(){ 
-      $("#final").slideDown('fast'); 
-      $("#description").removeClass('active');
-      $("#progress").fadeOut('fast');
-      $("#startstop").css('display', 'none');
-    }
-  });
+// Continue without Registration
+// ---
 
-  $("#startstop").click(function() {
-    if ($("#timer").data('countdown.state') == 'running')
-  {
-    $("#timer").resetTimer();
-    $("#description").removeAttr("disabled")
-    $("#progress").fadeOut('fast');
-  }
-    else if ($("#description").val() == '')
-  {
-    $("#description").attr({placeholder: 'You need to type in a task-description.',});
-  }
-    else
-  {
-    $("#timer").startTimer($("#timer").data('countdown.settings'));
-    $("#description").attr({placeholder: 'enter task',});
-    $("#description").attr({disabled: 'disabled',});
-    $('#startstop').delay(200).animate({
-      backgroundPosition: '33px'
-    }, 150);
-    $("#description").addClass('active');
-    $("#progress").progressbar({"value":0});
-    addTask($("#description").val(),ISODateString(new Date()),true);
-    $("#progress").fadeIn('slow');
-  }
-  });
+$('#noRegistration').click(function() {
+  $(this).parent('.container').parent('.notification').addClass( "noRegistration", 50 );
+});
 
-  $('#newtask').click(function() {
-    $('#startstop').delay(200).animate({
-      backgroundPosition: '0px'
-    }, 150);
-    $("#final").slideUp('fast');
-    $("#timer").resetTimer();
-    $("#description").removeAttr("disabled");
-    $("#description").val('')
-    $("#progress").fadeOut('fast');
-  });
+// Tasks
+// ---
 
-  $('#shortbreak').click(function() {
-    $("#description").val('Short Break')
-    $('#startstop').delay(200).animate({
-      backgroundPosition: '0px'
-    }, 150);
-    $("#final").slideUp('fast');
-    $("#timer").resetTimer($.extend($("#timer").data('countdown.settings'),{time_in_seconds:5*60}));
-    $("#timer").startTimer($("#timer").data('countdown.settings'));
-    addTask($("#description").val(),ISODateString(new Date()),true);
+// Moods
+
+$('#mood').children('.positive').click(function() {
+  $('#progressBar').animate({
+    backgroundColor: "rgb(60,160,50)",
+  }, 150 );
+});
+$('#mood').children('.neutral').click(function() {
+  $('#progressBar').animate({
+    backgroundColor: "rgb(255,120,0)",
+  }, 150 );
+});
+$('#mood').children('.negative').click(function() {
+  $('#progressBar').animate({
+    backgroundColor: "rgb(190,10,30)",
+  }, 150 );
+});
+
+
+$('#addMood').click(function() {
+  $('#afterTask').show("drop", { direction: "up" }, 200);
+});
+
+// Finished
+
+$('#finishedTask').click(function() {
+
+  // This is only necessary for demonstration-purposes
+  $('#task5').children('.taskInfo').css({
+    display: "none",
   });
   
-  $('#longbreak').click(function() {
-    $("#description").val('Long Break')
-    $('#startstop').delay(200).animate({
-      backgroundPosition: '0px'
-    }, 150);
-    $("#final").slideUp('fast');
-    $("#timer").resetTimer($.extend($("#timer").data('countdown.settings'),{time_in_seconds:25*60}));
-    $("#timer").startTimer($("#timer").data('countdown.settings'));
-    addTask($("#description").val(),ISODateString(new Date()),true);
-  });
-
-  function addTask(task,date,isnew)
-  {
-    var newli = document.createElement('li');
-    var taskid = $("#history").children().size();
-    newli.id="task" + taskid;
-    newli.innerHTML = "<div><button class=\"delete small\">Delete</button>"+task+"<abbr class=\"timeago\" title=\""+date+"Z\">"+date+"Z</abbr></div>";
-    if (isnew) newli.style.display="none";
-    $("#history").prepend(newli);
-    $("abbr.timeago").timeago();
-    if (isnew) 
-    {
-        $("#task"+taskid).slideDown("slow");
-        $.post("http://rispennl.appspot.com/save",{content:task,author:$("#chiffre").val()});
-    }
-  }
-
-  function ISODateString(d){
-    function pad(n){return n<10 ? '0'+n : n}
-    return d.getUTCFullYear()+'-'
-      + pad(d.getUTCMonth()+1)+'-'
-      + pad(d.getUTCDate())+'T'
-      + pad(d.getUTCHours())+':'
-      + pad(d.getUTCMinutes())+':'
-      + pad(d.getUTCSeconds())
-  }
-
-  function repopTasks(user){
-      $.getJSON("http://rispennl.appspot.com/json",
-              {author:user},
-              function(data){
-                data.reverse();
-                for (p in data)
-                    {
-                        addTask(data[p].content,data[p].date,false);
-                    }
-              })
-  }
-
-  repopTasks($("#chiffre").val())
+  $('#form').animate({ 
+    backgroundColor: "rgb(50,50,50)",
+  }, 100);
+  $('#form input').animate({ 
+    backgroundColor: "rgb(50,50,50)",
+    color: "#fff",
+  }, 100);
+  $('#form textarea').animate({ 
+    backgroundColor: "rgb(50,50,50)",
+    color: "#fff",
+  }, 100);
+  $('#actionContainer').animate({ 
+    height: "86px",
+  }, 100);
+  $('#afterTask').slideUp("fast");
+  $('#action').delay(250).hide("drop", { direction: "down" }, 300);
+  $('#task5').delay(300).show("bounce", { times:2 }, 300);
+  $('#form').delay(350).animate({ 
+    backgroundColor: "rgb(200,200,200)",
+  }, 100);
+  $('#form input').delay(350).animate({ 
+    backgroundColor: "rgb(255,255,255)",
+    color: "rgb(50,50,50)"
+  }, 100);
+  $('#form textarea').delay(350).animate({ 
+    backgroundColor: "rgb(255,255,255)",
+    color: "rgb(50,50,50)"
+  }, 100);
+  $('#startStop').delay(380).fadeIn("fast");
+  $('#progressBar').delay(380).animate({
+    width: "0",
+  }, 10 );
+  $('#action').delay(400).show("drop", { direction: "down" }, 200);
 });
 
-$(document).ready(function() {
-	$('a[href*=#]').bind("click", function(event) {
-		event.preventDefault();
-		var ziel = $(this).attr("href");
+// Expand
 
-		$('html,body').animate({
-			scrollTop: $(ziel).offset().top
-		}, 500 , function (){location.hash = ziel;});
+$('.expand').click(function() {
+  $(this).parent('h2').parent('li').children('.taskInfo').slideToggle('fast');
 });
-return false;
+
+// Delete
+
+$('.delete').click(function() {
+  $(this).parent('div').parent('div').parent('li').hide("drop", { direction: "left" }, 200);
+});
+
+// Debug
+
+$('#pomodoro').click(function() {
+  $('#task').animate({
+    backgroundColor: "rgb(200,200,200)",
+  }, 10 );
+
+  $('#progressBar').animate({
+    width: "560px",
+  }, 2000 );
+  $('#startStop').delay(2200).fadeOut("fast");
+  $('#afterTask').delay(2200).show("drop", { direction: "up" }, 200);
+  $('#actionContainer').delay(2200).animate({ 
+    height: "225px",
+  }, 100);
 });

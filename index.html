@@ -2,78 +2,188 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Rispen Markup</title>
-    <link href="css/styles2.css" rel="stylesheet" />
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Droid+Sans+Mono' rel='stylesheet' type='text/css'>
-    <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-    <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.15/jquery-ui.min.js"></script>
-    <script type='text/javascript' src='js/jquery.the_final_countdown.js'></script>
-    <script type="text/javascript" src="js/jquery.timeago.js"></script>
-    <script type='text/javascript' src="js/rispen.js"></script>
-    <link rel="image_src" href="images/rispen-logo.png" />
+    <title>Rispen</title>
+    <link rel="stylesheet" href="css/rispen.css" />
+    <script src="js/jquery-1.6.4.min.js"></script>
+    <script type='text/javascript' src="js/jquery-ui-1.8.16.custom.min.js"></script>
+    <!-- As bossy as Bowser. -->
   </head>
   <body>
-    <header id="top">
-      <ul id="top-navigation">
-        <li>Top</li>
-        <li>http://rispen.nl/<input id="identifier" value="dCe37Q" /></li>
-        <li id="lock-unlock">
-          <div id="lock-unlock-wrapper">
-            <button id="lock">Lock</button>
-            <button id="unlock">Unlock</button>
-          </div>
-        </li>
-        <li id="delete">Delete</li>
-      </ul>
-    </header>
-    <div id="interaction">
-      <div id="rispen-head">
-        <h1 class="logo"><a href="#">Rispen</a></h1>
-        <h2>Helping you to increase your productivity with Pomodoro®</h2>
+    <header>
+      <div class="container">
+        <h1 id="logo"><a href="#">Rispen</a></h1>
+        <ul id="primaryNavigation">
+          <li>Work</li>
+          <li>Stats</li>
+          <li>Settings</li>
+        </ul>
+        <span id="rispenId">
+          id: yE2gR6
+        </span>
       </div>
-      <div id="main">
-        <div id="input">
-          <input id="description" placeholder="what do you wanna work on?" />
-          <button id="startstop" class="inactive">
-          </button>
-          <span id="timer">13:37</span>
-          <h2 class="logo"><a href="#">Rispen</a></h2>
+    </header>
+    <div class="notification">
+      <div class="container">
+        <h2>You are using Rispen without Registration.</h2> 
+        <p>That‘s fine with us, but you‘re missing out on some cool features!</p>
+        <div id="fb-root"></div>
+      <script>
+        window.fbAsyncInit = function() {
+          FB.init({
+            appId      : 'YOUR_APP_ID',
+            status     : true, 
+            cookie     : true,
+            xfbml      : true
+          });
+        };
+        (function(d){
+           var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+           js = d.createElement('script'); js.id = id; js.async = true;
+           js.src = "//connect.facebook.net/en_US/all.js";
+           d.getElementsByTagName('head')[0].appendChild(js);
+         }(document));
+      </script>
+        <div class="fb-login-button" data-perms="email,user_checkins">
+          Login with Facebook
         </div>
-        <div id="after-task">
-          <form id="after-task-form">
-            <label>Disturbances</label><input placeholder="have you been disturbed? :3" />
-          </form>
-          <ul id="options">
-            <li id="newtask">new task</li>
-            <li id="continuetask">continue task</li>
-            <li id="shortbreak">short break</li>
-            <li id="longbreak">long break</li>
-          </ul>
-        </div>
+        <span id="noRegistration">Continue without registration</span>
       </div>
     </div>
-    <ul id="history">
-    </ul>
-    <footer>
-      <a href="#top">Scroll to top</a>
-    </footer>
-    <script>
-      $('#lock').click( 
-        function() {
-          $('#lock-unlock-wrapper').animate({
-          marginTop: '-50',
-        }, 100);
-      });
-      $('#unlock').click( 
-        function() {
-          $('#lock-unlock-wrapper').animate({
-            marginTop: '0',
-          }, 100);
-      });
-    </script>
+    
+    <!-- DEBUG NAVIGATION START -->
+    <div class="container" style="margin-bottom: 20px;">
+      <h2 style="display: inline; font-size: 10pt;">Debug Menu</h2>
+      <button id="pomodoro">Pomodoro</button>
+      <button id="finishedTask">Finish Task</button>
+    </div>
+    <!-- DEBUG NAVIGATION END -->
+    
+    <div class="container">
+      <div id="actionContainer">
+      <div id="action">
+        <div id="progressBar"></div>
+        <div id="form">
+          <input id="task" placeholder="What do you want to do?"/>
+          <button id="startStop" class="button">Start</button>
+          <div id="afterTask">
+            <textarea placeholder="Summary"></textarea>
+            <div id="mood">
+              <button class="button positive">Positive</button>
+              <button class="button neutral">Neutral</button>
+              <button class="button negative">Negative</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      <h1>History<span class="quickStats">Breaks: 5</span><span class="quickStats">Pomodoros: 23</span></h1>
+      <ul id="history">
+        <li id="task5" class="task neutral">
+          <h2>
+            <span class="expand">▼</span>
+            Fixing issue #23 – No Club-Mate in the office
+          </h2>
+          <abbr class="timeago" title="2011-10-29T11:39:59.325652Z">28 minutes ago</abbr>
+          <div class="taskInfo">
+            <p class="summary">
+              I was doing some fine progress until I found the sink to be making loud noises. Seems like working in the kitchen isn‘t the best thing for me.
+            </p>
+            <div class="taskOptions">
+              <span class="geoLocation">Coworking Space Garage Bilk</span>
+              <span class="delete">Delete ×</span>
+            </div>
+          </div>
+        </li>
+        <li id="task4" class="task positive">
+          <h2>
+            <span class="expand">▼</span>
+            Scouting issues on GitHub
+          </h2>
+          <abbr class="timeago" title="2011-10-29T11:39:59.325652Z">56 minutes ago</abbr>
+        </li>
+        <li id="task3" class="task neutral">
+          <h2>
+            <span class="expand">▼</span>
+            Doing CSS for extended Navigation
+          </h2>
+          <abbr class="timeago" title="2011-10-29T11:39:59.325652Z">yesterday</abbr>
+        </li>
+        <li id="break2" class="break long"></li>
+        <li id="task2" class="task positive">
+          <h2>
+            <span class="expand">▼</span>
+            Learning Hiragana. がんばって！
+          </h2>
+          <abbr class="timeago" title="2011-10-29T11:39:59.325652Z">2011-10-28</abbr>
+        </li>
+        <li id="task1" class="task negative">
+          <h2>
+            <span class="expand">▼</span>
+            Planning the next meeting for Rispen
+          </h2>
+          <abbr class="timeago" title="2011-10-29T11:39:59.325652Z">2011-10-28</abbr>
+        </li>
+        <li id="task0" class="task neutral">
+          <h2>
+            <span class="expand">▼</span>
+            Fixing issue #22 – Martinis don‘t come with olives
+          </h2>
+          <abbr class="timeago" title="2011-10-29T11:39:59.325652Z">2011-10-27</abbr>
+        </li>
+        <li id="task-1" class="task positive">
+          <h2>
+            <span class="expand">▼</span>
+            Creating a concept for Rispen‘s introduction video
+          </h2>
+          <abbr class="timeago" title="2011-10-29T11:39:59.325652Z">2011-10-27</abbr>
+        </li>
+        <li id="break1" class="break short"></li>
+        <li id="task-2" class="task negative">
+          <h2>
+            <span class="expand">▼</span>
+            Finding a recipe for dinner tonight
+          </h2>
+          <abbr class="timeago" title="2011-10-29T11:39:59.325652Z">2011-10-27</abbr>
+        </li>
+        <li id="task-3" class="task negative">
+          <h2>
+            <span class="expand">▼</span>
+            Band-aiding my wounds from the fight with Thomas
+          </h2>
+          <abbr class="timeago" title="2011-10-29T11:39:59.325652Z">2011-10-26</abbr>
+        </li>
+        <li id="task-4" class="task positive">
+          <h2>
+            <span class="expand">▼</span>
+            Messing around with Thomas‘ python code and hiding bugs
+          </h2>
+          <abbr class="timeago" title="2011-10-29T11:39:59.325652Z">2011-10-25</abbr>
+        </li>
+        <li id="task-5" class="task positive">
+          <h2>
+            <span class="expand">▼</span>
+            Drinking all of Thomas‘ Club-Mate
+          </h2>
+          <abbr class="timeago" title="2011-10-29T11:39:59.325652Z">2011-10-25</abbr>
+        </li>
+        <li id="task-6" class="task positive">
+          <h2>
+            <span class="expand">▼</span>
+            Creating some jQuery-magic for Rispen
+          </h2>
+          <abbr class="timeago" title="2011-10-29T11:39:59.325652Z">2011-10-25</abbr>
+        </li>
+      </ul>
+      <footer>
+        <p>Rispen is a project by <a href="https://twitter.com/#!/phreeza">Thomas McColgan</a> and <a href="https://twitter.com/#!/chrisgrabinski">Christopher Grabinski</a>.</p>
+        <dl>
+          <dt>Powered by</dt>
+          <dd><a href="http://www.python.org/">Python</a></dd>
+          <dd><a href="http://code.google.com/appengine/">Google App Engine</a></dd>
+        </dl>
+      </footer>
+    </div>
+    <script src="js/rispen.js" type="text/javascript"></script>
+    <script src="js/rispen-old.js" type="text/javascript"></script>
   </body>
 </html>
-<!-- 
-Z̸̛͚͆̄ͬ̈́̉̅̚ͅA̷̷̭͇̦̅̿̄̒͜ͅL̛̟̮̘͖͇͈̰͈̗̄ͤ̑̚͝G̮̮̼̃̍ͩ̽̚O̶͍͇̊͊!̶̸̟͔̲̍͑ͥͫͩͮ̎͘
--->

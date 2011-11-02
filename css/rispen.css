@@ -1,0 +1,326 @@
+.container {
+  margin: auto;
+  width: 560px;
+  clear: both;
+}
+body {
+  margin: 0;
+  padding: 0 0 40px 0;
+  background: #eee;
+  -webkit-text-size-adjust: none;
+}
+.close {
+  float: right;
+  font-size: 10pt;
+}
+a {
+  color: #ff7800;
+  text-decoration: none;
+}
+a:hover {
+  color: #cc6000;
+}
+.button {
+  height: 37px;
+  width: 120px;
+  margin: 0 0 10px 0;
+  background: #323232;
+  border: 0;
+  text-align: center;
+  font-size: 12pt;
+  -moz-border-bottom-left-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  -moz-border-bottom-right-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-top-width: 5px;
+  border-top-style: solid;
+  color: #ffffff;
+  text-shadow: 1px 1px 1px #141414;
+}
+@font-face {
+  font-family: 'DejaWeb';
+  src: url('../fonts/dejaweb-bold-webfont.eot');
+  src: url('../fonts/dejaweb-bold-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/dejaweb-bold-webfont.woff') format('woff'), url('../fonts/dejaweb-bold-webfont.ttf') format('truetype'), url('../fonts/dejaweb-bold-webfont.svg#DejaWebBold') format('svg');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'DejaWeb';
+  src: url('../fonts/dejaweb-webfont.eot');
+  src: url('../fonts/dejaweb-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/dejaweb-webfont.woff') format('woff'), url('../fonts/dejaweb-webfont.ttf') format('truetype'), url('../fonts/dejaweb-webfont.svg#DejaWebRegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  font-family: "DejaWeb", "Helvetica", "Arial", sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  padding: 0;
+}
+h1 {
+  margin-bottom: 15px;
+  font-size: 16pt;
+  -moz-text-shadow: 1px 1px 1px #ffffff;
+  -webkit-text-shadow: 1px 1px 1px #ffffff;
+  text-shadow: 1px 1px 1px #ffffff;
+}
+header {
+  min-width: 560px;
+  height: 60px;
+  line-height: 60px;
+  background: #323232;
+  box-shadow: 0 1px 1px #bebebe;
+  border-bottom: 1px solid #181818;
+}
+header #logo {
+  float: left;
+  width: 132px;
+  height: 40px;
+  margin: 10px 20px 0 0;
+  overflow: hidden;
+  background: url(../img/h1-logo.png) no-repeat;
+}
+header #logo a {
+  display: block;
+  line-height: 999999pt;
+}
+header #rispenId {
+  float: right;
+  font-family: 'Droid Sans Mono', sans-serif;
+  padding: 10px 20px;
+  margin-top: 14px;
+  background: #181818;
+  color: white;
+  font-size: 9pt;
+  line-height: 9pt;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+}
+.notification {
+  clear: both;
+  background: #c8c8c8;
+  margin-bottom: 20px;
+  padding: 15px 0;
+  font-size: 10pt;
+  border-bottom: 1px solid #ffffff;
+}
+.notification .fb-login-button {
+  float: left;
+  margin-right: 20px;
+  margin-top: -3px;
+}
+.notification h2 {
+  -moz-text-shadow: 1px 1px 1px #ffffff;
+  -webkit-text-shadow: 1px 1px 1px #ffffff;
+  text-shadow: 1px 1px 1px #ffffff;
+}
+.notification #noRegistration {
+  cursor: pointer;
+  font-size: 9pt;
+}
+.notification #noRegistration:hover {
+  text-decoration: underline;
+}
+.notification.noRegistration {
+  height: 16px;
+}
+.notification.noRegistration p, .notification.noRegistration #noRegistration {
+  display: none;
+}
+.notification.noRegistration h2 {
+  font-size: 10pt;
+  float: left;
+  margin-right: 20px;
+}
+.quickStats {
+  float: right;
+  font-size: 12pt;
+  font-weight: normal;
+  margin-left: 15px;
+  line-height: 20pt;
+  color: #323232;
+}
+#primaryNavigation {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+#primaryNavigation li {
+  float: left;
+  padding: 0 20px;
+  color: #ffffff;
+  border-left: 1px solid #252525;
+  text-shadow: 1px 1px 1px #141414;
+}
+#primaryNavigation li:last-child {
+  border-right: 1px solid #252525;
+}
+#primaryNavigation li:hover {
+  border-bottom: 5px solid #ff7800;
+  height: 55px;
+  cursor: pointer;
+}
+#progressBar {
+  height: 5px;
+  background: #ff7800;
+  width: 0px;
+}
+#form {
+  background: #c8c8c8;
+  padding: 10px 10px 4px 10px;
+  margin-bottom: 20px;
+  -moz-border-bottom-left-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  -moz-border-bottom-right-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+#form input {
+  width: 405px;
+  margin: 0 0 10px 0;
+  outline: 0;
+  border: 0;
+  padding: 8px 20px;
+  font-size: 12pt;
+}
+#form textarea {
+  width: 500px;
+  height: 64px;
+  padding: 8px 20px;
+  margin-bottom: 5px;
+  font-size: 12pt;
+  border: 0;
+  outline: 0;
+  resize: none;
+}
+#form #startStop {
+  width: 80px;
+}
+#form #afterTask {
+  display: none;
+}
+#form #mood {
+  text-align: center;
+}
+#history {
+  margin: 0 0 20px 0;
+  padding: 0;
+  width: 560px;
+  list-style: none;
+}
+#history li {
+  clear: both;
+}
+#history .task {
+  min-height: 37px;
+  border-top-width: 5px;
+  border-top-style: solid;
+  line-height: 37px;
+  vertical-align: middle;
+  background: #323232;
+  margin-bottom: 8px;
+  color: #ffffff;
+  text-shadow: 1px 1px 1px #141414;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-bottom: 1px solid #1e1e1e;
+  box-shadow: 0 1px 1px #bebebe;
+}
+#history .task h2 {
+  float: left;
+  margin: 0 0 0 10px;
+  font-weight: normal;
+  font-size: 12pt;
+}
+#history .task h2 .expand {
+  float: left;
+  margin-right: 10px;
+  font-size: 10pt;
+  color: #fff;
+  cursor: pointer;
+}
+#history .task abbr {
+  float: right;
+  margin-right: 10px;
+  font-size: 9pt;
+}
+#history .task p {
+  font-size: 10pt;
+  line-height: 14pt;
+}
+#history .task .taskInfo {
+  display: none;
+  clear: both;
+}
+#history .task .taskInfo .summary {
+  display: block;
+  padding: 10px 40px 10px 34px;
+  margin: 0 0 20px 0;
+  line-height: 16pt;
+  font-size: 11pt;
+}
+#history .task .taskInfo .taskOptions {
+  height: 36px;
+  line-height: 36px;
+  border-top: 1px dashed #1e1e1e;
+  padding: 0 20px 0 34px;
+}
+#history .task .taskInfo .taskOptions .geoLocation {
+  background: url(../img/geoLocation.png) no-repeat;
+  padding: 1px 0 1px 21px;
+  font-size: 9pt;
+}
+#history .task .taskInfo .taskOptions .delete {
+  float: right;
+  font-size: 9pt;
+  cursor: pointer;
+}
+#history .break {
+  background: #c8c8c8;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.positive {
+  border-top-color: #3ca032;
+}
+.neutral {
+  border-top-color: #ff7800;
+}
+.negative {
+  border-top-color: #be0a1e;
+}
+.long {
+  height: 25px;
+}
+.short {
+  height: 5px;
+}
+footer {
+  font-size: 9pt;
+}
+footer dl {
+  margin: 0;
+  padding: 0;
+}
+footer dl dt {
+  float: left;
+  margin-right: 20px;
+  font-weight: bold;
+}
+footer dl dd {
+  float: left;
+  margin: 0 10px;
+}
+#task5 {
+  display: none;
+}
