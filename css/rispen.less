@@ -434,7 +434,9 @@ header {
 
 // History
 // ---
-
+#historyContainer {
+  display: none;
+}
 #history {
   margin: 0 0 20px 0;
   padding: 0;
@@ -547,6 +549,7 @@ header {
 
 footer {
   font-size: 9pt;
+  padding-top: 40px;
   dl {
     margin: 0;
     padding: 0;
@@ -563,6 +566,28 @@ footer {
 }
 
 
-#task5 {
-  display: none;
+// Welcome
+// ---
+
+#welcome {
+  padding: 40px 0 20px 0;
+  text-align: center;
+  h1 {
+    font-weight: normal;
+    font-size: 12pt;
+    margin: 20px 0 40px 0;
+  }
+  p {
+    text-align: left;
+    font-size: 10pt;
+    line-height: 14pt;
+    -moz-column-count: 2;
+    -webkit-column-count: 2;
+    column-count: 2;
+    -moz-column-gap: 20px;
+    -webkit-column-gap: 20px;
+    column-gap: 20px;
+    height: 200px;
+    margin-bottom: 40px;
+  }
 }

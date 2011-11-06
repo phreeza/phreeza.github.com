@@ -79,7 +79,7 @@ $('#finishedTask').click(function() {
   $('#progressBar').delay(380).animate({
     width: "0",
   }, 10 );
-  $('#action').delay(400).show("drop", { direction: "down" }, 200);
+  $('#action').delay(400).show("drop", { direction: "up" }, 200);
 });
 
 // Expand
