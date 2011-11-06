@@ -116,6 +116,13 @@ header #rispenId input {
   font-size: 9pt;
   color: #ff7800;
 }
+header #rispenId input:focus {
+  background: #ff7800;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  color: #ffffff;
+}
 .notification {
   display: none;
   clear: both;
