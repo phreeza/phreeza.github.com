@@ -11,7 +11,7 @@ $(function() {
   autostart: false,
     buzzer: function(){
       $("#summary").slideDown('fast'); 
-      $("#description").removeClass('active');
+      $("#task").removeClass('active');
       $("#progress").fadeOut('fast');
       $("#startStop").css('display', 'none');
       var taskid = $("#history").children().size()-1;
@@ -27,10 +27,10 @@ $(function() {
     var taskid = $("#history").children().size()-1;
     $("#task"+taskid).removeClass("running");
   }
-    else if (trim($("#description").val()) == '')
+    else if (trim($("#task").val()) == '')
   {
-    $("#description").val('');
-    $("#description").attr({placeholder: 'You need to type in a task description.',});
+    $("#task").val('');
+    $("#task").attr({placeholder: 'You need to type in a task description.',});
   }
     else
   {
@@ -38,11 +38,11 @@ $(function() {
     $("#startstop div").animate({
       marginTop: '-25px'
     }, 100);
-    $("#description").attr({placeholder: 'What do you want to do?',});
-    $("#description").attr({disabled: 'disabled',});
-    $("#description").addClass('active');
+    $("#task").attr({placeholder: 'What do you want to do?',});
+    $("#task").attr({disabled: 'disabled',});
+    $("#task").addClass('active');
     $("#progress").progressbar({"value":100});
-    addTask($("#description").val(),ISODateString(new Date()),true,0);
+    addTask($("#task").val(),ISODateString(new Date()),true,0);
     $("#progress").fadeIn('fast');
   }
   });
@@ -74,13 +74,13 @@ $(function() {
     }, 150);
     $("#summary").slideUp('fast');
     $("#timer").resetTimer();
-    $("#description").removeAttr("disabled");
-    $("#description").val('')
+    $("#task").removeAttr("disabled");
+    $("#task").val('')
     $("#progress").fadeOut('fast');
   });
 
   $('#shortbreak').click(function() {
-    $("#description").val('Short Break')
+    $("#task").val('Short Break')
     $('#startstop').delay(200).animate({
       backgroundPosition: '0px'
     }, 150);
@@ -91,7 +91,7 @@ $(function() {
   });
   
   $('#longbreak').click(function() {
-    $("#description").val('Long Break')
+    $("#task").val('Long Break')
     $('#startstop').delay(200).animate({
       backgroundPosition: '0px'
     }, 150);
@@ -110,7 +110,7 @@ $(function() {
       }
       );
 
-  $('#description').keypress(
+  $('#task').keypress(
       function(e) {
         var code = (e.keyCode ? e.keyCode : e.which);
         if(code == 13) {
@@ -118,7 +118,7 @@ $(function() {
         }
       }
       );
-  $('#resumen,#description').keyup(function(){
+  $('#resumen,#task').keyup(function(){
     var text = $(this).val();
     var textlength = text.length;
     if(textlength > 140){$(this).val(text.substr(0,140));}
