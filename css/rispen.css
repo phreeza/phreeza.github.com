@@ -422,7 +422,7 @@ footer {
 }
 footer ul {
   margin: 0;
-  padding: 0;
+  padding: 20px 0;
   list-style: none;
 }
 footer ul li {
@@ -432,7 +432,7 @@ footer ul li h3 {
   float: left;
   margin-right: 20px;
   font-weight: bold;
-  font-size: 10pt;
+  font-size: 9pt;
   color: #323232;
 }
 footer ul li span {
@@ -441,6 +441,9 @@ footer ul li span {
 }
 footer ul li span#socialTwitter {
   margin-right: 0;
+}
+footer ul li span#socialFacebook {
+  margin: 0;
 }
 #welcome {
   padding: 40px 0 20px 0;
