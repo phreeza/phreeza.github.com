@@ -343,6 +343,7 @@ $(function() {
     }, 10 );
     $('#action').delay(400).show("drop", { direction: "down" }, 200);
     $("#task").removeAttr('disabled');
+    $("#task").val('');
     $("#startStop div").animate({
       marginTop: '0px'
     }, 100);
