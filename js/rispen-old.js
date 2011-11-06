@@ -1,17 +1,17 @@
 $(function() {
   $("#timer").createTimer({
-    time_in_seconds: 25*60, // hack for editing the post-pomodoro screen. TODO revert to 25*60,
+    time_in_seconds: 25, // hack for editing the post-pomodoro screen. TODO revert to 25*60,
   tick:function(timer, time_in_seconds, formatted_time)
   {
     $("#progressBar").animate({
-      width: (100.-time_in_seconds*100./(25*60.))+"%"},900);
+      width: (100.-time_in_seconds*100./(25.))+"%"},1000,"linear");
     document.title = formatted_time + " - Rispen";
 
   }
   ,
   autostart: false,
   buzzer: function(){
-    $("#summary").slideDown('fast'); 
+    $('#afterTask').show("drop", { direction: "up" }, 200);
     $("#task").removeClass('active');
     $("#startStop").css('display', 'none');
     var taskid = $("#history").children().size()-1;
@@ -204,7 +204,8 @@ $(function() {
     {
       $("#task"+taskid).addClass("task");
       $("#task"+taskid).addClass("neutral");
-      $("#task"+taskid).slideDown("slow");
+      //$("#task"+taskid).slideDown("slow");
+      $("#task"+taskid).hide();
       $.getJSON("http://rispennl.appspot.com/save",
           {content:task,author:$("#identifier").val(),item_type:"pomodoro"},
           function(data){
@@ -223,6 +224,7 @@ $(function() {
                 $.getJSON("http://rispennl.appspot.com/complete",{id:data.id,feedback_text:strip_html($("#resumen").val()),feedback_rating:1});
                 $("#task"+taskid+" .summary").html($("#resumen").val());
                 $("#task"+taskid+" .rating").html(1);
+
               });
 
           }
@@ -271,6 +273,48 @@ $(function() {
         task_list[p].feedback_rating);
     }
         });
+  }
+
+  function finishTaskAnimate(taskid) {
+
+    // This is only necessary for demonstration-purposes
+    $('#task'+taskid).children('.taskInfo').css({
+      display: "none",
+    });
+
+    $('#form').animate({ 
+      backgroundColor: "rgb(50,50,50)",
+    }, 100);
+    $('#form input').animate({ 
+      backgroundColor: "rgb(50,50,50)",
+      color: "#fff",
+    }, 100);
+    $('#form textarea').animate({ 
+      backgroundColor: "rgb(50,50,50)",
+      color: "#fff",
+    }, 100);
+    $('#actionContainer').animate({ 
+      height: "86px",
+    }, 100);
+    $('#afterTask').slideUp("fast");
+    $('#action').delay(250).hide("drop", { direction: "down" }, 300);
+    $('#task'+taskid).delay(300).show("bounce", { times:2 }, 300);
+    $('#form').delay(350).animate({ 
+      backgroundColor: "rgb(200,200,200)",
+    }, 100);
+    $('#form input').delay(350).animate({ 
+      backgroundColor: "rgb(255,255,255)",
+      color: "rgb(50,50,50)"
+    }, 100);
+    $('#form textarea').delay(350).animate({ 
+      backgroundColor: "rgb(255,255,255)",
+      color: "rgb(50,50,50)"
+    }, 100);
+    $('#startStop').delay(380).fadeIn("fast");
+    $('#progressBar').delay(380).animate({
+      width: "0",
+    }, 10 );
+    $('#action').delay(400).show("drop", { direction: "down" }, 200);
   }
 
   function strip_html(html)
