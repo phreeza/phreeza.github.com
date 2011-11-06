@@ -223,9 +223,29 @@ $(function() {
             $("#sendTask").unbind("click.sendfeedback");
             $("#sendTask").bind("click.sendfeedback", function()
               {
-                $.getJSON("http://rispennl.appspot.com/complete",{id:data.id,feedback_text:strip_html($("#summaryTextarea").val()),feedback_rating:1});
                 $("#task"+taskid+" .summary").html($("#summaryTextarea").val());
-                $("#task"+taskid+" .rating").html(1);
+                $("#task"+taskid).removeClass("neutral");
+                if ($('#progressBar').hasClass("positive"))
+                {
+                  $("#task"+taskid).removeClass("neutral");
+                  $("#task"+taskid).addClass("positive");
+                  fb_rating = 2;
+                }
+                if ($('#progressBar').hasClass("neutral"))
+                {
+                  $("#task"+taskid).removeClass("neutral");
+                  $("#task"+taskid).addClass("neutral");
+                  fb_rating = 1;
+                }
+                if ($('#progressBar').hasClass("negative"))
+                {
+                  $("#task"+taskid).removeClass("neutral");
+                  $("#task"+taskid).addClass("negative");
+                  fb_rating = 0;
+                }
+
+                $.getJSON("http://rispennl.appspot.com/complete",{id:data.id,feedback_text:strip_html($("#summaryTextarea").val()),feedback_rating:fb_rating});
+
                 finishTaskAnimate(taskid);
               });
 
@@ -234,8 +254,9 @@ $(function() {
     }
     else
     {
+      rating_classes = new Array("negative","neutral","positive");
       $("#task"+taskid).addClass("task");
-      $("#task"+taskid).addClass("neutral");
+      $("#task"+taskid).addClass(rating_classes[fb_rating]);
       $("#task"+taskid+" .summary").html(fb_text);
       $("#task"+taskid+" div").children(".delete").click(
           function()

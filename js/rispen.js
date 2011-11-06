@@ -14,16 +14,23 @@ $('#mood').children('.positive').click(function() {
   $('#progressBar').animate({
     backgroundColor: "rgb(60,160,50)",
   }, 150 );
+  $('#progressBar').removeClass("neutral negative");
+  $('#progressBar').addClass("positive");
+
 });
 $('#mood').children('.neutral').click(function() {
   $('#progressBar').animate({
     backgroundColor: "rgb(255,120,0)",
   }, 150 );
+  $('#progressBar').removeClass("positive negative");
+  $('#progressBar').addClass("neutral");
 });
 $('#mood').children('.negative').click(function() {
   $('#progressBar').animate({
     backgroundColor: "rgb(190,10,30)",
   }, 150 );
+  $('#progressBar').removeClass("positive neutral");
+  $('#progressBar').addClass("negative");
 });
 
 
