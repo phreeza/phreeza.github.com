@@ -1,0 +1,39 @@
+application: rispennl
+version: 1
+runtime: python
+api_version: 1
+
+handlers:
+- url: /images/(.*)
+  static_files: images/\1
+  upload: images/(.*)
+
+- url: /css/(.*)
+  static_files: css/\1
+  upload: css/(.*)
+
+- url: /js/(.*)
+  static_files: js/\1
+  upload: js/(.*)
+
+- url: /
+  script: main.py
+
+- url: /json
+  script: main.py
+
+- url: /save
+  script: main.py
+
+- url: /delete
+  script: main.py
+
+- url: /rename
+  script: main.py
+
+- url: /complete
+  script: main.py
+
+- url: .*
+  static_files: index.html
+  upload: index\.html
