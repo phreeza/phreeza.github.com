@@ -11,11 +11,11 @@ $(function() {
   ,
   autostart: false,
   buzzer: function(){
+    $('#actionContainer').css({ height: "auto" });
     $('#afterTask').show("drop", { direction: "up" }, 200);
     $("#task").removeClass('active');
     $("#startStop").css('display', 'none');
     var taskid = $("#history").children().size()-1;
-    $("#task"+taskid).removeClass("running");
   }
   });
 
