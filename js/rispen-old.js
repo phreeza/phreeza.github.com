@@ -23,8 +23,8 @@ $(function() {
     if ($("#timer").data('countdown.state') == 'running')
   {
     $("#timer").resetTimer();
+    $('#action').effect("shake", { times:2 }, 80);
     var taskid = $("#history").children().size()-1;
-    $("#task"+taskid).removeClass("running");
   }
     else if (trim($("#task").val()) == '')
   {
