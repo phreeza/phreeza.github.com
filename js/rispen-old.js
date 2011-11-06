@@ -234,17 +234,17 @@ $(function() {
                   $("#task"+taskid).addClass("positive");
                   fb_rating = 3;
                 }
-                if ($('#progressBar').hasClass("neutral"))
-                {
-                  $("#task"+taskid).removeClass("neutral");
-                  $("#task"+taskid).addClass("neutral");
-                  fb_rating = 2;
-                }
-                if ($('#progressBar').hasClass("negative"))
+                else if ($('#progressBar').hasClass("negative"))
                 {
                   $("#task"+taskid).removeClass("neutral");
                   $("#task"+taskid).addClass("negative");
                   fb_rating = 1;
+                }
+                else //assume neutral. ($('#progressBar').hasClass("neutral"))
+                {
+                  $("#task"+taskid).removeClass("neutral");
+                  $("#task"+taskid).addClass("neutral");
+                  fb_rating = 2;
                 }
 
                 $.getJSON("http://rispennl.appspot.com/complete",{id:data.id,feedback_text:strip_html($("#summaryTextarea").val()),feedback_rating:fb_rating});
@@ -343,6 +343,7 @@ $(function() {
       width: "0",
     }, 10 );
     $('#action').delay(400).show("drop", { direction: "down" }, 200);
+    $("#task").addClass('active');
   }
 
   function strip_html(html)
