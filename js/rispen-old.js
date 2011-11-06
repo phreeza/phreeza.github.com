@@ -198,6 +198,7 @@ $(function() {
     newli.id="task" + taskid;
     newli.innerHTML = "<h2><span class=\"expand\">▼</span>"+task+"</h2><abbr class=\"timeago\" title=\""+date+"Z\">"+date+"Z</abbr><div class=\"taskInfo\"><p class=\"summary\"></p><div class=\"taskOptions\"><span class=\"geoLocation\">Coworking Space Garage Bilk</span><span class=\"delete\">Delete ×</span></div></div>";
     if (isnew) newli.style.display="none";
+
     $("#history").prepend(newli);
     $("abbr.timeago").timeago();
     if (isnew) 
@@ -234,6 +235,7 @@ $(function() {
     {
       $("#task"+taskid).addClass("task");
       $("#task"+taskid).addClass("neutral");
+      $("#task"+taskid+" .summary").html(fb_text);
       $("#task"+taskid+" div").children(".delete").click(
           function()
           {
