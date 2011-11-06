@@ -3,8 +3,8 @@ $(function() {
     time_in_seconds: 25, // hack for editing the post-pomodoro screen. TODO revert to 25*60,
   tick:function(timer, time_in_seconds, formatted_time)
   {
-    $("#progressBar").animate({
-      width: (100.-time_in_seconds*100./(25.))+"%"},1000,"linear");
+    $("#progressBar").css({
+      width: (100.-time_in_seconds*100./(25.))+"%"});
     document.title = formatted_time + " - Rispen";
 
   }
