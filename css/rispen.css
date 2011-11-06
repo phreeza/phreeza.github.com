@@ -420,16 +420,22 @@ footer {
   font-size: 9pt;
   padding-top: 40px;
 }
-footer dl {
+footer ul {
   margin: 0;
   padding: 0;
+  list-style: none;
 }
-footer dl dt {
+footer ul li {
+  margin-bottom: 20px;
+}
+footer ul li h3 {
   float: left;
   margin-right: 20px;
   font-weight: bold;
+  font-size: 10pt;
+  color: #323232;
 }
-footer dl dd {
+footer ul li span {
   float: left;
   margin: 0 10px;
 }
