@@ -361,11 +361,10 @@ $(function() {
   else {
     $("#identifier").val("localuser");
     repopTasks("localuser");
-
   }
 });
 
-$(document).ready(function() {
+/*$(document).ready(function() {
 
   $('a[href*=#]').bind("click", function(event) {
     event.preventDefault();
@@ -376,4 +375,4 @@ $(document).ready(function() {
     }, 500 , function (){location.hash = ziel;});
   });
   return false;
-});
+});*/
