@@ -439,6 +439,9 @@ footer ul li span {
   float: left;
   margin: 0 10px;
 }
+footer ul li span#socialtwitter {
+  margin-right: 0;
+}
 #welcome {
   padding: 40px 0 20px 0;
   text-align: center;
