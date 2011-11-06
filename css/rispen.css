@@ -76,6 +76,7 @@ header {
   min-width: 560px;
   height: 60px;
   line-height: 60px;
+  margin-bottom: 20px;
   background: #323232;
   box-shadow: 0 1px 1px #bebebe;
   border-bottom: 1px solid #181818;
@@ -106,6 +107,7 @@ header #rispenId {
   border-radius: 3px;
 }
 .notification {
+  display: none;
   clear: both;
   background: #c8c8c8;
   margin-bottom: 20px;
@@ -150,6 +152,7 @@ header #rispenId {
   color: #323232;
 }
 #primaryNavigation {
+  display: none;
   padding: 0;
   margin: 0;
   list-style: none;
@@ -252,6 +255,7 @@ header #rispenId {
 #history .task abbr {
   float: right;
   margin-right: 10px;
+  border: 0;
   font-size: 9pt;
 }
 #history .task p {
@@ -265,17 +269,17 @@ header #rispenId {
 #history .task .taskInfo .summary {
   display: block;
   padding: 10px 40px 10px 34px;
-  margin: 0 0 20px 0;
+  margin: 0;
   line-height: 16pt;
   font-size: 11pt;
 }
 #history .task .taskInfo .taskOptions {
   height: 36px;
   line-height: 36px;
-  border-top: 1px dashed #1e1e1e;
   padding: 0 20px 0 34px;
 }
 #history .task .taskInfo .taskOptions .geoLocation {
+  display: none;
   background: url(../img/geoLocation.png) no-repeat;
   padding: 1px 0 1px 21px;
   font-size: 9pt;

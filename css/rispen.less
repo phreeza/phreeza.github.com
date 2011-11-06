@@ -168,7 +168,7 @@ header {
   min-width: @gridWidth;
   height: 60px;
   line-height: 60px;
-//  margin-bottom: 20px;
+  margin-bottom: 20px;
   background: @darkGrey;
   box-shadow: 0 1px 1px #bebebe;
   border-bottom: 1px solid darken(@darkGrey, 10%);
@@ -198,6 +198,7 @@ header {
 }
 
 .notification {
+  display: none;
   clear: both;
   background: @lightGrey;
   margin-bottom: 20px;
@@ -244,6 +245,7 @@ header {
 // Primary Navigation
 
 #primaryNavigation {
+  display: none;
   padding: 0;
   margin: 0;
   list-style: none;
@@ -352,6 +354,7 @@ header {
     abbr {
       float: right;
       margin-right: 10px;
+      border: 0;
       font-size: 9pt;
     }
     p {
@@ -364,16 +367,18 @@ header {
       .summary {
         display: block;
         padding: 10px 40px 10px 34px;
-        margin: 0 0 20px 0;
+//        margin: 0 0 20px 0;
+        margin: 0;
         line-height: 16pt;
         font-size: 11pt;
       }
       .taskOptions {
         height: 36px;
         line-height: 36px;
-        border-top: 1px dashed rgb(30,30,30);
+//        border-top: 1px dashed rgb(30,30,30);
         padding: 0 20px 0 34px;
         .geoLocation {
+          display: none;
           background: url(../img/geoLocation.png) no-repeat;
           padding: 1px 0 1px 21px;
           font-size: 9pt;
