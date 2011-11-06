@@ -227,6 +227,7 @@ $(function() {
               {
                 $("#task"+taskid+" .summary").html($("#summaryTextarea").val());
                 $("#task"+taskid).removeClass("neutral");
+                fb_rating = 2;
                 if ($('#progressBar').hasClass("positive"))
                 {
                   $("#task"+taskid).removeClass("neutral");
