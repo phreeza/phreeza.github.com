@@ -37,6 +37,8 @@ $(function() {
     $("#startStop div").animate({
       marginTop: '-36px'
     }, 100);
+    $('#welcome').slideUp(80);
+    $('#historyContainer').show("drop", { direction: "up" }, 200);
     $("#task").attr({placeholder: 'What do you want to do?',});
     $("#task").attr({disabled: 'disabled',});
     $("#task").addClass('active');

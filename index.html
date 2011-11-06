@@ -54,33 +54,46 @@
       </div>
     </div>
     <div class="container">
+      <div id="welcome">
+        <img src="img/rispen-logo.png" alt="Rispen" />
+        <h1>Helping you getting more efficient and keeping track of your work <br />with The Pomodoro-Technique®</h1>
+        <p>Rispen is a free and easy to use time-management application that is built upon the Pomodoro-Technique by Francesco Cirillo. The basic idea is to make you split big tasks into smaller parts, that you can complete in a time-frame of 25 minutes – called Pomodoro.<br /><br />
+
+Every 25 minutes, you get a short break and every 5 Pomodoros, you get a long break. While the outcome is pretty much awesome, organizing your Pomodoros is a bag of hurt.<br />
+That‘s why we created Rispen, to take away all the organizing from you and let you do stuff again.<br /><br />
+
+Rispen is still in beta. We are working hard on bringing you new features every now and then that improve your work even more and go way beyond everything, you might have seen in other Pomodoro-timers.</p>
+        <h2>Interested? Get started right now!</h2>
+      </div>
       <div id="actionContainer">
       <div id="action">
         <div id="progressBar"></div>
-        <div id="form" class="clearfix">
-          <input id="task" placeholder="What do you want to do?"/>
-          <a href="#" id="startStop" class="button">
-            <div>
-              <span>Start</span>
-              <span id="timer">13:37</span>
-              <span>Stop</span>
+          <div id="form" class="clearfix">
+            <input id="task" placeholder="What do you want to do?"/>
+            <a href="#" id="startStop" class="button">
+              <div>
+                <span>Start</span>
+                <span id="timer">13:37</span>
+                <span>Stop</span>
+              </div>
+            </a>
+            <div id="afterTask">
+              <textarea id="summaryTextarea" placeholder="Summary"></textarea>
+              <div id="mood">
+                <button id="moodPositive" class="button">Positive</button><button id="moodNeutral" class="button">Neutral</button><button id="moodNegative" class="button">Negative</button>
+              </div>
+              <button id="sendTask" class="button">Send</button>
             </div>
-          </a>
-          <div id="afterTask">
-            <textarea id="summaryTextarea" placeholder="Summary"></textarea>
-            <div id="mood">
-              <button id="moodPositive" class="button">Positive</button><button id="moodNeutral" class="button">Neutral</button><button id="moodNegative" class="button">Negative</button>
-            </div>
-            <button id="sendTask" class="button">Send</button>
           </div>
+          <div id="shortBreak" class="breakAction"><p>Short Break. Grab yourself a bottle of Club-Mate.</p></div>
+          <div id="longBreak" class="breakAction"><p>Long Break. Do you know Nyan Cat, yet?</p></div>
         </div>
-        <div id="shortBreak" class="breakAction"><p>Short Break. Grab yourself a bottle of Club-Mate.</p></div>
-        <div id="longBreak" class="breakAction"><p>Long Break. Do you know Nyan Cat, yet?</p></div>
       </div>
+      <div id="historyContainer">
+        <h1>History<span class="quickStats">Breaks: 5</span><span class="quickStats">Pomodoros: 23</span></h1>
+        <ul id="history">
+        </ul>
       </div>
-      <h1>History<span class="quickStats">Breaks: 5</span><span class="quickStats">Pomodoros: 23</span></h1>
-      <ul id="history">
-      </ul>
       <footer>
         <p>Rispen is a project by <a href="http://twitter.com/phreeza">Thomas McColgan</a> and <a href="http://twitter.com/chrisgrabinski">Christopher Grabinski</a>.</p>
         <dl>
