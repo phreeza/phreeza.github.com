@@ -218,13 +218,13 @@ $(function() {
               }
               );
             //assign feedback sending function
-            $("#newtask").unbind("click.sendfeedback");
-            $("#newtask").bind("click.sendfeedback", function()
+            $("#sendTask").unbind("click.sendfeedback");
+            $("#sendTask").bind("click.sendfeedback", function()
               {
                 $.getJSON("http://rispennl.appspot.com/complete",{id:data.id,feedback_text:strip_html($("#resumen").val()),feedback_rating:1});
                 $("#task"+taskid+" .summary").html($("#resumen").val());
                 $("#task"+taskid+" .rating").html(1);
-
+                finishTaskAnimate(taskid);
               });
 
           }
