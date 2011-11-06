@@ -276,7 +276,7 @@ header {
 }
 #form {
   background: @lightGrey;
-  padding: 10px 10px 4px 10px;
+  padding: 10px 10px 0 10px;
   margin-bottom: 20px;
   -moz-border-bottom-left-radius: 3px;
   -webkit-border-bottom-left-radius: 3px;
@@ -303,7 +303,22 @@ header {
     resize: none;
   }
   #startStop {
-    width: 80px;
+    float: right;
+    display: block;
+    background: @darkGrey;
+    height: 36px;
+    width: 85px;
+    overflow: hidden;
+    /* background-image: url(http://clients.chrisgrabinski.com/rispen/images/startstop.jpg); */
+    div {
+      span {
+        display: block;
+        width: 85px;
+        line-height: 36px;
+        text-align: center;
+        font-size: 10pt;
+      }
+    }
   }
   #afterTask {
     display: none;
