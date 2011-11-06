@@ -122,20 +122,15 @@ a {
 //}
 
 .button {
-  height: 31px;
+  height: 36px;
   .text-shadow(1px 1px 1px rgba(0,0,0,.1);
-  color: @darkGrey;
-  line-height: 32px;
+  background: @darkGrey;
+  color: @white;
+  line-height: 36px;
   text-align: center;
   letter-spacing: 0.5pt;
   font-size: 10pt;
-  border-bottom-color: @darkGrey;
-  border-bottom-width: 5px;
-  border-bottom-style: solid;
   .border-radius;
-
-  
-  
   &.primary {
     background: @neutral;
     color: @white;
@@ -388,6 +383,10 @@ header {
     box-shadow: 0 1px 1px #bebebe;
     h2 {
       float: left;
+      display: block;
+      height: 36px;
+      max-width: 395px;
+      overflow: hidden;
       margin: 0 0 0 10px;
       font-weight: normal;
       font-size: 12pt;
