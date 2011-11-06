@@ -192,6 +192,7 @@ $(function() {
   {
     fb_rating = typeof(fb_rating) != 'undefined' ? fb_rating : "";
     fb_text = typeof(fb_text) != 'undefined' ? fb_text : "";
+    fb_text = fb_text != 'undefined' ? fb_text : "";
     task = strip_html(task);
     var newli = document.createElement('li');
     var taskid = $("#history").children().size();
