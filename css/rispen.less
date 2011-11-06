@@ -121,7 +121,7 @@ a {
 //  text-shadow: 1px 1px 1px rgb(20,20,20);
 //}
 
-.button {
+.button, button {
   height: 36px;
   .text-shadow(1px 1px 1px rgba(0,0,0,.1);
   background: @darkGrey;
@@ -130,10 +130,32 @@ a {
   text-align: center;
   letter-spacing: 0.5pt;
   font-size: 10pt;
+  border: 0;
+  cursor: pointer;
   .border-radius;
-  &.primary {
+  &:hover {
+      background: lighten(@darkGrey,5%);
+    }
+  &.positive {
+    background: @positive;
+    color: @white;
+    &:hover {
+      background: lighten(@positive,5%);
+    }
+  }
+  &.neutral {
     background: @neutral;
     color: @white;
+    &:hover {
+      background: lighten(@neutral,5%);
+    }
+  }
+  &.negative {
+    background: @negative;
+    color: @white;
+    &:hover {
+      background: lighten(@negative,5%);
+    }
   }
 }
 
@@ -305,7 +327,7 @@ header {
   background: @neutral;
   width: 0px;
 }
-#form {
+#form, .breakAction {
   background: @lightGrey;
   padding: 10px 10px 0 10px;
   margin-bottom: 20px;
@@ -350,9 +372,23 @@ header {
   }
   #afterTask {
     display: none;
+    clear: both;
   }
   #mood {
     text-align: center;
+  }
+  #sendTask {
+    float: right;
+  }
+  p {
+    margin: 0;
+    padding: 0 0 10px 0;
+  }
+  &#shortBreak {
+    display: none;
+  }
+  &#longBreak {
+    display: none;
   }
 }
 
