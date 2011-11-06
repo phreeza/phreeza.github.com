@@ -1,10 +1,10 @@
 $(function() {
   $("#timer").createTimer({
-    time_in_seconds: 25*60, // hack for editing the post-pomodoro screen. TODO revert to 25*60,
+    time_in_seconds: 25, // hack for editing the post-pomodoro screen. TODO revert to 25*60,
   tick:function(timer, time_in_seconds, formatted_time)
   {
     $("#progressBar").animate({
-      width: (100.-time_in_seconds*100./(25*60.))+"%"},900);
+      width: (100.-time_in_seconds*100./(25.))+"%"},1000,"linear");
     document.title = formatted_time + " - Rispen";
 
   }
