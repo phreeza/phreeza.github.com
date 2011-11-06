@@ -4,19 +4,19 @@ $(function() {
   tick:function(timer, time_in_seconds, formatted_time)
   {
     $("#progressBar").animate({
-    width: (100.-time_in_seconds*100./(25*60.))+"%"},900);
+      width: (100.-time_in_seconds*100./(25*60.))+"%"},900);
     document.title = formatted_time + " - Rispen";
 
   }
   ,
   autostart: false,
-    buzzer: function(){
-      $("#summary").slideDown('fast'); 
-      $("#task").removeClass('active');
-      $("#startStop").css('display', 'none');
-      var taskid = $("#history").children().size()-1;
-      $("#task"+taskid).removeClass("running");
-    }
+  buzzer: function(){
+    $("#summary").slideDown('fast'); 
+    $("#task").removeClass('active');
+    $("#startStop").css('display', 'none');
+    var taskid = $("#history").children().size()-1;
+    $("#task"+taskid).removeClass("running");
+  }
   });
 
   $("#startStop").click(function() {
@@ -43,9 +43,9 @@ $(function() {
     addTask($("#task").val(),ISODateString(new Date()),true,0);
   }
   });
-  
-// Display of Stop Task 
-  
+
+  // Display of Stop Task 
+
   $("#startstop").hover(function() {
     if ($("#timer").data('countdown.state') == 'running')
   {
@@ -61,9 +61,9 @@ $(function() {
     }, 100);
   }
   }
-  
+
   );
-  
+
 
   $('#newtask').click(function() {
     $('#startstop').delay(200).animate({
@@ -80,21 +80,21 @@ $(function() {
     $('#startstop').delay(200).animate({
       backgroundPosition: '0px'
     }, 150);
-    $("#summary").slideUp('fast');
-    $("#timer").resetTimer($.extend($("#timer").data('countdown.settings'),{time_in_seconds:5*60}));
-    $("#timer").startTimer($("#timer").data('countdown.settings'));
-    addBreak("shortBreak",ISODateString(new Date()),true,0);
+  $("#summary").slideUp('fast');
+  $("#timer").resetTimer($.extend($("#timer").data('countdown.settings'),{time_in_seconds:5*60}));
+  $("#timer").startTimer($("#timer").data('countdown.settings'));
+  addBreak("shortBreak",ISODateString(new Date()),true,0);
   });
-  
+
   $('#longbreak').click(function() {
     $("#task").val('Long Break')
     $('#startstop').delay(200).animate({
       backgroundPosition: '0px'
     }, 150);
-    $("#summary").slideUp('fast');
-    $("#timer").resetTimer($.extend($("#timer").data('countdown.settings'),{time_in_seconds:25*60}));
-    $("#timer").startTimer($("#timer").data('countdown.settings'));
-    addBreak("longBreak",ISODateString(new Date()),true,0);
+  $("#summary").slideUp('fast');
+  $("#timer").resetTimer($.extend($("#timer").data('countdown.settings'),{time_in_seconds:25*60}));
+  $("#timer").startTimer($("#timer").data('countdown.settings'));
+  addBreak("longBreak",ISODateString(new Date()),true,0);
   });
 
   $('#identifier').keypress(
@@ -150,8 +150,8 @@ $(function() {
     var newli = document.createElement('li');
     var taskid = $("#history").children().size();
     if (type == "longBreak") var task = "Long Break"
-    if (type == "shortBreak") var task = "Short Break"
-    newli.innerHTML = "<div>"+task+"<span class=\"delete\">×</span><abbr class=\"timeago\" title=\""+date+"Z\">"+date+"Z</abbr></div>";
+      if (type == "shortBreak") var task = "Short Break"
+        newli.innerHTML = "<div>"+task+"<span class=\"delete\">×</span><abbr class=\"timeago\" title=\""+date+"Z\">"+date+"Z</abbr></div>";
     newli.id="task" + taskid;
     newli.addClass(type);
     if (isnew) newli.style.display="none";
@@ -220,29 +220,29 @@ $(function() {
             $("#newtask").unbind("click.sendfeedback");
             $("#newtask").bind("click.sendfeedback", function()
               {
-              $.getJSON("http://rispennl.appspot.com/complete",{id:data.id,feedback_text:strip_html($("#resumen").val()),feedback_rating:1});
-              $("#task"+taskid+" .summary").html($("#resumen").val());
-              $("#task"+taskid+" .rating").html(1);
+                $.getJSON("http://rispennl.appspot.com/complete",{id:data.id,feedback_text:strip_html($("#resumen").val()),feedback_rating:1});
+                $("#task"+taskid+" .summary").html($("#resumen").val());
+                $("#task"+taskid+" .rating").html(1);
               });
-          
+
           }
-          );
+      );
     }
     else
     {
       $("#task"+taskid).addClass("task");
       $("#task"+taskid).addClass("neutral");
-        $("#task"+taskid+" div").children(".delete").click(
-            function()
-            {
-              $.post("http://rispennl.appspot.com/delete",{id:id});
-              $("#task"+taskid).slideUp("slow");
-            }
-            );
+      $("#task"+taskid+" div").children(".delete").click(
+          function()
+          {
+            $.post("http://rispennl.appspot.com/delete",{id:id});
+            $("#task"+taskid).slideUp("slow");
+          }
+          );
     }
     $("#task"+taskid+" .expand").click(function() {
-    $(this).parent().children('.expandables').slideToggle('fast');
-});
+      $(this).parent().children('.expandables').slideToggle('fast');
+    });
   }
 
   function ISODateString(d){
@@ -256,17 +256,21 @@ $(function() {
   }
 
   function repopTasks(user){
-      $.getJSON("http://rispennl.appspot.com/json",
-              {author:user},
-              function(task_list){
-                task_list.reverse();
-                for (p in task_list)
-                {
-                  addTask(task_list[p].content,task_list[p].date,false,task_list[p].id,
-                    task_list[p].feedback_text,
-                    task_list[p].feedback_rating);
-                }
-              });
+    $.getJSON("http://rispennl.appspot.com/json",
+        {author:user},
+        function(task_list){
+          task_list.reverse();
+          for (p in task_list)
+    {
+      addTask(
+        task_list[p].content,
+        task_list[p].date,
+        false,
+        task_list[p].id,
+        task_list[p].feedback_text,
+        task_list[p].feedback_rating);
+    }
+        });
   }
 
   function strip_html(html)
@@ -277,9 +281,9 @@ $(function() {
   }
 
   function trim(stringToTrim) {
-      return stringToTrim.replace(/^\s+|\s+$/g,"");
+    return stringToTrim.replace(/^\s+|\s+$/g,"");
   }
- 
+
   if (window.location.protocol == "http:"){
     $("#identifier").val(window.location.pathname.split('/')[1]);
     var oldname = $("#identifier").val();
@@ -288,19 +292,19 @@ $(function() {
   else {
     $("#identifier").val("localuser");
     repopTasks("localuser");
-  
+
   }
 });
 
 $(document).ready(function() {
 
-$('a[href*=#]').bind("click", function(event) {
-event.preventDefault();
-var ziel = $(this).attr("href");
+  $('a[href*=#]').bind("click", function(event) {
+    event.preventDefault();
+    var ziel = $(this).attr("href");
 
-$('html,body').animate({
-  scrollTop: $(ziel).offset().top
-  }, 500 , function (){location.hash = ziel;});
+    $('html,body').animate({
+      scrollTop: $(ziel).offset().top
+    }, 500 , function (){location.hash = ziel;});
   });
   return false;
 });
