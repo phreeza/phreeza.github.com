@@ -41,7 +41,6 @@ $(function() {
     $('#historyContainer').show("drop", { direction: "up" }, 200);
     $("#task").attr({placeholder: 'What do you want to do?',});
     $("#task").attr({disabled: 'disabled',});
-    $("#task").addClass('active');
     addTask($("#task").val(),ISODateString(new Date()),true,0);
   }
   });
@@ -344,6 +343,11 @@ $(function() {
     }, 10 );
     $('#action').delay(400).show("drop", { direction: "down" }, 200);
     $("#task").removeAttr('disabled');
+    $("#startStop div").animate({
+      marginTop: '0px'
+    }, 100);
+    //$("#startStop").unbind('mouseenter mouseleave');
+    $("#timer").data('countdown.state','done');
   }
 
   function strip_html(html)
