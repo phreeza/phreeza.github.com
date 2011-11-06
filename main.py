@@ -78,7 +78,8 @@ class PomodoroDeleter(webapp.RequestHandler):
         pomodoros = db.GqlQuery("SELECT * "
                                 "FROM Pomodoro WHERE __key__ = KEY('Pomodoro', %i)"
                                 % int(self.request.get('id')))
-        pomodoros[0].delete()
+        pomodoros[0].status = "deleted"
+        pomodoros[0].put()
         self.redirect('/')
 
 class PomodoroCreator(webapp.RequestHandler):
