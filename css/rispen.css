@@ -21,43 +21,24 @@ a:hover {
   color: #cc6000;
 }
 .button {
-  height: 34px;
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  -moz-box-shadow: inset 0 0 4px rgba(255, 255, 255, 0.5);
-  -webkit-box-shadow: inset 0 0 4px rgba(255, 255, 255, 0.5);
-  box-shadow: inset 0 0 4px rgba(255, 255, 255, 0.5);
+  height: 31px;
   -moz-text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
   -webkit-text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
-  background-color: #afafaf;
-  background-repeat: repeat-x;
-  background-image: -khtml-gradient(linear, left top, left bottom, from(#c8c8c8), to(#afafaf));
-  background-image: -moz-linear-gradient(#c8c8c8, #afafaf);
-  background-image: -ms-linear-gradient(#c8c8c8, #afafaf);
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #c8c8c8), color-stop(100%, #afafaf));
-  background-image: -webkit-linear-gradient(#c8c8c8, #afafaf);
-  background-image: -o-linear-gradient(#c8c8c8, #afafaf);
-  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#c8c8c8', endColorstr='#afafaf', GradientType=0)";
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#c8c8c8', endColorstr='#afafaf', GradientType=0);
-  background-image: linear-gradient(#c8c8c8, #afafaf);
   color: #323232;
+  line-height: 37px;
+  text-align: center;
+  letter-spacing: 0.5pt;
+  font-size: 10pt;
+  border-bottom-color: #323232;
+  border-bottom-width: 5px;
+  border-bottom-style: solid;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
 }
 .button.primary {
   background: #ff7800;
-  background-color: #ff7800;
-  background-repeat: repeat-x;
-  background-image: -khtml-gradient(linear, left top, left bottom, from(#ff9333), to(#ff7800));
-  background-image: -moz-linear-gradient(#ff9333, #ff7800);
-  background-image: -ms-linear-gradient(#ff9333, #ff7800);
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ff9333), color-stop(100%, #ff7800));
-  background-image: -webkit-linear-gradient(#ff9333, #ff7800);
-  background-image: -o-linear-gradient(#ff9333, #ff7800);
-  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff9333', endColorstr='#ff7800', GradientType=0)";
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff9333', endColorstr='#ff7800', GradientType=0);
-  background-image: linear-gradient(#ff9333, #ff7800);
   color: #ffffff;
 }
 @font-face {
@@ -252,9 +233,7 @@ header #rispenId input:focus {
 #form #startStop div span {
   display: block;
   width: 85px;
-  line-height: 36px;
   text-align: center;
-  font-size: 10pt;
 }
 #form #afterTask {
   display: none;
