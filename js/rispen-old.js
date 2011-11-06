@@ -46,18 +46,18 @@ $(function() {
   
 // Display of Stop Task 
   
-  $("#startstop").hover(function() {
+  $("#startStop").hover(function() {
     if ($("#timer").data('countdown.state') == 'running')
   {
-    $("#startstop div").animate({
-      marginTop: '-50px'
+    $("#startStop div").animate({
+      marginTop: '-72px'
     }, 100);
   }
   },function() {
     if ($("#timer").data('countdown.state') == 'running')
   {
-    $("#startstop div").animate({
-      marginTop: '-25px'
+    $("#startStop div").animate({
+      marginTop: '-36px'
     }, 100);
   }
   }
