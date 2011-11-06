@@ -52,14 +52,6 @@
       </div>
     </div>
     
-    <!-- DEBUG NAVIGATION START -->
-    <div class="container" style="margin-bottom: 20px;">
-      <h2 style="display: inline; font-size: 10pt;">Debug Menu</h2>
-      <button id="pomodoro">Pomodoro</button>
-      <button id="finishedTask">Finish Task</button>
-      <div id="timer"></div>
-    </div>
-    <!-- DEBUG NAVIGATION END -->
     
     <div class="container">
       <div id="actionContainer">
@@ -67,7 +59,13 @@
         <div id="progressBar"></div>
         <div id="form">
           <input id="task" placeholder="What do you want to do?"/>
-          <button id="startStop" class="button">Start</button>
+          <a href="#" id="startStop" class="btn primary">
+          <div>
+            <span>Start</span>
+            <span id="timer">13:37</span>
+            <span>Stop</span>
+          </div>
+        </a>
           <div id="afterTask">
             <textarea placeholder="Summary"></textarea>
             <div id="mood">
