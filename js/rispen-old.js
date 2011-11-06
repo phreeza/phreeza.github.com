@@ -4,7 +4,7 @@ $(function() {
   tick:function(timer, time_in_seconds, formatted_time)
   {
     $("#progressBar").animate({
-    width: time_in_seconds*100./(25*60.)+"%"},900);
+    width: (100.-time_in_seconds*100./(25*60.))+"%"},900);
     document.title = formatted_time + " - Rispen";
 
   }
@@ -13,7 +13,6 @@ $(function() {
     buzzer: function(){
       $("#summary").slideDown('fast'); 
       $("#task").removeClass('active');
-      $("#progress").fadeOut('fast');
       $("#startStop").css('display', 'none');
       var taskid = $("#history").children().size()-1;
       $("#task"+taskid).removeClass("running");
@@ -24,7 +23,6 @@ $(function() {
     if ($("#timer").data('countdown.state') == 'running')
   {
     $("#timer").resetTimer();
-    $("#progress").fadeOut('fast');
     var taskid = $("#history").children().size()-1;
     $("#task"+taskid).removeClass("running");
   }
@@ -42,9 +40,7 @@ $(function() {
     $("#task").attr({placeholder: 'What do you want to do?',});
     $("#task").attr({disabled: 'disabled',});
     $("#task").addClass('active');
-    $("#progressBar").progressbar({"value":100});
     addTask($("#task").val(),ISODateString(new Date()),true,0);
-    $("#progressBar").show();
   }
   });
   
@@ -77,7 +73,6 @@ $(function() {
     $("#timer").resetTimer();
     $("#task").removeAttr("disabled");
     $("#task").val('')
-    $("#progress").fadeOut('fast');
   });
 
   $('#shortbreak').click(function() {
@@ -145,11 +140,6 @@ $(function() {
     window.location.href = "http://rispennl.appspot.com/"+$('#identifier').val();
   })
 
-  // Progress-Bar
-
-  $( "#progress" ).progressbar({
-    value: 100
-  });
 
   // Radio Buttons
 
