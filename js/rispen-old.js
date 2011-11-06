@@ -343,7 +343,7 @@ $(function() {
       width: "0",
     }, 10 );
     $('#action').delay(400).show("drop", { direction: "down" }, 200);
-    $("#task").addClass('active');
+    $("#task").removeAttr('disabled');
   }
 
   function strip_html(html)
