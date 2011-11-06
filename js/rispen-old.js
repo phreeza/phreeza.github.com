@@ -34,7 +34,7 @@ $(function() {
     else
   {
     $("#timer").startTimer($("#timer").data('countdown.settings'));
-    $("#startstop div").animate({
+    $("#startStop div").animate({
       marginTop: '-32px'
     }, 100);
     $("#task").attr({placeholder: 'What do you want to do?',});
