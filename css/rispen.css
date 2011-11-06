@@ -106,6 +106,16 @@ header #rispenId {
   -webkit-border-radius: 3px;
   border-radius: 3px;
 }
+header #rispenId input {
+  margin: 0;
+  border: 0;
+  width: 80px;
+  background: #181818;
+  outline: 0;
+  font-family: 'Droid Sans Mono', sans-serif;
+  font-size: 9pt;
+  color: #ff7800;
+}
 .notification {
   display: none;
   clear: both;
