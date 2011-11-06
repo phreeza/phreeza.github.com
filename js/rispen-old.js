@@ -196,7 +196,7 @@ $(function() {
     var newli = document.createElement('li');
     var taskid = $("#history").children().size();
     newli.id="task" + taskid;
-    newli.innerHTML = "<h2><span class=\"expand\">▼</span>"+task+"</h2><abbr class=\"timeago\" title=\""+date+"Z\">"+date+"Z</abbr>";
+    newli.innerHTML = "<h2><span class=\"expand\">▼</span>"+task+"</h2><abbr class=\"timeago\" title=\""+date+"Z\">"+date+"Z</abbr><div class=\"taskInfo\"><p class=\"summary\"></p><div class=\"taskOptions\"><span class=\"geoLocation\">Coworking Space Garage Bilk</span><span class=\"delete\">Delete ×</span></div></div>";
     if (isnew) newli.style.display="none";
     $("#history").prepend(newli);
     $("abbr.timeago").timeago();
@@ -243,7 +243,8 @@ $(function() {
           );
     }
     $("#task"+taskid+" .expand").click(function() {
-      $(this).parent().children('.expandables').slideToggle('fast');
+      //$(this).parent().children('.expandables').slideToggle('fast');
+      $(this).parent('h2').parent('li').children('.taskInfo').slideToggle('fast');
     });
   }
 
