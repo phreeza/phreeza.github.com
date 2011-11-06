@@ -238,7 +238,7 @@ $(function() {
           function()
           {
             $.post("http://rispennl.appspot.com/delete",{id:id});
-            $("#task"+taskid).slideUp("slow");
+            $(this).parent('div').parent('div').parent('li').hide("drop", { direction: "left" }, 200);
           }
           );
     }
