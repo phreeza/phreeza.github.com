@@ -230,6 +230,15 @@ header #rispenId input:focus {
   background: #ff7800;
   width: 0px;
 }
+#progressBar.positive {
+  background: #3ca032;
+}
+#progressBar.neutral {
+  background: #ff7800;
+}
+#progressBar.negative {
+  background: #be0a1e;
+}
 #form, .breakAction {
   background: #c8c8c8;
   padding: 10px 10px 0 10px;
@@ -303,6 +312,7 @@ header #rispenId input:focus {
 }
 #form #sendTask, .breakAction #sendTask {
   float: right;
+  width: 85px;
 }
 #form p, .breakAction p {
   margin: 0;
