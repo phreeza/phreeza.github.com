@@ -3,7 +3,8 @@ $(function() {
     time_in_seconds: 25*60, // hack for editing the post-pomodoro screen. TODO revert to 25*60,
   tick:function(timer, time_in_seconds, formatted_time)
   {
-    $("#progressBar").progressbar("option","value",time_in_seconds*100./(25*60.));//also change this 5 back to 25*60
+    $("#progressBar").animate({
+    width: time_in_seconds*100./(25*60.)+"%"},900);
     document.title = formatted_time + " - Rispen";
 
   }
@@ -41,9 +42,9 @@ $(function() {
     $("#task").attr({placeholder: 'What do you want to do?',});
     $("#task").attr({disabled: 'disabled',});
     $("#task").addClass('active');
-    $("#progress").progressbar({"value":100});
+    $("#progressBar").progressbar({"value":100});
     addTask($("#task").val(),ISODateString(new Date()),true,0);
-    $("#progress").fadeIn('fast');
+    $("#progressBar").show();
   }
   });
   
