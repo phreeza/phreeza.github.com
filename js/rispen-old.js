@@ -110,7 +110,7 @@ $(function() {
       function(e) {
         var code = (e.keyCode ? e.keyCode : e.which);
         if(code == 13) {
-          $('#startstop').click();
+          $('#startStop').click();
         }
       }
       );
@@ -196,14 +196,15 @@ $(function() {
     var newli = document.createElement('li');
     var taskid = $("#history").children().size();
     newli.id="task" + taskid;
-    newli.innerHTML = "<div><span class=\"expand\">▼</span>"+task+"<span class=\"delete\">×</span><abbr class=\"timeago\" title=\""+date+"Z\">"+date+"Z</abbr><div class=\"expandables\"><p class=\"summary\">"+fb_text+"</p><p class=\"rating\">"+fb_rating+"</p></div></div>";
+    newli.innerHTML = "<h2><span class=\"expand\">▼</span>"+task+"</h2><abbr class=\"timeago\" title=\""+date+"Z\">"+date+"Z</abbr>";
     if (isnew) newli.style.display="none";
     $("#history").prepend(newli);
     $("abbr.timeago").timeago();
     if (isnew) 
     {
+      $("#task"+taskid).addClass("task");
+      $("#task"+taskid).addClass("neutral");
       $("#task"+taskid).slideDown("slow");
-      $("#task"+taskid).addClass("running");
       $.getJSON("http://rispennl.appspot.com/save",
           {content:task,author:$("#identifier").val(),item_type:"pomodoro"},
           function(data){
@@ -229,6 +230,8 @@ $(function() {
     }
     else
     {
+      $("#task"+taskid).addClass("task");
+      $("#task"+taskid).addClass("neutral");
         $("#task"+taskid+" div").children(".delete").click(
             function()
             {
