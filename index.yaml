@@ -13,5 +13,6 @@ indexes:
 - kind: Pomodoro
   properties:
   - name: author
+  - name: status
   - name: date
     direction: desc
