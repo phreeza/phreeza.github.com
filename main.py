@@ -50,6 +50,7 @@ class JSONDump(webapp.RequestHandler):
                             % self.request.get('author'))
         if authors.count(limit=2) > 0:
             pomodoros = authors[0].pomodoros
+            pomodoros.filter('status =','complete')
             pomodoros.order('-date')
         else:
             pomodoros = []
