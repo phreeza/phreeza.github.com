@@ -57,7 +57,7 @@
       <div id="actionContainer">
       <div id="action">
         <div id="progressBar"></div>
-        <div id="form">
+        <div id="form" class="clearfix">
           <input id="task" placeholder="What do you want to do?"/>
           <a href="#" id="startStop" class="button">
             <div>
@@ -69,9 +69,7 @@
           <div id="afterTask">
             <textarea id="summaryTextarea" placeholder="Summary"></textarea>
             <div id="mood">
-              <button class="button positive">Positive</button>
-              <button class="button neutral">Neutral</button>
-              <button class="button negative">Negative</button>
+              <button id="moodPositive" class="button">Positive</button><button id="moodNeutral" class="button">Neutral</button><button id="moodNegative" class="button">Negative</button>
             </div>
             <button id="sendTask" class="button">Send</button>
           </div>
