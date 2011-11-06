@@ -1,3 +1,16 @@
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+* + html .clearfix {
+  display: inline-block;
+}
+* html .clearfix {
+  height: 1%;
+}
 .container {
   margin: auto;
   width: 560px;
@@ -20,8 +33,9 @@ a {
 a:hover {
   color: #cc6000;
 }
-.button {
+.button, button {
   height: 36px;
+  margin: 0;
   -moz-text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
   -webkit-text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
@@ -31,13 +45,35 @@ a:hover {
   text-align: center;
   letter-spacing: 0.5pt;
   font-size: 10pt;
+  border: 0;
+  cursor: pointer;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   border-radius: 3px;
 }
-.button.primary {
+.button:hover, button:hover {
+  background: #3f3f3f;
+}
+.button.positive, button.positive {
+  background: #3ca032;
+  color: #ffffff;
+}
+.button.positive:hover, button.positive:hover {
+  background: #43b338;
+}
+.button.neutral, button.neutral {
   background: #ff7800;
   color: #ffffff;
+}
+.button.neutral:hover, button.neutral:hover {
+  background: #ff861a;
+}
+.button.negative, button.negative {
+  background: #be0a1e;
+  color: #ffffff;
+}
+.button.negative:hover, button.negative:hover {
+  background: #d60b22;
 }
 @font-face {
   font-family: 'DejaWeb';
@@ -194,7 +230,16 @@ header #rispenId input:focus {
   background: #ff7800;
   width: 0px;
 }
-#form {
+#progressBar.positive {
+  background: #3ca032;
+}
+#progressBar.neutral {
+  background: #ff7800;
+}
+#progressBar.negative {
+  background: #be0a1e;
+}
+#form, .breakAction {
   background: #c8c8c8;
   padding: 10px 10px 0 10px;
   margin-bottom: 20px;
@@ -205,7 +250,7 @@ header #rispenId input:focus {
   -webkit-border-bottom-right-radius: 3px;
   border-bottom-right-radius: 3px;
 }
-#form input {
+#form input, .breakAction input {
   width: 405px;
   margin: 0 0 10px 0;
   outline: 0;
@@ -213,10 +258,10 @@ header #rispenId input:focus {
   padding: 8px 20px;
   font-size: 12pt;
 }
-#form input[disabled] {
+#form input[disabled], .breakAction input[disabled] {
   background: #c8c8c8;
 }
-#form textarea {
+#form textarea, .breakAction textarea {
   width: 500px;
   height: 64px;
   padding: 8px 20px;
@@ -226,21 +271,58 @@ header #rispenId input:focus {
   outline: 0;
   resize: none;
 }
-#form #startStop {
+#form #startStop, .breakAction #startStop {
   float: right;
   display: block;
   overflow: hidden;
 }
-#form #startStop div span {
+#form #startStop div span, .breakAction #startStop div span {
   display: block;
   width: 85px;
   text-align: center;
 }
-#form #afterTask {
+#form #afterTask, .breakAction #afterTask {
+  display: none;
+  clear: both;
+}
+#form #mood, .breakAction #mood {
+  float: left;
+  margin-bottom: 10px;
+}
+#form #mood button, .breakAction #mood button {
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  height: 36px;
+  line-height: 31px;
+  font-size: 12pt;
+  padding: 0 15px;
+}
+#form #mood #moodPositive, .breakAction #mood #moodPositive {
+  border-bottom-left-radius: 4px;
+  border-top: 5px solid #3ca032;
+}
+#form #mood #moodNeutral, .breakAction #mood #moodNeutral {
+  border-radius: 0;
+  border-top: 5px solid #ff7800;
+}
+#form #mood #moodNegative, .breakAction #mood #moodNegative {
+  border-bottom-right-radius: 4px;
+  border-top: 5px solid #be0a1e;
+}
+#form #sendTask, .breakAction #sendTask {
+  float: right;
+  width: 85px;
+}
+#form p, .breakAction p {
+  margin: 0;
+  padding: 0 0 10px 0;
+}
+#form#shortBreak, .breakAction#shortBreak {
   display: none;
 }
-#form #mood {
-  text-align: center;
+#form#longBreak, .breakAction#longBreak {
+  display: none;
 }
 #history {
   margin: 0 0 20px 0;
