@@ -35,7 +35,7 @@ $(function() {
   {
     $("#timer").startTimer($("#timer").data('countdown.settings'));
     $("#startstop div").animate({
-      marginTop: '-25px'
+      marginTop: '-32px'
     }, 100);
     $("#task").attr({placeholder: 'What do you want to do?',});
     $("#task").attr({disabled: 'disabled',});
@@ -50,14 +50,14 @@ $(function() {
     if ($("#timer").data('countdown.state') == 'running')
   {
     $("#startStop div").animate({
-      marginTop: '-72px'
+      marginTop: '-64px'
     }, 100);
   }
   },function() {
     if ($("#timer").data('countdown.state') == 'running')
   {
     $("#startStop div").animate({
-      marginTop: '-36px'
+      marginTop: '-32px'
     }, 100);
   }
   }
