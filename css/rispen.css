@@ -215,6 +215,9 @@ header #rispenId input:focus {
   padding: 8px 20px;
   font-size: 12pt;
 }
+#form input[disabled] {
+  background: #c8c8c8;
+}
 #form textarea {
   width: 500px;
   height: 64px;
